@@ -41,8 +41,33 @@ table.results tbody tr.good {
 }
 </style>
   <body>
-    <div id="content">
-<table class="results">
+    <main id="content">
+      <section>
+      <h2>Implementation gaps</h2>
+      <dl>
+        <dt><code>RTCIceCandidate</code> interface attributes</dt>
+        <dd>foundation, component, priority, address, protocol, port, type, tcpType, relatedAddress, relatedPort</dd>
+        <dt><code>RTCDtlsTransport</code> interface</dt>
+        <dd>Not implemented in FF, Safari; implemented partially in old Edge (but does it pass the tests?)</dd>
+        <dt><code>RTCIceTransport</code> interface</dt>
+        <dd>Available in SecureContext only in Chromium?</dd>
+        <dd>In general, some tests are https-only, but not clear if this is always justified</dd>
+        <dt><code>RTCPeerConnection.setLocalDescription()</code></dt>
+        <dd>Supports for zero-argument in FF?</dd>
+        <dt>validation of <code>rid</code> values in addTransceiver</dt>
+      </dl>
+      </section>
+      <section>
+        <h2>Test suite issues</h2>
+        <ul>
+          <li>test for <code>bufferedAmount</code> depends on <code>blob</code> sending (but not implemented in Chromium yet)</li>
+          <li>is <a href="https://github.com/web-platform-tests/wpt/blob/master/webrtc/RTCCertificate-postMessage.html#L61">x-origin RTCCertificate</a> expected to fail?</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Annotated WPT results</h2>
+
+      <table class="results">
           <thead>
             <tr>
               <th>Tests</th>
@@ -365,7 +390,7 @@ table.results tbody tr.good {
             
               <tr>
                 <td>
-                  RTCDataChannel.prototype.bufferedAmount
+                  <a href="https://wpt.fyi/results/webrtc/RTCDataChannel-bufferedAmount.html?label=master&label=experimental&aligned">RTCDataChannel.prototype.bufferedAmount</a>
                 </td>
                   <td class="numbers passes-most">
                     <span class="passes passes-most">11</span>
@@ -390,7 +415,7 @@ table.results tbody tr.good {
                     /
                     <span class="total passes-hardly">13</span>
                   </td>
-		  <td>missing support on Safari
+		  <td>missing support on Safari; Chromium fails because of dependency on <code>blob</code> sending
 		  </td>
               </tr>
             
@@ -427,7 +452,7 @@ table.results tbody tr.good {
             
               <tr>
                 <td>
-                  RTCDataChannel.prototype.send for blobs
+                  <a href="https://wpt.fyi/results/webrtc/RTCDataChannel-send-blob-order.html?label=master&label=experimental&aligned">RTCDataChannel.prototype.send for blobs</a>
                 </td>
                   <td class="numbers passes-half">
                     <span class="passes passes-half">1</span>
@@ -519,7 +544,7 @@ table.results tbody tr.good {
             
               <tr>
                 <td>
-                  RTCDtlsTransport.prototype.getRemoteCertificates
+                  <a href="https://wpt.fyi/results/webrtc/RTCDtlsTransport-getRemoteCertificates.html?label=master&label=experimental&aligned">RTCDtlsTransport.prototype.getRemoteCertificates</a>
                 </td>
                   <td class="numbers passes-all">
                     <span class="passes passes-all">2</span>
@@ -544,7 +569,7 @@ table.results tbody tr.good {
                     /
                     <span class="total passes-half">2</span>
                   </td>
-                <td></td>
+                <td>DtlsTransport not implemented in FF, Safari</td>
               </tr>
             
               <tr>
@@ -574,7 +599,7 @@ table.results tbody tr.good {
                     /
                     <span class="total passes-a-few">4</span>
                   </td>
-                <td></td>
+                <td>DtlsTransport not implemented in FF, Safari</td>
               </tr>
             
               <tr>
@@ -669,36 +694,6 @@ table.results tbody tr.good {
             
               <tr>
                 <td>
-                 <a href="https://wpt.fyi/results/webrtc/RTCIceTransport-extensions.https.html">RTCIceTransport-extensions.https.html</a>
-                </td>
-                  <td class="numbers passes-all">
-                    <span class="passes passes-all">30</span>
-                    /
-                    <span class="total passes-all">30</span>
-                  </td>
-                
-                  <td class="numbers passes-hardly">
-                    <span class="passes passes-hardly">3</span>
-                    /
-                    <span class="total passes-hardly">30</span>
-                  </td>
-                
-                  <td class="numbers passes-hardly">
-                    <span class="passes passes-hardly">1</span>
-                    /
-                    <span class="total passes-hardly">30</span>
-                  </td>
-                
-                  <td class="numbers passes-hardly">
-                    <span class="passes passes-hardly">1</span>
-                    /
-                    <span class="total passes-hardly">30</span>
-                  </td>
-                <td></td>
-              </tr>
-            
-              <tr>
-                <td>
                   RTCIceTransport
                 </td>
                   <td class="numbers passes-a-few">
@@ -724,7 +719,7 @@ table.results tbody tr.good {
                     /
                     <span class="total passes-a-few">3</span>
                   </td>
-                <td></td>
+                <td>fails for lack of DtlsTransport in FF, Safari; fails because <code>RTCIceTransport</code> is only available in secure context in Chromium</td>
               </tr>
             
               <tr class=good>
@@ -784,12 +779,12 @@ table.results tbody tr.good {
                     /
                     <span class="total passes-a-few">3</span>
                   </td>
-                <td></td>
+                <td>FF, Safari don't implement argument-less sLD; known timing bug in Chromium</td>
               </tr>
             
               <tr>
                 <td>
-                  Test RTCPeerConnection.prototype.addIceCandidate
+                  <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-addIceCandidate.html?label=master&label=experimental&aligned">Test RTCPeerConnection.prototype.addIceCandidate</a>
                 </td>
                   <td class="numbers passes-half">
                     <span class="passes passes-half">17</span>
@@ -814,7 +809,7 @@ table.results tbody tr.good {
                     /
                     <span class="total passes-a-few">30</span>
                   </td>
-                <td></td>
+                <td>Chromium wrongly rejects empty candidate argument (explains 6 of the failures)</td>
               </tr>
             
               <tr class=good>
@@ -849,7 +844,7 @@ table.results tbody tr.good {
             
               <tr>
                 <td>
-                  RTCPeerConnection.prototype.addTransceiver
+                  <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-addTransceiver.https.html?label=master&label=experimental&aligned">RTCPeerConnection.prototype.addTransceiver</a>
                 </td>
                   <td class="numbers passes-most">
                     <span class="passes passes-most">11</span>
@@ -874,7 +869,7 @@ table.results tbody tr.good {
                     /
                     <span class="total passes-most">13</span>
                   </td>
-                <td></td>
+                <td>Failure to validate <code>rid</code> (16 chars, alphanumeric)</td>
               </tr>
             
               <tr>
@@ -3389,7 +3384,41 @@ table.results tbody tr.good {
                   <td>OK</td>
               </tr>
           </tbody>
-        </table>
-   </div>
+          <tbody>
+            <tr><th colspan="6">Out of scope</th></tr>
+            <tr>
+                <td>
+                 <a href="https://wpt.fyi/results/webrtc/RTCIceTransport-extensions.https.html">RTCIceTransport-extensions.https.html</a>
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">30</span>
+                    /
+                    <span class="total passes-all">30</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">3</span>
+                    /
+                    <span class="total passes-hardly">30</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">30</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">30</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+          </tbody>
+          </table>
+      </section>
+   </main>
   </body>
 </html>
