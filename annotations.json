@@ -1,0 +1,108 @@
+{
+  "webrtc/RTCCertificate-postMessage.html": {
+    "comment":"Check cross-origin created RTCCertificate fails on 3 browsers"
+  },
+  "webrtc/RTCCertificate.html": {
+    "comment": "RTCPeerConnection({ certificates }) should generate offer SDP with fingerprint of all provided certificates fails on all browsers."
+  },
+  "webrtc/RTCConfiguration-iceServers.html": {
+    "comment": "<ul><li>FF doesn't implement setConfiguration (1/2 tests)</li><li>SyntaxError vs InvalidAccessError</li><li>OAuth credential needs to go (12 failures)</li><li>legacy support for iceServers.url</li><li>credentialType validation</li><li>empty urls as error</li><li></ul>"
+  },
+  "webrtc/RTCDataChannel-bufferedAmount.html": {
+    "comment": "missing support on Safari; Chromium fails because of dependency on <code>blob</code> sending"
+  },
+  "webrtc/RTCDataChannel-send-blob-order.html": {
+    "comment": "Chromium not implementing blob sending, FF missing order"
+  },
+  "webrtc/RTCDataChannel-send.html": {
+    "comment": "lack of <code>blob</code> support explains 4 Chromium failures; maxSize test depends on sctp transport availability"
+  },
+  "webrtc/RTCDtlsTransport-getRemoteCertificates.html": {
+    "comment": "DtlsTransport not implemented in FF, Safari"
+  },
+  "webrtc/RTCDtlsTransport-state.html": {
+    "comment": "DtlsTransport not implemented in FF, Safari"
+  },
+  "webrtc/RTCError.html": {
+    "comment": "RTCError not implemented in FF, Safari"
+  },
+  "webrtc/RTCIceCandidate-constructor.html": {
+    "comment": "missing IceCandidate additional attributes in FF, Safari"
+  },
+  "webrtc/RTCIceTransport.html": {
+    "comment": "fails for lack of DtlsTransport in FF, Safari; fails because <code>RTCIceTransport</code> is only available in secure context in Chromium"
+  },
+  "webrtc/RTCIceTransport-extension.https.html": {
+    "status": "ignore",
+    "comment": "not part of webrtc-pc"
+  },
+  "webrtc/RTCPeerConnection-addIceCandidate-timing.https.html": {
+    "comment": "FF, Safari don't implement argument-less sLD; known timing bug in Chromium"
+  },
+  "webrtc/RTCPeerConnection-addIceCandidate.html": {
+    "comment": "Chromium wrongly rejects empty candidate argument (explains 6 of the failures)"
+  },
+  "webrtc/RTCPeerConnection-addTransceiver.https.html": {
+    "comment": "Failure to validate <code>rid</code> (16 chars, alphanumeric)"
+  },
+  "webrtc/RTCPeerConnection-canTrickleIceCandidates.html": {
+    "comment": "old Edge has <code>canTrickleIceCandidates</code> - does it pass the tests?"
+  },
+  "webrtc/RTCPeerConnection-connectionState.https.html": {
+    "comment": "1 Safari failure linked to lack of <code>sctp</code> transport; 2nd linked to wrong state machine (FF doesn't implement)"
+  },
+  "webrtc/RTCPeerConnection-constructor.html": {
+    "status": "ok",
+    "comment": "canTrickleIceCandidates initial value fails for 3 - but old Edge implemented it, should be OK"
+  },
+  "webrtc/RTCPeerConnection-createDataChannel.html": {
+    "comment": "5 Chromium / 3 FF fails because of no-longer required <code>priority</code>; last chromium issue is linked to dependency on missing <code>stop()</code> on transceiver"
+  },
+  "webrtc/RTCPeerConnection-iceConnectionState.https.html": {
+    "comment": "FF failures linked to lack of <code>sctp</code> / <code>receiver.transport</code>"
+  },
+  "webrtc/RTCPeerConnection-iceGatheringState.html": {
+    "comment": "FF/Safari fails because of lack of sctp; Chromium because RTCIceTransport not available in non-secure context"
+  },
+  "webrtc/RTCPeerConnection-removeTrack.https.html": {
+    "comment": "Chromium fails for lack of <code>transceiver.stop()</code>; Safari fails on removing track from a stopped transceiver"
+  },
+  "webrtc/RTCPeerConnection-ondatachannel.html": {
+    "status": "ok",
+    "comment": "Only tests that don't have double pass are those for priority"
+  },
+  "webrtc/RTCPeerConnection-restartIce.https.html": {
+    "status": "ok",
+    "comment": "only edge case lack implementation"
+  },
+  "webrtc/RTCPeerConnection-setDescription-transceiver.html": {
+    "status": "ok",
+    "comment": "Chromium fails on <code>transceiver.stop</code>"
+  },
+  "webrtc/RTCPeerConnection-setLocalDescription-answer.html": {
+    "status": "ok",
+    "comment": "Chromium error is just wrong error type raised"
+  },
+  "webrtc/RTCPeerConnection-setLocalDescription-pranswer.html": {
+    "comment": "Test is wrong to assume pendingRemoteDescription is null?  other chromium failure is wrong error name"
+  },
+  "webrtc/RTCPeerConnection-transceivers.https.html": {
+    "status": "ok",
+    "comment": "only FF failure due to missing <code>encodings</code> on sendparameters"
+  },
+  "webrtc/RTCPeerConnectionIceEvent-constructor.html": {
+    "status": "ok",
+    "comment": "Minor bug in FF/Chromium (undefined instead of nullable)"
+  },
+  "webrtc/RTCRtpParameters-codecs.html": {
+    "comment": "Not implemented in FF, Safari?"
+  },
+  "webrtc/RTCPeerConnection-getDefaultIceServers.html": {
+    "status": "ignore",
+    "comment": "removed"
+  },
+  "webrtc/RTCRtpParameters-degradationPreference.html": {
+    "status": "ignore",
+    "comment": "removed"
+  }
+}
