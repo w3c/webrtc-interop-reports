@@ -69,6 +69,8 @@ table.results tbody tr.ok {
         <dd>Missing from chromium</dd>
         <dt><code>restartIce</code> survives remote offer containing partial restart</dt>
         <dd>Not implemented in FF, Chromium</dd>
+        <dt><code>RTCRtpSender.setStreams()</code></dt>
+        <dd>Not implemented in FF, Safari</dd>
       </dl>
       </section>
       <section>
@@ -76,7 +78,7 @@ table.results tbody tr.ok {
         <ul>
           <li>test for <code>bufferedAmount</code> depends on <code>blob</code> sending (but not implemented in Chromium yet)</li>
           <li>is <a href="https://github.com/web-platform-tests/wpt/blob/master/webrtc/RTCCertificate-postMessage.html#L61">x-origin RTCCertificate</a> expected to fail?</li>
-          <li>Remove <code>priority</code> from data channel tests (<a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-createDataChannel.html?label=experimental&label=master&aligned">RTCPeerConnection-createDataChannel.html</a>)</li>
+          <li>Remove <code>priority</code> from data channel tests (<a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-createDataChannel.html?label=experimental&label=master&aligned">RTCPeerConnection-createDataChannel.html</a>, <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-ondatachannel.html?label=experimental&label=master&aligned">RTCPeerConnection-ondatachannel</a>)</li>
         </ul>
       </section>
       <section>
@@ -1277,7 +1279,7 @@ table.results tbody tr.ok {
                 <td>WebRTC Stats</td>
               </tr>
             
-              <tr>
+              <tr class=ok>
                 <td>
                  <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-ondatachannel.html">RTCPeerConnection-ondatachannel.html</a>
                 </td>
@@ -1304,7 +1306,7 @@ table.results tbody tr.ok {
                     /
                     <span class="total passes-half">9</span>
                   </td>
-                <td></td>
+                <td>Only tests that don't have double pass are those for priority</td>
               </tr>
             
               <tr>
@@ -1364,7 +1366,7 @@ table.results tbody tr.ok {
                     /
                     <span class="total passes-a-few">14</span>
                   </td>
-                <td></td>
+                <td>FF fails because of lack of <code>setStreams</code></td>
               </tr>
             
               <tr class=good>
