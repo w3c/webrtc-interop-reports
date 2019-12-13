@@ -55,6 +55,8 @@ table.results tbody tr.good {
         <dt><code>RTCPeerConnection.setLocalDescription()</code></dt>
         <dd>Supports for zero-argument in FF?</dd>
         <dt>validation of <code>rid</code> values in addTransceiver</dt>
+        <dt><code>createOffer</code></dt>
+        <dd>Chromium Safari fails "When media stream is added when createOffer() is running in parallel, the result offer should contain the new media stream"</dd>
       </dl>
       </section>
       <section>
@@ -62,6 +64,7 @@ table.results tbody tr.good {
         <ul>
           <li>test for <code>bufferedAmount</code> depends on <code>blob</code> sending (but not implemented in Chromium yet)</li>
           <li>is <a href="https://github.com/web-platform-tests/wpt/blob/master/webrtc/RTCCertificate-postMessage.html#L61">x-origin RTCCertificate</a> expected to fail?</li>
+          <li>Remove <code>priority</code> from data channel tests (<a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-createDataChannel.html?label=experimental&label=master&aligned">RTCPeerConnection-createDataChannel.html</a>)</li>
         </ul>
       </section>
       <section>
@@ -874,7 +877,7 @@ table.results tbody tr.good {
             
               <tr>
                 <td>
-                  RTCPeerConnection canTrickleIceCandidates tests
+                  <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-canTrickleIceCandidates.html?label=master&label=experimental&aligned">RTCPeerConnection canTrickleIceCandidates tests</a>
                 </td>
                   <td class="numbers passes-a-few">
                     <span class="passes passes-a-few">1</span>
@@ -899,7 +902,7 @@ table.results tbody tr.good {
                     /
                     <span class="total passes-a-few">4</span>
                   </td>
-                <td></td>
+                <td>old Edge has <code>canTrickleIceCandidates</code> - does it pass the tests?</td>
               </tr>
             
               <tr>
@@ -1019,7 +1022,7 @@ table.results tbody tr.good {
                     /
                     <span class="total passes-lots">45</span>
                   </td>
-                <td></td>
+                <td>5 Chromium / 3 FF fails because of no-longer required <code>priority</code>; last chromium issue is linked to dependency on missing <code>stop()</code> on transceiver</td>
               </tr>
             
               <tr>
