@@ -36,6 +36,9 @@ table.results thead th:first-child {
   border-left: none;
 }
 
+table.results tbody tr.good {
+  background: #cfc;
+}
 </style>
   <body>
     <div id="content">
@@ -112,7 +115,7 @@ table.results thead th:first-child {
 		  <td>RTCPeerConnection({ certificates }) should generate offer SDP with fingerprint of all provided certificates fails on all browsers.
 		  </td>
               </tr>
-              <tr>
+              <tr class=good>
                 <td>
 		  RTCConfiguration bundlePolicy
                 </td>
@@ -143,7 +146,7 @@ table.results thead th:first-child {
                  </td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
 		  RTCConfiguration-iceCandidatePoolSize.html
                 </td>
@@ -205,7 +208,7 @@ table.results thead th:first-child {
                   </td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCConfiguration iceTransportPolicy
                 </td>
@@ -236,7 +239,7 @@ table.results thead th:first-child {
 		  </td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCConfiguration rtcpMuxPolicy
                 </td>
@@ -268,7 +271,7 @@ table.results thead th:first-child {
 		  </td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                  RTCDTMFSender-insertDTMF.https.html 
                 </td>
@@ -299,7 +302,7 @@ table.results thead th:first-child {
 		  </td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
 		  RTCDTMFSender.prototype.ontonechange (Long Timeout)
                 </td>
@@ -329,7 +332,7 @@ table.results thead th:first-child {
 		  <td>OK
 		  </td>
               </tr>
-              <tr>
+              <tr class=good>
                 <td>
 		  RTCDTMFSender.prototype.ontonechange
                 </td>
@@ -391,7 +394,7 @@ table.results thead th:first-child {
 		  </td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCDataChannel id attribute
                 </td>
@@ -484,7 +487,7 @@ table.results thead th:first-child {
 		  </td>
               </tr>
 
-              <tr>
+              <tr class=good>
                 <td>
                   RTCDataChannelEvent constructor
                 </td>
@@ -634,7 +637,7 @@ table.results thead th:first-child {
                 <td></td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCIceConnectionState and RTCIceCandidatePair
                 </td>
@@ -724,7 +727,7 @@ table.results thead th:first-child {
                 <td></td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCPeerConnection addTrack does not deadlock
                 </td>
@@ -814,7 +817,7 @@ table.results thead th:first-child {
                 <td></td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCPeerConnection.prototype.addTrack
                 </td>
@@ -964,7 +967,7 @@ table.results thead th:first-child {
                 <td>canTrickleIceCandidates initial value fails for 3</td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCPeerConnection.prototype.createAnswer
                 </td>
@@ -1054,7 +1057,7 @@ table.results thead th:first-child {
                 <td></td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCPeerConnection-generateCertificate.html
                 </td>
@@ -1144,7 +1147,7 @@ table.results thead th:first-child {
                 <td>WebRTC Stats</td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCPeerConnection-getTransceivers.html
                 </td>
@@ -1174,7 +1177,7 @@ table.results thead th:first-child {
                 <td>OK</td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCPeerConnection.prototype.iceConnectionState - disconnection
                 </td>
@@ -1383,7 +1386,7 @@ table.results thead th:first-child {
                 <td></td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCPeerConnection onsignalingstatechanged
                 </td>
@@ -1413,7 +1416,7 @@ table.results thead th:first-child {
                 <td>OK</td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCPeerConnection.prototype.ontrack
                 </td>
@@ -1743,7 +1746,7 @@ table.results thead th:first-child {
                 <td></td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCPeerConnection-setLocalDescription.html
                 </td>
@@ -1773,7 +1776,7 @@ table.results thead th:first-child {
                 <td>OK</td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCPeerConnection-setRemoteDescription-answer.html
                 </td>
@@ -1803,7 +1806,7 @@ table.results thead th:first-child {
                 <td>OK</td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCPeerConnection.prototype.setRemoteDescription - legacy streams without a=msid lines
                 </td>
@@ -1863,7 +1866,7 @@ table.results thead th:first-child {
                 <td></td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCPeerConnection.prototype.setRemoteDescription pranswer
                 </td>
@@ -1893,7 +1896,7 @@ table.results thead th:first-child {
                 <td>OK</td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCPeerConnection.prototype.setRemoteDescription - replaceTrack
                 </td>
@@ -1983,7 +1986,7 @@ table.results thead th:first-child {
                 <td></td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCPeerConnection-setRemoteDescription.html
                 </td>
@@ -2283,7 +2286,7 @@ table.results thead th:first-child {
                 <td></td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                  RTCRtpReceiver-getCapabilities.html
                 </td>
@@ -2313,7 +2316,7 @@ table.results thead th:first-child {
                 <td>OK</td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCRtpReceiver.prototype.getContributingSources
                 </td>
@@ -2433,7 +2436,7 @@ table.results thead th:first-child {
                 <td></td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCRtpSender.getCapabilities
                 </td>
@@ -2493,7 +2496,7 @@ table.results thead th:first-child {
                 <td>WebRTC Stats</td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCRtpSender.prototype.replaceTrack
                 </td>
@@ -2523,7 +2526,7 @@ table.results thead th:first-child {
                 <td>OK</td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCRtpSender.prototype.setParameters
                 </td>
@@ -2613,7 +2616,7 @@ table.results thead th:first-child {
                 <td></td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCRtpTransceiver-direction.html
                 </td>
@@ -2853,7 +2856,7 @@ table.results thead th:first-child {
                 <td></td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td> 
 		  RTCTrackEvent constructor
                 </td>
@@ -2943,7 +2946,7 @@ table.results thead th:first-child {
                 <td></td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCPeerConnection GetStats
                 </td>
@@ -3003,7 +3006,7 @@ table.results thead th:first-child {
                 <td></td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCPeerConnection Data-Only Connection Test with Promises
                 </td>
@@ -3033,7 +3036,7 @@ table.results thead th:first-child {
                 <td>OK</td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   simplecall-no-ssrcs.https.html
                 </td>
@@ -3063,7 +3066,7 @@ table.results thead th:first-child {
                 <td>OK</td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                 simplecall.https.html
                 </td>
