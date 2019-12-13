@@ -73,6 +73,7 @@ table.results tbody tr.ok {
         <dd>Not implemented in FF, Safari</dd>
         <dt><code>RTCRtpCodecParameters</code></dt>
         <dd>Not implemented in FF, Safari? (per <a href="https://wpt.fyi/results/webrtc/RTCRtpParameters-codecs.html?label=experimental&label=master&aligned">RTCRtpParamters-codecs.html</a></dd>
+
       </dl>
       </section>
       <section>
@@ -83,10 +84,11 @@ table.results tbody tr.ok {
           <li>is <a href="https://github.com/web-platform-tests/wpt/blob/master/webrtc/RTCCertificate-postMessage.html#L61">x-origin RTCCertificate</a> expected to fail?</li>
           <li>Remove <code>priority</code> from data channel tests (<a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-createDataChannel.html?label=experimental&label=master&aligned">RTCPeerConnection-createDataChannel.html</a>, <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-ondatachannel.html?label=experimental&label=master&aligned">RTCPeerConnection-ondatachannel</a>)</li>
           <li>pendingRemoteDescription not null after <code>pranswer</code> in <a href="https://github.com/web-platform-tests/wpt/blob/master/webrtc/RTCPeerConnection-setLocalDescription-pranswer.html#L106">RTCPeerConnection-setLocalDescription-pranswer.html</a> per 3.2.4.3 of set session description?</li>
+          <li>Remove oauth credential from <a href="https://wpt.fyi/results/webrtc/RTCConfiguration-iceServers.html?label=experimental&label=master&aligned">RTCConfiguration-iceServers.html</a></li>
         </ul>
         <h3>Gaps</h3>
         <ul>
-          <li>RTCPeerConnection.setConfiguration()</li>
+          <li>dedicated test for RTCPeerConnection.setConfiguration()</li>
         </ul>
       </section>
       
@@ -230,7 +232,7 @@ table.results tbody tr.ok {
             
               <tr>
                 <td>
-                  RTCConfiguration iceServers
+                  <a href="https://wpt.fyi/results/webrtc/RTCConfiguration-iceServers.html?label=experimental&label=master&aligned">RTCConfiguration iceServers</a>
                 </td>
                   <td class="numbers passes-half">
                     <span class="passes passes-half">33</span>
@@ -255,7 +257,15 @@ table.results tbody tr.ok {
                     /
                     <span class="total passes-half">76</span>
                   </td>
-                  <td>lots of setConfig issues
+                <td><ul>
+                    <li>FF doesn't implement setConfiguration (1/2 tests)</li>
+                    <li>SyntaxError vs InvalidAccessError</li>
+                    <li>OAuth credential needs to go (12 failures)</li>
+                    <li>legacy support for iceServers.url</li>
+                    <li>credentialType validation</li>
+                    <li>empty urls as error</li>
+                    <li>
+                    </ul>
                   </td>
               </tr>
             
@@ -1705,10 +1715,10 @@ table.results tbody tr.ok {
                     /
                     <span class="total passes-most">5</span>
                   </td>
-                <td>Test is wrong to assume pendingRemoteDescription is null?</td>
+                <td>Test is wrong to assume pendingRemoteDescription is null?  other chromium failure is wrong error name</td>
               </tr>
             
-              <tr>
+              <tr class=good>
                 <td>
                   RTCPeerConnection.prototype.setLocalDescription rollback
                 </td>
@@ -1735,7 +1745,7 @@ table.results tbody tr.ok {
                     /
                     <span class="total passes-lots">5</span>
                   </td>
-                <td></td>
+                <td>OK</td>
               </tr>
             
               <tr class=good>
