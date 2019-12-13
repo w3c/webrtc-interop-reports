@@ -104,5 +104,9 @@
   "webrtc/RTCRtpParameters-degradationPreference.html": {
     "status": "ignore",
     "comment": "removed"
+  },
+  "webrtc/RTCConfiguration-iceTransportPolicy.html": {
+    "status": "good",
+    "comment": "each sub-test is passed by two implementations"
   }
 }

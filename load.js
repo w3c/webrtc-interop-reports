@@ -42,16 +42,20 @@ fetch("https://wpt.fyi/api/runs?label=master")
           }
           tr.appendChild(td);
         });
-
+        let status;
         if (fullImpl >= 2) {
           tr.classList.add("good");
+          status = "good";
         } else if (annotation.status) {
           tr.classList.add(annotation.status);
+          status = annotation.status;
         }
         const commentTd = document.createElement("td");
         commentTd.className = "comment";
         if (annotation.comment) {
           commentTd.innerHTML = annotation.comment;
+        } else if (!status) {
+          commentTd.className = "todo";
         }
         tr.appendChild(commentTd);
         resultsBody.appendChild(tr);
