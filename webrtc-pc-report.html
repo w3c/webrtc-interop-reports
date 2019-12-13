@@ -1,0 +1,3101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>webrtc-pc interop</title>
+  </head>
+<style>
+table.results {
+  border: 2px solid darkgrey;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.results td, table.results th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.results tbody td {
+  font-size: 13px;
+}
+table.results tr:nth-child(even) {
+  background: lightgrey;
+}
+table.results thead {
+  background: grey;
+}
+table.results thead th {
+  font-size: 19px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid grey;
+}
+table.results thead th:first-child {
+  border-left: none;
+}
+
+</style>
+  <body>
+    <div id="content">
+<table class="results">
+          <thead>
+            <tr>
+              <th>Tests</th>
+                <th>Chrome</th>
+                <th>Edge</th>
+                <th>FireFox</th>
+                <th>Safari</th>
+		<th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td>
+		  RTCCertificate persistent Tests (RTCCertificate-postMessage.html)
+                </td>
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">3</span>
+                    /
+                    <span class="total passes-lots">4</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">3</span>
+                    /
+                    <span class="total passes-lots">4</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">4</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+		  <td>
+                    Check cross-origin created RTCCertificate fails on 3 browsers
+		  </td>
+              </tr>
+              <tr>
+                <td>
+		  RTCCertificate Tests
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">5</span>
+                    /
+                    <span class="total passes-most">6</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">5</span>
+                    /
+                    <span class="total passes-most">6</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">2</span>
+                    /
+                    <span class="total passes-a-few">6</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">5</span>
+                    /
+                    <span class="total passes-most">6</span>
+                  </td>
+		  <td>RTCPeerConnection({ certificates }) should generate offer SDP with fingerprint of all provided certificates fails on all browsers.
+		  </td>
+              </tr>
+              <tr>
+                <td>
+		  RTCConfiguration bundlePolicy
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">16</span>
+                    /
+                    <span class="total passes-all">16</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">16</span>
+                    /
+                    <span class="total passes-all">16</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">8</span>
+                    /
+                    <span class="total passes-half">16</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">16</span>
+                    /
+                    <span class="total passes-all">16</span>
+                  </td>
+		 <td>OK
+                 </td>
+              </tr>
+            
+              <tr>
+                <td>
+		  RTCConfiguration-iceCandidatePoolSize.html
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">10</span>
+                    /
+                    <span class="total passes-all">10</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">10</span>
+                    /
+                    <span class="total passes-all">10</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">10</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">10</span>
+                    /
+                    <span class="total passes-all">10</span>
+                  </td>
+                  <td>OK
+                  </td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCConfiguration iceServers
+                </td>
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">33</span>
+                    /
+                    <span class="total passes-half">76</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">33</span>
+                    /
+                    <span class="total passes-half">76</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">30</span>
+                    /
+                    <span class="total passes-a-few">76</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">32</span>
+                    /
+                    <span class="total passes-half">76</span>
+                  </td>
+                  <td>lots of setConfig issues
+                  </td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCConfiguration iceTransportPolicy
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">14</span>
+                    /
+                    <span class="total passes-most">17</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">14</span>
+                    /
+                    <span class="total passes-most">17</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">11</span>
+                    /
+                    <span class="total passes-lots">17</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">17</span>
+                    /
+                    <span class="total passes-all">17</span>
+                  </td>
+		  <td>OK
+		  </td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCConfiguration rtcpMuxPolicy
+                </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">14</span>
+                    /
+                    <span class="total passes-all">14</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">14</span>
+                    /
+                    <span class="total passes-all">14</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">14</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">14</span>
+                    /
+                    <span class="total passes-all">14</span>
+                  </td>
+		  <td>OK
+		  </td>
+              </tr>
+            
+              <tr>
+                <td>
+                 RTCDTMFSender-insertDTMF.https.html 
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">7</span>
+                    /
+                    <span class="total passes-most">8</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">6</span>
+                    /
+                    <span class="total passes-lots">8</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">8</span>
+                    /
+                    <span class="total passes-all">8</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">8</span>
+                    /
+                    <span class="total passes-all">8</span>
+                  </td>
+		  <td>OK
+		  </td>
+              </tr>
+            
+              <tr>
+                <td>
+		  RTCDTMFSender.prototype.ontonechange (Long Timeout)
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+		  <td>OK
+		  </td>
+              </tr>
+              <tr>
+                <td>
+		  RTCDTMFSender.prototype.ontonechange
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">12</span>
+                    /
+                    <span class="total passes-most">14</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">12</span>
+                    /
+                    <span class="total passes-most">14</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">14</span>
+                    /
+                    <span class="total passes-all">14</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">14</span>
+                    /
+                    <span class="total passes-all">14</span>
+                  </td>
+		  <td>OK
+		  </td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCDataChannel.prototype.bufferedAmount
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">11</span>
+                    /
+                    <span class="total passes-most">13</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">11</span>
+                    /
+                    <span class="total passes-most">13</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">13</span>
+                    /
+                    <span class="total passes-all">13</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">13</span>
+                  </td>
+		  <td>missing support on Safari
+		  </td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCDataChannel id attribute
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">5</span>
+                    /
+                    <span class="total passes-all">5</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">5</span>
+                    /
+                    <span class="total passes-all">5</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">5</span>
+                    /
+                    <span class="total passes-all">5</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">5</span>
+                  </td>
+		  <td>OK
+		  </td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCDataChannel.prototype.send for blobs
+                </td>
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+		  <td>
+		  </td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCDataChannel.prototype.send
+                </td>
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">7</span>
+                    /
+                    <span class="total passes-half">12</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">7</span>
+                    /
+                    <span class="total passes-half">12</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">11</span>
+                    /
+                    <span class="total passes-most">12</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">10</span>
+                    /
+                    <span class="total passes-most">12</span>
+                  </td>
+		  <td>
+		  </td>
+              </tr>
+
+              <tr>
+                <td>
+                  RTCDataChannelEvent constructor
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">5</span>
+                    /
+                    <span class="total passes-all">5</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">5</span>
+                    /
+                    <span class="total passes-all">5</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">5</span>
+                    /
+                    <span class="total passes-all">5</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">5</span>
+                    /
+                    <span class="total passes-all">5</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCDtlsTransport.prototype.getRemoteCertificates
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCDtlsTransport
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">4</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">4</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCError and RTCErrorInit
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">24</span>
+                    /
+                    <span class="total passes-all">24</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">24</span>
+                    /
+                    <span class="total passes-all">24</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">24</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">24</span>
+                  </td>
+                <td></td> 
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCIceCandidate constructor
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">19</span>
+                    /
+                    <span class="total passes-all">19</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">19</span>
+                    /
+                    <span class="total passes-all">19</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">17</span>
+                    /
+                    <span class="total passes-most">19</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">8</span>
+                    /
+                    <span class="total passes-half">19</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCIceConnectionState and RTCIceCandidatePair
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCIceTransport-extensions.https.html
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">30</span>
+                    /
+                    <span class="total passes-all">30</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">3</span>
+                    /
+                    <span class="total passes-hardly">30</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">30</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">30</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCIceTransport
+                </td>
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection addTrack does not deadlock
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-addIceCandidate-timing.https.html
+                </td>
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">2</span>
+                    /
+                    <span class="total passes-lots">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  Test RTCPeerConnection.prototype.addIceCandidate
+                </td>
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">17</span>
+                    /
+                    <span class="total passes-half">30</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">17</span>
+                    /
+                    <span class="total passes-half">30</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">30</span>
+                    /
+                    <span class="total passes-all">30</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">11</span>
+                    /
+                    <span class="total passes-a-few">30</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection.prototype.addTrack
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">10</span>
+                    /
+                    <span class="total passes-all">10</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">6</span>
+                    /
+                    <span class="total passes-lots">10</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">10</span>
+                    /
+                    <span class="total passes-all">10</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">10</span>
+                    /
+                    <span class="total passes-all">10</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection.prototype.addTransceiver
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">11</span>
+                    /
+                    <span class="total passes-most">13</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">9</span>
+                    /
+                    <span class="total passes-lots">13</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">11</span>
+                    /
+                    <span class="total passes-most">13</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">11</span>
+                    /
+                    <span class="total passes-most">13</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection canTrickleIceCandidates tests
+                </td>
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">4</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">4</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">4</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection.prototype.connectionState
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">7</span>
+                    /
+                    <span class="total passes-all">7</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">5</span>
+                    /
+                    <span class="total passes-lots">7</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">7</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">5</span>
+                    /
+                    <span class="total passes-lots">7</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection constructor
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">22</span>
+                    /
+                    <span class="total passes-most">23</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">22</span>
+                    /
+                    <span class="total passes-most">23</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">21</span>
+                    /
+                    <span class="total passes-most">23</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">22</span>
+                    /
+                    <span class="total passes-most">23</span>
+                  </td>
+                <td>canTrickleIceCandidates initial value fails for 3</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection.prototype.createAnswer
+                </td>
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">3</span>
+                    /
+                    <span class="total passes-lots">4</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">3</span>
+                    /
+                    <span class="total passes-lots">4</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-createDataChannel.html
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">39</span>
+                    /
+                    <span class="total passes-most">45</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">39</span>
+                    /
+                    <span class="total passes-most">45</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">38</span>
+                    /
+                    <span class="total passes-most">45</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">28</span>
+                    /
+                    <span class="total passes-lots">45</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-createOffer.html
+                </td>
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">3</span>
+                    /
+                    <span class="total passes-lots">5</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">3</span>
+                    /
+                    <span class="total passes-lots">5</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">5</span>
+                    /
+                    <span class="total passes-all">5</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">4</span>
+                    /
+                    <span class="total passes-most">5</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-generateCertificate.html
+                </td>
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">7</span>
+                    /
+                    <span class="total passes-lots">9</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">7</span>
+                    /
+                    <span class="total passes-lots">9</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">9</span>
+                    /
+                    <span class="total passes-all">9</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">9</span>
+                    /
+                    <span class="total passes-all">9</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-getDefaultIceServers.html
+                </td>
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-getStats.https.html
+                </td>
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">9</span>
+                    /
+                    <span class="total passes-lots">14</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">8</span>
+                    /
+                    <span class="total passes-half">14</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">8</span>
+                    /
+                    <span class="total passes-half">14</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">6</span>
+                    /
+                    <span class="total passes-half">14</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-getTransceivers.html
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection.prototype.iceConnectionState - disconnection
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>
+                  RTCPeerConnection.prototype.iceConnectionState
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">13</span>
+                    /
+                    <span class="total passes-all">13</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">7</span>
+                    /
+                    <span class="total passes-half">13</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">8</span>
+                    /
+                    <span class="total passes-lots">13</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">9</span>
+                    /
+                    <span class="total passes-lots">13</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-iceGatheringState.html
+                </td>
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">3</span>
+                    /
+                    <span class="total passes-lots">4</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">3</span>
+                    /
+                    <span class="total passes-lots">4</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">3</span>
+                    /
+                    <span class="total passes-lots">4</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">3</span>
+                    /
+                    <span class="total passes-lots">4</span>
+                  </td>
+                <td> connection with one data channel should eventually have connected connection state	fails on all 4</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  Mandatory-to-implement stats compliance (a subset of webrtc-stats)
+                </td>
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">49</span>
+                    /
+                    <span class="total passes-lots">77</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">49</span>
+                    /
+                    <span class="total passes-lots">77</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">28</span>
+                    /
+                    <span class="total passes-a-few">77</span>
+                  </td>
+                
+                  <td class="numbers passes-none">
+                    <span class="passes passes-none">0</span>
+                    /
+                    <span class="total passes-none">77</span>
+                  </td>
+                <td>WebRTC Stats</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-ondatachannel.html
+                </td>
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">5</span>
+                    /
+                    <span class="total passes-half">9</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">5</span>
+                    /
+                    <span class="total passes-half">9</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">7</span>
+                    /
+                    <span class="total passes-lots">9</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">4</span>
+                    /
+                    <span class="total passes-half">9</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection.prototype.onicecandidateerror
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-none">
+                    <span class="passes passes-none">0</span>
+                    /
+                    <span class="total passes-none">2</span>
+                  </td>
+                
+                  <td class="numbers passes-none">
+                    <span class="passes passes-none">0</span>
+                    /
+                    <span class="total passes-none">2</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-onnegotiationneeded.html
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">14</span>
+                    /
+                    <span class="total passes-all">14</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">14</span>
+                    /
+                    <span class="total passes-all">14</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">13</span>
+                    /
+                    <span class="total passes-most">14</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">4</span>
+                    /
+                    <span class="total passes-a-few">14</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection onsignalingstatechanged
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection.prototype.ontrack
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">6</span>
+                    /
+                    <span class="total passes-all">6</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">6</span>
+                    /
+                    <span class="total passes-all">6</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">6</span>
+                    /
+                    <span class="total passes-all">6</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">6</span>
+                    /
+                    <span class="total passes-all">6</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-remote-track-mute.https.html
+                </td>
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">6</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">6</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">3</span>
+                    /
+                    <span class="total passes-half">6</span>
+                  </td>
+                
+                  <td class="numbers passes-none">
+                    <span class="passes passes-none">0</span>
+                    /
+                    <span class="total passes-none">6</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection.prototype.removeTrack
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">13</span>
+                    /
+                    <span class="total passes-most">14</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">5</span>
+                    /
+                    <span class="total passes-a-few">14</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">14</span>
+                    /
+                    <span class="total passes-all">14</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">13</span>
+                    /
+                    <span class="total passes-most">14</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-restartIce-onnegotiationneeded.https.html
+                </td>
+                  <td class="numbers passes-none">
+                    <span class="passes passes-none">0</span>
+                    /
+                    <span class="total passes-none">2</span>
+                  </td>
+                
+                  <td class="numbers passes-none">
+                    <span class="passes passes-none">0</span>
+                    /
+                    <span class="total passes-none">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-restartIce.https.html
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">12</span>
+                    /
+                    <span class="total passes-most">14</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">11</span>
+                    /
+                    <span class="total passes-lots">14</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">13</span>
+                    /
+                    <span class="total passes-most">14</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">14</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection Set Session Description - Transceiver Tests
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">6</span>
+                    /
+                    <span class="total passes-most">7</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">3</span>
+                    /
+                    <span class="total passes-half">7</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">7</span>
+                    /
+                    <span class="total passes-all">7</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">4</span>
+                    /
+                    <span class="total passes-half">7</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-setLocalDescription-answer.html
+                </td>
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">5</span>
+                    /
+                    <span class="total passes-lots">7</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">4</span>
+                    /
+                    <span class="total passes-half">7</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">7</span>
+                    /
+                    <span class="total passes-all">7</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">2</span>
+                    /
+                    <span class="total passes-a-few">7</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-setLocalDescription-offer.html
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">7</span>
+                    /
+                    <span class="total passes-most">8</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">6</span>
+                    /
+                    <span class="total passes-lots">8</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">8</span>
+                    /
+                    <span class="total passes-all">8</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">3</span>
+                    /
+                    <span class="total passes-a-few">8</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-setLocalDescription-parameterless.https.html
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">10</span>
+                    /
+                    <span class="total passes-most">12</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">10</span>
+                    /
+                    <span class="total passes-most">12</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">2</span>
+                    /
+                    <span class="total passes-hardly">12</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">2</span>
+                    /
+                    <span class="total passes-hardly">12</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection.prototype.setLocalDescription pranswer
+                </td>
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">3</span>
+                    /
+                    <span class="total passes-lots">5</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">3</span>
+                    /
+                    <span class="total passes-lots">5</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">5</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">4</span>
+                    /
+                    <span class="total passes-most">5</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection.prototype.setLocalDescription rollback
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">5</span>
+                    /
+                    <span class="total passes-all">5</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">5</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">5</span>
+                    /
+                    <span class="total passes-all">5</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">3</span>
+                    /
+                    <span class="total passes-lots">5</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-setLocalDescription.html
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-setRemoteDescription-answer.html
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection.prototype.setRemoteDescription - legacy streams without a=msid lines
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection.prototype.setRemoteDescription - offer
+                </td>
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">4</span>
+                    /
+                    <span class="total passes-half">10</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">3</span>
+                    /
+                    <span class="total passes-a-few">10</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">8</span>
+                    /
+                    <span class="total passes-most">10</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">3</span>
+                    /
+                    <span class="total passes-a-few">10</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection.prototype.setRemoteDescription pranswer
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">5</span>
+                    /
+                    <span class="total passes-all">5</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">5</span>
+                    /
+                    <span class="total passes-all">5</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">5</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">5</span>
+                    /
+                    <span class="total passes-all">5</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection.prototype.setRemoteDescription - replaceTrack
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">7</span>
+                    /
+                    <span class="total passes-all">7</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">7</span>
+                    /
+                    <span class="total passes-all">7</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">7</span>
+                    /
+                    <span class="total passes-all">7</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">7</span>
+                    /
+                    <span class="total passes-all">7</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection.prototype.setRemoteDescription rollback
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">16</span>
+                    /
+                    <span class="total passes-most">19</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">19</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">12</span>
+                    /
+                    <span class="total passes-lots">19</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">2</span>
+                    /
+                    <span class="total passes-hardly">19</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection.prototype.setRemoteDescription - add/remove remote tracks
+                </td>
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">11</span>
+                    /
+                    <span class="total passes-lots">15</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">11</span>
+                    /
+                    <span class="total passes-lots">15</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">15</span>
+                    /
+                    <span class="total passes-all">15</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">11</span>
+                    /
+                    <span class="total passes-lots">15</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-setRemoteDescription.html
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">5</span>
+                    /
+                    <span class="total passes-most">6</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">5</span>
+                    /
+                    <span class="total passes-most">6</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">6</span>
+                    /
+                    <span class="total passes-all">6</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">6</span>
+                    /
+                    <span class="total passes-all">6</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection.prototype.getStats
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">18</span>
+                    /
+                    <span class="total passes-most">19</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">18</span>
+                    /
+                    <span class="total passes-most">19</span>
+                  </td>
+                
+                  <td class="numbers passes-none">
+                    <span class="passes passes-none">0</span>
+                    /
+                    <span class="total passes-none">19</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">7</span>
+                    /
+                    <span class="total passes-a-few">19</span>
+                  </td>
+                <td>WebRTC stats</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection-transceivers.https.html
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">45</span>
+                    /
+                    <span class="total passes-all">45</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">45</span>
+                    /
+                    <span class="total passes-all">45</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">44</span>
+                    /
+                    <span class="total passes-most">45</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">42</span>
+                    /
+                    <span class="total passes-most">45</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  4.8.2 RTCPeerConnectionIceEvent
+                </td>
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">7</span>
+                    /
+                    <span class="total passes-lots">9</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">7</span>
+                    /
+                    <span class="total passes-lots">9</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">7</span>
+                    /
+                    <span class="total passes-lots">9</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">9</span>
+                    /
+                    <span class="total passes-all">9</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpParameters codecs
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">7</span>
+                    /
+                    <span class="total passes-all">7</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">7</span>
+                    /
+                    <span class="total passes-all">7</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">7</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">7</span>
+                  </td>
+                <td></td>
+           </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpParameters degradationPreference
+                </td>
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpParameters encodings
+                </td>
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">16</span>
+                    /
+                    <span class="total passes-lots">25</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">16</span>
+                    /
+                    <span class="total passes-lots">25</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">25</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">25</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpParameters headerExtensions
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpParameters rtcp
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">3</span>
+                    /
+                    <span class="total passes-all">3</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">3</span>
+                    /
+                    <span class="total passes-all">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpParameters transactionId
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">6</span>
+                    /
+                    <span class="total passes-all">6</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">6</span>
+                    /
+                    <span class="total passes-all">6</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">6</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">6</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                 RTCRtpReceiver-getCapabilities.html
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">4</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpReceiver.prototype.getContributingSources
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">3</span>
+                    /
+                    <span class="total passes-all">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">3</span>
+                    /
+                    <span class="total passes-all">3</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">3</span>
+                    /
+                    <span class="total passes-all">3</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpReceiver-getParameters.html
+                </td>
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">3</span>
+                    /
+                    <span class="total passes-lots">4</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">3</span>
+                    /
+                    <span class="total passes-lots">4</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">4</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">4</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpReceiver-getStats.https.html
+                </td>
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                <td>WebRTC Stats</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpReceiver.prototype.getSynchronizationSources
+                </td>
+                  <td class="numbers passes-none">
+                    <span class="passes passes-none">0</span>
+                    /
+                    <span class="total passes-none">15</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">15</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">6</span>
+                    /
+                    <span class="total passes-half">15</span>
+                  </td>
+                
+                  <td class="numbers passes-lots">
+                    <span class="passes passes-lots">10</span>
+                    /
+                    <span class="total passes-lots">15</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpSender.getCapabilities
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">4</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpSender.prototype.getStats
+                </td>
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                <td>WebRTC Stats</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpSender.prototype.replaceTrack
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">8</span>
+                    /
+                    <span class="total passes-most">10</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">8</span>
+                    /
+                    <span class="total passes-most">10</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">10</span>
+                    /
+                    <span class="total passes-all">10</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">10</span>
+                    /
+                    <span class="total passes-all">10</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpSender.prototype.setParameters
+                </td>
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpSender.prototype.setStreams
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">6</span>
+                    /
+                    <span class="total passes-all">6</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">6</span>
+                    /
+                    <span class="total passes-all">6</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">6</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">6</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpSender.transport
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">9</span>
+                    /
+                    <span class="total passes-all">9</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">9</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">9</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">9</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpTransceiver-direction.html
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">4</span>
+                    /
+                    <span class="total passes-all">4</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpTransceiver-setCodecPreferences.html
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">14</span>
+                    /
+                    <span class="total passes-all">14</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">14</span>
+                    /
+                    <span class="total passes-all">14</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">14</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">14</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpTransceiver-stop.html
+                </td>
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">5</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">5</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">4</span>
+                    /
+                    <span class="total passes-most">5</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">5</span>
+                    /
+                    <span class="total passes-all">5</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCRtpTransceiver RTCRtpTransceiver.https.html
+                </td>
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">20</span>
+                    /
+                    <span class="total passes-half">39</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">19</span>
+                    /
+                    <span class="total passes-half">39</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">39</span>
+                    /
+                    <span class="total passes-all">39</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">20</span>
+                    /
+                    <span class="total passes-half">39</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCSctpTransport constructor
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">5</span>
+                    /
+                    <span class="total passes-all">5</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">5</span>
+                    /
+                    <span class="total passes-all">5</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">5</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">5</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCSctpTransport-events.html
+                </td>
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-none">
+                    <span class="passes passes-none">0</span>
+                    /
+                    <span class="total passes-none">3</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCSctpTransport-maxChannels.html
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">3</span>
+                    /
+                    <span class="total passes-all">3</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">3</span>
+                    /
+                    <span class="total passes-all">3</span>
+                  </td>
+                
+                  <td class="numbers passes-none">
+                    <span class="passes passes-none">0</span>
+                    /
+                    <span class="total passes-none">3</span>
+                  </td>
+                
+                  <td class="numbers passes-none">
+                    <span class="passes passes-none">0</span>
+                    /
+                    <span class="total passes-none">3</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCSctpTransport-maxMessageSize.html
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">6</span>
+                    /
+                    <span class="total passes-all">6</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">6</span>
+                    /
+                    <span class="total passes-all">6</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">6</span>
+                  </td>
+                
+                  <td class="numbers passes-hardly">
+                    <span class="passes passes-hardly">1</span>
+                    /
+                    <span class="total passes-hardly">6</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td> 
+		  RTCTrackEvent constructor
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">7</span>
+                    /
+                    <span class="total passes-most">8</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">7</span>
+                    /
+                    <span class="total passes-most">8</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">8</span>
+                    /
+                    <span class="total passes-all">8</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">8</span>
+                    /
+                    <span class="total passes-all">8</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  Change of msid in remote description should trigger related track events
+                </td>
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">8</span>
+                    /
+                    <span class="total passes-most">10</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">8</span>
+                    /
+                    <span class="total passes-most">10</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">10</span>
+                    /
+                    <span class="total passes-all">10</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">5</span>
+                    /
+                    <span class="total passes-half">10</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+ 		  RTCPeerConnection Data Channel Empty String Test
+                </td>
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection GetStats
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection No-Media Connection Test
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">28</span>
+                    /
+                    <span class="total passes-all">28</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">26</span>
+                    /
+                    <span class="total passes-most">28</span>
+                  </td>
+                
+                  <td class="numbers passes-most">
+                    <span class="passes passes-most">27</span>
+                    /
+                    <span class="total passes-most">28</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">9</span>
+                    /
+                    <span class="total passes-a-few">28</span>
+                  </td>
+                <td></td>
+              </tr>
+            
+              <tr>
+                <td>
+                  RTCPeerConnection Data-Only Connection Test with Promises
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  simplecall-no-ssrcs.https.html
+                </td>
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+              <tr>
+                <td>
+                simplecall.https.html
+                </td>
+
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                
+                  <td class="numbers passes-all">
+                    <span class="passes passes-all">2</span>
+                    /
+                    <span class="total passes-all">2</span>
+                  </td>
+                <td>OK</td>
+              </tr>
+            
+          </tbody>
+        </table>
+   </div>
+  </body>
+</html>
