@@ -71,19 +71,28 @@ table.results tbody tr.ok {
         <dd>Not implemented in FF, Chromium</dd>
         <dt><code>RTCRtpSender.setStreams()</code></dt>
         <dd>Not implemented in FF, Safari</dd>
+        <dt><code>RTCRtpCodecParameters</code></dt>
+        <dd>Not implemented in FF, Safari? (per <a href="https://wpt.fyi/results/webrtc/RTCRtpParameters-codecs.html?label=experimental&label=master&aligned">RTCRtpParamters-codecs.html</a></dd>
       </dl>
       </section>
       <section>
         <h2>Test suite issues</h2>
+        <h3>Bugs</h3>
         <ul>
           <li>test for <code>bufferedAmount</code> depends on <code>blob</code> sending (but not implemented in Chromium yet)</li>
           <li>is <a href="https://github.com/web-platform-tests/wpt/blob/master/webrtc/RTCCertificate-postMessage.html#L61">x-origin RTCCertificate</a> expected to fail?</li>
           <li>Remove <code>priority</code> from data channel tests (<a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-createDataChannel.html?label=experimental&label=master&aligned">RTCPeerConnection-createDataChannel.html</a>, <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-ondatachannel.html?label=experimental&label=master&aligned">RTCPeerConnection-ondatachannel</a>)</li>
+          <li>pendingRemoteDescription not null after <code>pranswer</code> in <a href="https://github.com/web-platform-tests/wpt/blob/master/webrtc/RTCPeerConnection-setLocalDescription-pranswer.html#L106">RTCPeerConnection-setLocalDescription-pranswer.html</a> per 3.2.4.3 of set session description?</li>
+        </ul>
+        <h3>Gaps</h3>
+        <ul>
+          <li>RTCPeerConnection.setConfiguration()</li>
         </ul>
       </section>
+      
       <section>
         <h2>Annotated WPT results</h2>
-
+        <p>@@@ Why aren't <a href="https://wpt.fyi/results/webrtc/idlharness.https.window.html?label=experimental&label=master&aligned">idlharness results</a> included?</p>
       <table class="results">
           <thead>
             <tr>
@@ -1579,7 +1588,7 @@ table.results tbody tr.ok {
                 <td>Chromium fails on <code>transceiver.stop</code></td>
               </tr>
             
-              <tr>
+              <tr class=ok>
                 <td>
                  <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-setLocalDescription-answer.html">RTCPeerConnection-setLocalDescription-answer.html</a>
                 </td>
@@ -1606,7 +1615,7 @@ table.results tbody tr.ok {
                     /
                     <span class="total passes-a-few">7</span>
                   </td>
-                <td></td>
+                <td>Chromium error is just wrong error type raised</td>
               </tr>
             
               <tr>
@@ -1671,7 +1680,7 @@ table.results tbody tr.ok {
             
               <tr>
                 <td>
-                  RTCPeerConnection.prototype.setLocalDescription pranswer
+                  <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-setLocalDescription-pranswer.html?label=experimental&label=master&aligned">RTCPeerConnection.prototype.setLocalDescription pranswer</a>
                 </td>
                   <td class="numbers passes-lots">
                     <span class="passes passes-lots">3</span>
@@ -1696,7 +1705,7 @@ table.results tbody tr.ok {
                     /
                     <span class="total passes-most">5</span>
                   </td>
-                <td></td>
+                <td>Test is wrong to assume pendingRemoteDescription is null?</td>
               </tr>
             
               <tr>
@@ -2091,7 +2100,7 @@ table.results tbody tr.ok {
             
               <tr>
                 <td>
-                  RTCRtpParameters codecs
+                  <a href="https://wpt.fyi/results/webrtc/RTCRtpParameters-codecs.html?label=experimental&label=master&aligned">RTCRtpParameters codecs</a>
                 </td>
                   <td class="numbers passes-all">
                     <span class="passes passes-all">7</span>
@@ -2116,38 +2125,8 @@ table.results tbody tr.ok {
                     /
                     <span class="total passes-hardly">7</span>
                   </td>
-                <td></td>
+                <td>Not implemented in FF, Safari?</td>
            </tr>
-            
-              <tr>
-                <td>
-                  RTCRtpParameters degradationPreference
-                </td>
-                  <td class="numbers passes-a-few">
-                    <span class="passes passes-a-few">1</span>
-                    /
-                    <span class="total passes-a-few">3</span>
-                  </td>
-                
-                  <td class="numbers passes-a-few">
-                    <span class="passes passes-a-few">1</span>
-                    /
-                    <span class="total passes-a-few">3</span>
-                  </td>
-                
-                  <td class="numbers passes-a-few">
-                    <span class="passes passes-a-few">1</span>
-                    /
-                    <span class="total passes-a-few">3</span>
-                  </td>
-                
-                  <td class="numbers passes-a-few">
-                    <span class="passes passes-a-few">1</span>
-                    /
-                    <span class="total passes-a-few">3</span>
-                  </td>
-                <td></td>
-              </tr>
             
               <tr>
                 <td>
@@ -3432,6 +3411,36 @@ table.results tbody tr.ok {
                   </td>
                 <td>Removed</td>
               </tr>
+              <tr>
+                <td>
+                  RTCRtpParameters degradationPreference
+                </td>
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                
+                  <td class="numbers passes-a-few">
+                    <span class="passes passes-a-few">1</span>
+                    /
+                    <span class="total passes-a-few">3</span>
+                  </td>
+                <td>Removed</td>
+              </tr>
+            
             
             
           </tbody>
