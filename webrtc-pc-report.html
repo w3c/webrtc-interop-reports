@@ -57,7 +57,7 @@ table.results tbody tr.ok {
         <dd>Available in SecureContext only in Chromium?</dd>
         <dd>In general, some tests are https-only, but not clear if this is always justified</dd>
         <dt><code>RTCPeerConnection.setLocalDescription()</code></dt>
-        <dd>Supports for zero-argument in FF?</dd>
+        <dd>Supports for zero-argument in FF, Safari?</dd>
         <dt>validation of <code>rid</code> values in addTransceiver</dt>
         <dt><code>createOffer</code></dt>
         <dd>Chromium Safari fails "When media stream is added when createOffer() is running in parallel, the result offer should contain the new media stream"</dd>
@@ -73,7 +73,8 @@ table.results tbody tr.ok {
         <dd>Not implemented in FF, Safari</dd>
         <dt><code>RTCRtpCodecParameters</code></dt>
         <dd>Not implemented in FF, Safari? (per <a href="https://wpt.fyi/results/webrtc/RTCRtpParameters-codecs.html?label=experimental&label=master&aligned">RTCRtpParamters-codecs.html</a></dd>
-
+        <dt>RTCError</dt>
+        <dd>Not implemented in Firefox, Safari (OperationError fallback test?)</dd>
       </dl>
       </section>
       <section>
@@ -140,7 +141,7 @@ table.results tbody tr.ok {
               </tr>
               <tr>
                 <td>
-		  RTCCertificate Tests
+		  <a href="https://wpt.fyi/results/webrtc/RTCCertificate.html">RTCCertificate Tests</a>
                 </td>
                   <td class="numbers passes-most">
                     <span class="passes passes-most">5</span>
@@ -611,7 +612,7 @@ table.results tbody tr.ok {
             
               <tr>
                 <td>
-                  RTCDtlsTransport
+                  <a href="https://wpt.fyi/results/webrtc/RTCDtlsTransport-state.html">RTCDtlsTransport</a>
                 </td>
                   <td class="numbers passes-all">
                     <span class="passes passes-all">4</span>
@@ -641,7 +642,7 @@ table.results tbody tr.ok {
             
               <tr>
                 <td>
-                  RTCError and RTCErrorInit
+                  <a href="https://wpt.fyi/results/webrtc/RTCError.html?label=experimental&label=master&aligned">RTCError and RTCErrorInit</a>
                 </td>
                   <td class="numbers passes-all">
                     <span class="passes passes-all">24</span>
@@ -731,7 +732,7 @@ table.results tbody tr.ok {
             
               <tr>
                 <td>
-                  RTCIceTransport
+                  <a href="https://wpt.fyi/results/webrtc/RTCIceTransport.html?label=experimental&label=master&aligned">RTCIceTransport</a>
                 </td>
                   <td class="numbers passes-a-few">
                     <span class="passes passes-a-few">1</span>
@@ -969,9 +970,9 @@ table.results tbody tr.ok {
                 <td>1 Safari failure linked to lack of <code>sctp</code> transport; 2nd linked to wrong state machine (FF doesn't implement)</td>
               </tr>
             
-              <tr>
+              <tr class=ok>
                 <td>
-                  RTCPeerConnection constructor
+                  <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-constructor.html?label=experimental&label=master&aligned">RTCPeerConnection constructor</a>
                 </td>
                   <td class="numbers passes-most">
                     <span class="passes passes-most">22</span>
@@ -996,7 +997,7 @@ table.results tbody tr.ok {
                     /
                     <span class="total passes-most">23</span>
                   </td>
-                <td>canTrickleIceCandidates initial value fails for 3</td>
+                <td>canTrickleIceCandidates initial value fails for 3, but implemented in old Edge</td>
               </tr>
             
               <tr class=good>
@@ -1265,7 +1266,7 @@ table.results tbody tr.ok {
                     /
                     <span class="total passes-lots">4</span>
                   </td>
-                <td> connection with one data channel should eventually have connected connection state	fails on all 4</td>
+                <td> connection with one data channel should eventually have connected connection state	fails on all 4: no sctp transport in FF, Safari; Chromium because RTCIceTransport not available in non-secure context</td>
               </tr>
             
               <tr>
@@ -3423,7 +3424,7 @@ table.results tbody tr.ok {
               </tr>
               <tr>
                 <td>
-                  RTCRtpParameters degradationPreference
+                  <a href="https://wpt.fyi/results/webrtc/RTCRtpParameters-degradationPreference.html?label=experimental&label=master&aligned">RTCRtpParameters degradationPreference</a>
                 </td>
                   <td class="numbers passes-a-few">
                     <span class="passes passes-a-few">1</span>
@@ -3456,6 +3457,6 @@ table.results tbody tr.ok {
           </tbody>
           </table>
       </section>
-   </main>
+    </main>
   </body>
 </html>
