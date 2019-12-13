@@ -39,6 +39,10 @@ table.results thead th:first-child {
 table.results tbody tr.good {
   background: #cfc;
 }
+table.results tbody tr.ok {
+  background: #ffc;
+}
+
 </style>
   <body>
     <main id="content">
@@ -57,6 +61,14 @@ table.results tbody tr.good {
         <dt>validation of <code>rid</code> values in addTransceiver</dt>
         <dt><code>createOffer</code></dt>
         <dd>Chromium Safari fails "When media stream is added when createOffer() is running in parallel, the result offer should contain the new media stream"</dd>
+        <dt><code>blob</code> argument for <code>RTCDataChannel.send()</code></dt>
+        <dd>Missing in Chromium</dd>
+        <dt>sctp transport</dt>
+        <dd>Missing in FF, Safari</dd>
+        <dt><code>transceiver.stop()</code></dt>
+        <dd>Missing from chromium</dd>
+        <dt><code>restartIce</code> survives remote offer containing partial restart</dt>
+        <dd>Not implemented in FF, Chromium</dd>
       </dl>
       </section>
       <section>
@@ -486,7 +498,7 @@ table.results tbody tr.good {
             
               <tr>
                 <td>
-                  RTCDataChannel.prototype.send
+                  <a href="https://wpt.fyi/results/webrtc/RTCDataChannel-send.html?label=master&label=experimental&aligned">RTCDataChannel.prototype.send</a>
                 </td>
                   <td class="numbers passes-half">
                     <span class="passes passes-half">7</span>
@@ -511,7 +523,8 @@ table.results tbody tr.good {
                     /
                     <span class="total passes-most">12</span>
                   </td>
-		  <td>
+		<td>
+                  lack of <code>blob</code> support explains 4 Chromium failures; maxSize test depends on sctp transport availability
 		  </td>
               </tr>
 
@@ -907,7 +920,7 @@ table.results tbody tr.good {
             
               <tr>
                 <td>
-                  RTCPeerConnection.prototype.connectionState
+                  <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-connectionState.https.html?label=master&label=experimental&aligned">RTCPeerConnection.prototype.connectionState</a>
                 </td>
                   <td class="numbers passes-all">
                     <span class="passes passes-all">7</span>
@@ -932,7 +945,7 @@ table.results tbody tr.good {
                     /
                     <span class="total passes-lots">7</span>
                   </td>
-                <td></td>
+                <td>1 Safari failure linked to lack of <code>sctp</code> transport; 2nd linked to wrong state machine (FF doesn't implement)</td>
               </tr>
             
               <tr>
@@ -1087,36 +1100,6 @@ table.results tbody tr.good {
             
               <tr>
                 <td>
-                 <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-getDefaultIceServers.html">RTCPeerConnection-getDefaultIceServers.html</a>
-                </td>
-                  <td class="numbers passes-half">
-                    <span class="passes passes-half">1</span>
-                    /
-                    <span class="total passes-half">2</span>
-                  </td>
-                
-                  <td class="numbers passes-half">
-                    <span class="passes passes-half">1</span>
-                    /
-                    <span class="total passes-half">2</span>
-                  </td>
-                
-                  <td class="numbers passes-half">
-                    <span class="passes passes-half">1</span>
-                    /
-                    <span class="total passes-half">2</span>
-                  </td>
-                
-                  <td class="numbers passes-half">
-                    <span class="passes passes-half">1</span>
-                    /
-                    <span class="total passes-half">2</span>
-                  </td>
-                <td></td>
-              </tr>
-            
-              <tr>
-                <td>
                  <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-getStats.https.html">RTCPeerConnection-getStats.https.html</a>
                 </td>
                   <td class="numbers passes-lots">
@@ -1206,7 +1189,7 @@ table.results tbody tr.good {
               </tr>
               <tr>
                 <td>
-                  RTCPeerConnection.prototype.iceConnectionState
+                  <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-iceConnectionState.https.html?label=master&label=experimental&aligned">RTCPeerConnection.prototype.iceConnectionState</a>
                 </td>
                   <td class="numbers passes-all">
                     <span class="passes passes-all">13</span>
@@ -1231,7 +1214,7 @@ table.results tbody tr.good {
                     /
                     <span class="total passes-lots">13</span>
                   </td>
-                <td></td>
+                <td>FF failures linked to lack of <code>sctp</code> / <code>receiver.transport</code></td>
               </tr>
             
               <tr>
@@ -1266,7 +1249,7 @@ table.results tbody tr.good {
             
               <tr>
                 <td>
-                  Mandatory-to-implement stats compliance (a subset of webrtc-stats)
+                  <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-iceConnectionState.https.html?label=master&label=experimental&aligned">Mandatory-to-implement stats compliance (a subset of webrtc-stats)</a>
                 </td>
                   <td class="numbers passes-lots">
                     <span class="passes passes-lots">49</span>
@@ -1476,7 +1459,7 @@ table.results tbody tr.good {
             
               <tr>
                 <td>
-                  RTCPeerConnection.prototype.removeTrack
+                  <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-removeTrack.https.html?label=master&label=experimental&aligned">RTCPeerConnection.prototype.removeTrack</a>
                 </td>
                   <td class="numbers passes-most">
                     <span class="passes passes-most">13</span>
@@ -1501,7 +1484,7 @@ table.results tbody tr.good {
                     /
                     <span class="total passes-most">14</span>
                   </td>
-                <td></td>
+                <td>Chromium fails for lack of <code>transceiver.stop()</code>; Safari fails on removing track from a stopped transceiver</td>
               </tr>
             
               <tr>
@@ -1534,7 +1517,7 @@ table.results tbody tr.good {
                 <td></td>
               </tr>
             
-              <tr>
+              <tr class=ok>
                 <td>
                  <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-restartIce.https.html">RTCPeerConnection-restartIce.https.html</a>
                 </td>
@@ -1561,12 +1544,12 @@ table.results tbody tr.good {
                     /
                     <span class="total passes-hardly">14</span>
                   </td>
-                <td></td>
+                <td>only edge case lack implementation</td>
               </tr>
             
-              <tr>
+              <tr class=ok>
                 <td>
-                  RTCPeerConnection Set Session Description - Transceiver Tests
+                  <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-setDescription-transceiver.html?label=experimental&label=master&aligned">RTCPeerConnection Set Session Description - Transceiver Tests</a>
                 </td>
                   <td class="numbers passes-most">
                     <span class="passes passes-most">6</span>
@@ -1591,7 +1574,7 @@ table.results tbody tr.good {
                     /
                     <span class="total passes-half">7</span>
                   </td>
-                <td></td>
+                <td>Chromium fails on <code>transceiver.stop</code></td>
               </tr>
             
               <tr>
@@ -3416,8 +3399,38 @@ table.results tbody tr.good {
                     /
                     <span class="total passes-hardly">30</span>
                   </td>
-                <td></td>
+                <td>Moved</td>
               </tr>
+              <tr>
+                <td>
+                 <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-getDefaultIceServers.html">RTCPeerConnection-getDefaultIceServers.html</a>
+                </td>
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                
+                  <td class="numbers passes-half">
+                    <span class="passes passes-half">1</span>
+                    /
+                    <span class="total passes-half">2</span>
+                  </td>
+                <td>Removed</td>
+              </tr>
+            
             
           </tbody>
           </table>
