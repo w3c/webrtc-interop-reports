@@ -1,11 +1,19 @@
 let wptData;
 const resultsBody = document.querySelector(".results tbody");
 
-fetch("https://wpt.fyi/api/runs?label=master")
+let oldEdgeId;
+let runIds;
+// TODO fetch data for non-chromium edge https://wpt.fyi/api/runs?product=edge&to=2019-06-01T00:00:00Z
+fetch("https://wpt.fyi/api/runs?product=edge&to=2019-06-01T00:00:00Z")
   .then(r => r.json())
   .then(runs => {
-    const ids = runs.map(r => r.id);
-    return fetch("https://wpt.fyi/api/search?run_ids=" + ids.join(",") + "&q=webrtc/");
+    oldEdgeId = runs[0].id;
+    return fetch("https://wpt.fyi/api/runs?label=master");
+  })
+  .then(r => r.json())
+  .then(runs => {
+    runIds = runs.map(r => r.id).concat([oldEdgeId]);
+    return fetch("https://wpt.fyi/api/search?run_ids=" + runIds.join(",") + "&q=webrtc/");
   })
   .then(r => r.json())
   .then(data => {
@@ -25,7 +33,7 @@ fetch("https://wpt.fyi/api/runs?label=master")
         const tr = document.createElement("tr");
         const testTd = document.createElement("th");
         const link = document.createElement("a");
-        link.href = "https://wpt.fyi/results" + r.test;
+        link.href = "https://wpt.fyi/results" + r.test + "?run_ids=" + runIds.join(",");
         link.textContent = testName;
         testTd.appendChild(link)
         tr.appendChild(testTd);
