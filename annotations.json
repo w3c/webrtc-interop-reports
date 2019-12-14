@@ -108,5 +108,8 @@
   "webrtc/RTCConfiguration-iceTransportPolicy.html": {
     "status": "good",
     "comment": "each sub-test is passed by two implementations"
+  },
+  "webrtc/RTCRtpSender-transport.https.html": {
+    "comment": "Missing transport objects in FF/Safari - does old Edge help?"
   }
 }
