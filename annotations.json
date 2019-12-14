@@ -111,5 +111,36 @@
   },
   "webrtc/RTCRtpSender-transport.https.html": {
     "comment": "Missing transport objects in FF/Safari - does old Edge help?"
+  },
+  "webrtc/RTCTrackEvent-fire.html": {
+    "comment": "Chromium bug in handling duplicate/emtpy msid - ignore?"
+  },
+  "webrtc/datachannel-emptystring.html": {
+    "comment": "edge case",
+    "status": "ok"
+  },
+  "webrtc/RTCSctpTransport-maxMessageSize.html": {
+    "comment": "sctp transport not implemented in FF/Safari"
+  },
+  "webrtc/RTCSctpTransport-maxChannels.html": {
+    "comment": "sctp transport not implemented in FF/Safari"
+  },
+  "webrtc/RTCSctpTransport-events.html": {
+    "comment": "sctp transport not implemented in FF/Safari"
+  },
+  "webrtc/RTCSctpTransport-constructor.html": {
+    "comment": "sctp transport not implemented in FF/Safari"
+  },
+  "webrtc/RTCRtpTransceiver-setCodecPreferences.html": {
+    "comment": "setCodecPreferences not implemented in FF/Safari"
+  },
+  "webrtc/RTCPeerConnection-setLocalDescription-offer.html": {
+    "comment": "setLocalDescription() with offer not created by own createOffer() should reject with InvalidModificationError but doesn't in Chromium, Safari"
+  },
+  "webrtc/RTCPeerConnection-setLocalDescription-parameterless.https.html": {
+    "comment": "FF/Safari don't support parameter-less sLD; Chromium bug in falling back to last answer?"
+  },
+  "webrtc/idlharness.https.window.html": {
+    "comments": "IDL gaps as documented in <a href='http://dontcallmedom.github.io/webrtc-impl-tracker/?webrtc'>impl tracker</a>"
   }
 }

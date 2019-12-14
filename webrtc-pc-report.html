@@ -54,7 +54,7 @@ table.results tbody td.comment {
 }
 
 table.results tbody td.todo {
- background-color: #fcc;
+ border: 2px solid #f00;
 }
 
 </style>
@@ -68,10 +68,22 @@ table.results tbody td.todo {
         <dt><code>RTCDtlsTransport</code> interface</dt>
         <dd>Not implemented in FF, Safari; implemented partially in old Edge (but does it pass the tests?)</dd>
         <dt><code>RTCIceTransport</code> interface</dt>
-        <dd>Available in SecureContext only in Chromium?</dd>
+        <dd>Missing in FF; Available in SecureContext only in Chromium? missing component attribute in Chromium; missing most attributes/methods in Safari</dd>
         <dd>In general, some tests are https-only, but not clear if this is always justified</dd>
+        <dt>RTCDataChannel.onclosing</dt>
+        <dd>No implementation</dd>
+        <dt>canTrickleIceCandidates</dt>
+        <dd>Not available in Chromium, Safari</dd>
+        <dt>onicecandidateerror</dt>
+        <dd>Not available in Firefox, Safari</dd>
+        <dt>readonly attributes in RTCSessionDescription (type, sdp)</dt>
+        <dd>writable in FF, Chromium</dd>
         <dt><code>RTCPeerConnection.setLocalDescription()</code></dt>
         <dd>Supports for zero-argument in FF, Safari?</dd>
+        <dt><code>RTCPeerConnection.setRemoteDescription()</code></dt>
+        <dd>Supports for zero-argument in all browsers</dd>
+        <dt><code>RTCPeerConnection.addIceCandidate()</code></dt>
+        <dd>Supports for zero-argument in Chromium, Safari</dd>
         <dt>validation of <code>rid</code> values in addTransceiver</dt>
         <dt><code>createOffer</code></dt>
         <dd>Chromium Safari fails "When media stream is added when createOffer() is running in parallel, the result offer should contain the new media stream"</dd>
@@ -87,8 +99,16 @@ table.results tbody td.todo {
         <dd>Not implemented in FF, Safari</dd>
         <dt><code>setCodecPreferences</code></dt>
         <dd>Not implemented in FF, Safari? (per <a href="https://wpt.fyi/results/webrtc/RTCRtpParameters-codecs.html?label=experimental&label=master&aligned">RTCRtpParamters-codecs.html</a>, <a href="https://wpt.fyi/results/webrtc/RTCRtpTransceiver-setCodecPreferences.html">RTCRtpTransceiver-setCodecPreferences.html</a></dd>
-        <dt>RTCError</dt>
-        <dd>Not implemented in Firefox, Safari (OperationError fallback test?)</dd>
+        <dt>RTCError, RTCErrorEvent</dt>
+        <dd>Not implemented in Firefox, Safari (OperationError fallback test?); bug in RTCErrorEvent consutrctor (cf <a href="https://wpt.fyi/results/webrtc/idlharness.https.window.html">idlharness test</a></dd>
+        <dt>setLocalDescription() with offer not created by own createOffer() should reject with InvalidModificationError</dt>
+        <dd>Fails in Chromium, Safari</dd>
+        <dt>RTCPeerConnectionIceEvent url attribute</dt>
+        <dd>Missing in FF, Chromium</dd>
+        <dt>RTCPeerConnectionIceErrorEvent</dt>
+        <dd>Missing in FF, Safari; address, port missing in Chromium</dd>
+        <dt>parameter-less setParameters (!)</dt>
+        <dd>Bug in FF, Chromium</dd>
       </dl>
       </section>
       <section>
