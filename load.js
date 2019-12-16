@@ -18,18 +18,14 @@ fetch("https://wpt.fyi/api/runs?product=edge&to=2019-06-01T00:00:00Z")
   .then(r => r.json())
   .then(data => {
     wptData = data;
-    console.log(wptData);
     return fetch("annotations.json");
   })
   .then(r => r.json())
   .then(annotations => {
-    console.log(annotations);
     wptData.results
       .forEach(r => {
-        console.log(r);
         const testName = r.test.slice(1);
         const annotation = annotations[testName] || {};
-        console.log(testName, annotations[testName]);
         const tr = document.createElement("tr");
         const testTd = document.createElement("th");
         const link = document.createElement("a");

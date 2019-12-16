@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset=utf-8>
     <title>webrtc-pc interop</title>
   </head>
 <style>
@@ -17,9 +18,6 @@ table.results td, table.results th {
 }
 table.results tbody td {
   font-size: 13px;
-}
-table.results tr:nth-child(even) {
-  background: lightgrey;
 }
 table.results thead {
   background: grey;
@@ -109,6 +107,8 @@ table.results tbody td.todo {
         <dd>Missing in FF, Safari; address, port missing in Chromium</dd>
         <dt>parameter-less setParameters (!)</dt>
         <dd>Bug in FF, Chromium</dd>
+        <dt>MTI stats</dt>
+        <dd>Chromium misses mandatory stats: codecId, packetsDiscarded,remoteId, framesDecoded, selectedCandidatePairId, remoteCertficateId. <br>FF misses mandatory stats: trackId, transportId, codecId, packetsDiscarded, remoteId, framesDecoded, ip, RTCPeerConnectionStats.</dd>
       </dl>
       </section>
       <section>
@@ -121,6 +121,7 @@ table.results tbody td.todo {
           <li>pendingRemoteDescription not null after <code>pranswer</code> in <a href="https://github.com/web-platform-tests/wpt/blob/master/webrtc/RTCPeerConnection-setLocalDescription-pranswer.html#L106">RTCPeerConnection-setLocalDescription-pranswer.html</a> per 3.2.4.3 of set session description?</li>
           <li>Remove oauth credential from <a href="https://wpt.fyi/results/webrtc/RTCConfiguration-iceServers.html?label=experimental&label=master&aligned">RTCConfiguration-iceServers.html</a></li>
           <li><a href="webrtc/RTCPeerConnection-getStats.https.html">webrtc/RTCPeerConnection-getStats.https.html</a> should not depend on getUserMedia to create tracks</li>
+          <li>Unclear if outbound-rtp stats needs to be collected when nothing is sent in <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-getStats.https.html">RTCPeerConnection-getStats.https.html</a></li>
         </ul>
         <h3>Gaps</h3>
         <ul>

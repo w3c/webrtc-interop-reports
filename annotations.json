@@ -141,6 +141,35 @@
     "comment": "FF/Safari don't support parameter-less sLD; Chromium bug in falling back to last answer?"
   },
   "webrtc/idlharness.https.window.html": {
-    "comments": "IDL gaps as documented in <a href='http://dontcallmedom.github.io/webrtc-impl-tracker/?webrtc'>impl tracker</a>"
+    "comment": "IDL gaps as documented in <a href='http://dontcallmedom.github.io/webrtc-impl-tracker/?webrtc'>impl tracker</a>"
+  },
+  "webrtc/legacy/RTCPeerConnection-addStream.https.html": {
+    "status": "ignore",
+    "comment": "not in spec"
+  },
+  "webrtc/historical.html": {
+    "status": "ok",
+    "comment": "Chromium and FF haven't removed all their legacy backwards-compat support yet (addstream, channel.reliable, get*Streams)"
+  },
+  "RTCRtpParameters-transactionId.html": {
+    "comment": "FF doesn't implement transactionId yet cf <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1401592'>#1401592</a>"
+  },
+  "webrtc/RTCRtpReceiver-getStats.https.html": {
+    "comment": "Chromium misses mandatory stats: codecId, packetsDiscarded,remoteId, framesDecoded, selectedCandidatePairId, remoteCertficateId. <br>FF misses mandatory stats: trackId, transportId, codecId, packetsDiscarded, remoteId, framesDecoded, ip."
+  },
+  "webrtc/RTCPeerConnection-restartIce-onnegotiationneeded.https.html": {
+    "comment": "timing bug in Chromium; restartIce not implemented in Safari"
+  },
+  "webrtc/RTCPeerConnection-createOffer.html": {
+    "comment": "bug in operation queuing in Chromium, Safari"
+  },
+  "webrtc/RTCPeerConnection-onicecandidateerror.https.htm": {
+    "comment": "onicecandidateerror not implemented in FF, Safari"
+  },
+  "webrtc/RTCPeerConnection-onnegotiationneeded.html": {
+    "comment": "FF failure due to lack of setStreams"
+  },
+  "/webrtc/RTCPeerConnection-getStats.https.html": {
+    "comment": "FF doesn't implement RTCPeerConnectionStats and MTI @@@.<br> Chromium doesn't provide outbound-rtp stats on null selector (unclear if it should since track is not being sent?), MTI @@@"
   }
 }
