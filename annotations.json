@@ -230,5 +230,14 @@
   },
   "webrtc/protocol/simulcast-offer.html": {
     "comment": "FF/Safari don't implement rid"
+  },
+  "webrtc/protocol/candidate-exchange.https.html": {
+    "comment": "FF doesn't implement IceTransport; Safari doesn't expose it"
+  },
+  "webrtc/protocol/dtls-fingerprint-validation.html": {
+    "comment": "FF doesn't implement connectionState (not clear if it is failing the pc); Safari doesn't make the PC fail"
+  },
+  "webrtc/protocol/ice-state.https.html": {
+    "comment": "FF & Safari go to failed instead of disconnected on invalid ICE candidate"
   }
 }
