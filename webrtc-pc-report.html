@@ -64,13 +64,14 @@ table.results tbody td.todo {
       <section>
       <h2>Implementation gaps</h2>
       <dl>
+        <dt>support for setting multiple certificates</dt>
+        <dd>In Chromium, Firefox, Safari</dd>
         <dt><code>RTCIceCandidate</code> interface attributes</dt>
         <dd>foundation, component, priority, address, protocol, port, type, tcpType, relatedAddress, relatedPort</dd>
         <dt><code>RTCDtlsTransport</code> interface</dt>
         <dd>Not implemented in FF, Safari; implemented partially in old Edge (but does it pass the tests?)</dd>
         <dt><code>RTCIceTransport</code> interface</dt>
         <dd>Missing in FF; Available in SecureContext only in Chromium? missing component attribute in Chromium; missing most attributes/methods in Safari</dd>
-        <dd>In general, some tests are https-only, but not clear if this is always justified</dd>
         <dt>RTCDataChannel.onclosing</dt>
         <dd>No implementation</dd>
         <dt>canTrickleIceCandidates</dt>
@@ -81,8 +82,6 @@ table.results tbody td.todo {
         <dd>writable in FF, Chromium</dd>
         <dt><code>RTCPeerConnection.setLocalDescription()</code></dt>
         <dd>Supports for zero-argument in FF, Safari?</dd>
-        <dt><code>RTCPeerConnection.setRemoteDescription()</code></dt>
-        <dd>Supports for zero-argument in all browsers</dd>
         <dt><code>RTCPeerConnection.addIceCandidate()</code></dt>
         <dd>Supports for zero-argument in Chromium, Safari</dd>
         <dt>validation of <code>rid</code> values in addTransceiver</dt>
@@ -97,7 +96,7 @@ table.results tbody td.todo {
         <dt><code>restartIce</code> survives remote offer containing partial restart</dt>
         <dd>Not implemented in FF, Chromium</dd>
         <dt><code>RTCRtpSender.setStreams()</code></dt>
-        <dd>Not implemented in FF, Safari</dd>
+        <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1510802">FF</a>, Safari</dd>
         <dt><code>setCodecPreferences</code></dt>
         <dd>Not implemented in FF, Safari? (per <a href="https://wpt.fyi/results/webrtc/RTCRtpParameters-codecs.html?label=experimental&label=master&aligned">RTCRtpParamters-codecs.html</a>, <a href="https://wpt.fyi/results/webrtc/RTCRtpTransceiver-setCodecPreferences.html">RTCRtpTransceiver-setCodecPreferences.html</a></dd>
         <dt>RTCError, RTCErrorEvent</dt>
@@ -120,6 +119,7 @@ table.results tbody td.todo {
         <h2>Test suite issues</h2>
         <h3>Bugs</h3>
         <ul>
+          <li>In general, some tests are https-only, but not clear if this is always justified</li>
           <li>test for <code>bufferedAmount</code> depends on <code>blob</code> sending (but not implemented in Chromium yet)</li>
           <li>is <a href="https://github.com/web-platform-tests/wpt/blob/master/webrtc/RTCCertificate-postMessage.html#L61">x-origin RTCCertificate</a> expected to fail?</li>
           <li>pendingRemoteDescription not null after <code>pranswer</code> in <a href="https://github.com/web-platform-tests/wpt/blob/master/webrtc/RTCPeerConnection-setLocalDescription-pranswer.html#L106">RTCPeerConnection-setLocalDescription-pranswer.html</a> per 3.2.4.3 of set session description?</li>

@@ -40,7 +40,7 @@
     "comment": "FF, Safari don't implement argument-less sLD; known timing bug in Chromium"
   },
   "webrtc/RTCPeerConnection-addIceCandidate.html": {
-    "comment": "Chromium wrongly rejects empty candidate argument (explains 6 of the failures)"
+    "comment": "2 failures because of wrong error names in Chromium;  Chromium doesn't handle null candidate as end-of-candidate (explains 7 of the failures)"
   },
   "webrtc/RTCPeerConnection-addTransceiver.https.html": {
     "comment": "Failure to validate <code>rid</code> (16 chars, alphanumeric)"
