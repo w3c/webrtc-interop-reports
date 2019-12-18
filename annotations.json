@@ -95,7 +95,7 @@
     "comment": "Minor bug in FF/Chromium (undefined instead of nullable)"
   },
   "webrtc/RTCRtpParameters-codecs.html": {
-    "comment": "Not implemented in FF, Safari?"
+    "comment": "FF doesn't implement RtpParameters.codecs; Safari doesn't reject invalid modifications"
   },
   "webrtc/RTCPeerConnection-getDefaultIceServers.html": {
     "status": "ignore",
@@ -169,7 +169,66 @@
   "webrtc/RTCPeerConnection-onnegotiationneeded.html": {
     "comment": "FF failure due to lack of setStreams"
   },
-  "/webrtc/RTCPeerConnection-getStats.https.html": {
-    "comment": "FF doesn't implement RTCPeerConnectionStats and MTI @@@.<br> Chromium doesn't provide outbound-rtp stats on null selector (unclear if it should since track is not being sent?), MTI @@@"
+  "webrtc/RTCPeerConnection-getStats.https.html": {
+    "comment": "Many missing MTI stats in FF, Chromium (not checked Safari)"
+  },
+  "webrtc/RTCPeerConnection-mandatory-getStats.https.html": {
+    "comment": "22 missing in Chromium, 47 in FF; 20 implemented in both"
+  },
+  "webrtc/RTCPeerConnection-onicecandidateerror.https.html": {
+    "comment": "icecandidateerror not implemented in FF, Safari"
+  },
+  "webrtc/RTCPeerConnection-remote-track-mute.https.html": {
+    "comment": "Timing bug in muting/unmuting in Chromium; FF partial impl of transceiver/close impact on mute events"
+  },
+  "webrtc/RTCPeerConnection-setRemoteDescription-offer.html": {
+    "comment": "FF failures are only linked to error type; Chromium doesn't follow spec algo"
+  },
+  "webrtc/RTCPeerConnection-setRemoteDescription-rollback.html": {
+    "comment": "Chromium doesn't implement rollback; Safari has wrong state machine<br>FF: two failures due to lack of transport, one due to lack of setStreams, 4 due to state machine bugs"
+  },
+  "webrtc/RTCPeerConnection-setRemoteDescription-tracks.https.html": {
+    "comment": "timing bug in muted track explains 2 Chromium failures (the 3rd actually passes when timeout removed)"
+  },
+  "webrtc/RTCPeerConnection-track-stats.https.html": {
+    "comment": "Chromium fails in handling replaceTrack; 3 of safari failures due to outdated stream stat tests, others are real; FF completely off?"
+  },
+  "webrtc/RTCRtpSender-setStreams.https.html": {
+    "comment": "setStreams not implemented in FF, Safari"
+  },
+  "webrtc/RTCRtpSender-getStats.https.html": {
+    "comment": "gaps in MIT stats (but selector implemented)"
+  },
+  "webrtc/RTCRtpTransceiver.https.html": {
+    "comment": "Chromium failures due to bug in mute timing, lack of rollback, lack of transceiver.stop"
+  },
+  "webrtc/RTCRtpParameters-encodings.html": {
+    "comment": "FF doesn't implement RtpParameters.encodings; Safari doesn't set active/maxBitRate/rid and doesn't reject invalid modifications (\"only\" 7 real failures)"
+  },
+  "webrtc/RTCRtpParameters-headerExtensions.html": {
+    "comment": "FF doesn't implement RtpParameters.headerExtensions; Safari OK (sends InvalidStateError instead of InvalidModificationError",
+    "status": "ok"
+  },
+  "webrtc/RTCRtpParameters-rtcp.html": {
+    "comment": "not implemented in FF nor Safari"
+  },
+  "webrtc/RTCRtpParameters-transactionId.html": {
+    "comment": "not implemented in Safari OK (sends InvalidStateError instead of InvalidModificationError",
+    "status": "ok"
+  },
+  "webrtc/RTCRtpReceiver-getSynchronizationSources.https.html": {
+    "comment": "Safari doesn't implement rtpTimestamp; Chromium @@@"
+  },
+  "webrtc/RTCRtpReceiver-getParameters.html": {
+    "comment": "Safari doesn't implement .rctp, but otherwise passes same tests as Chromium (i.e. fails on simulcast test, not sure if it's right); FF doesn't implement getParameters"
+  },
+  "webrtc/RTCRtpTransceiver-stop.html": {
+    "comment": "Chromium doesn't implement transceiver.stop; FF fails on 'A stopped sendonly transceiver should generate a sendonly m-section in the offer'"
+  },
+  "webrtc/protocol/simulcast-answer.html": {
+    "comment": "FF/Safari don't implement rid"
+  },
+  "webrtc/protocol/simulcast-offer.html": {
+    "comment": "FF/Safari don't implement rid"
   }
 }

@@ -41,7 +41,7 @@ table.results tbody tr.good {
   background: #cfc;
 }
 table.results tbody tr.ok {
-  background: #ffc;
+  background: #efa;
 }
 table.results tbody tr.ignore {
   opacity: 0.5;
@@ -108,13 +108,14 @@ table.results tbody td.todo {
         <dt>parameter-less setParameters (!)</dt>
         <dd>Bug in FF, Chromium</dd>
         <dt>MTI stats</dt>
-        <dd>Chromium misses mandatory stats: codecId, packetsDiscarded,remoteId, framesDecoded, selectedCandidatePairId, remoteCertficateId. <br>FF misses mandatory stats: trackId, transportId, codecId, packetsDiscarded, remoteId, framesDecoded, ip, RTCPeerConnectionStats.</dd>
+        <dd>Chromium misses mandatory stats: codecId, packetsDiscarded,remoteId, framesDecoded, framesDropped, framesCorruppted, jitter, audioLevel, selectedCandidatePairId, remoteCertficateId, dataChannelIdentifier, framesPerSecond, framesReceived. Lifecyle for presence of  RTCInboundRtpStreamStats, RTCRemoteInboundRtpStreamStats,  RTCOutboundRtpStreamStats, RTCRemoteOutboundRtpStreamStats, RTCDataChannelStats? <br>FF misses mandatory stats: trackId, transportId, codecId, packetsDiscarded, remoteId, framesDecoded, ip, RTCPeerConnectionStats, totalRoundTripTime, remoteTimestamp. Lifecycle for presence of RTCIceCandidatePairStats.state, currentRoundTripTime. RTCCodecStats, RTCInboundRtpStreamStats, RTCRemoteInboundRtpStreamStats, RTCOutboundRtpStreamStats, RTCRemoteOutboundRtpStreamStats, RTCDataChannelStats, RTCMediaHandlerStats, RTCTransportStats, RTCCertificateStats? </dd>
       </dl>
       </section>
       <section>
         <h2>Test suite issues</h2>
         <h3>Bugs</h3>
         <ul>
+          <li>Need test for transceiver.currentDirection == stopped</li>
           <li>test for <code>bufferedAmount</code> depends on <code>blob</code> sending (but not implemented in Chromium yet)</li>
           <li>is <a href="https://github.com/web-platform-tests/wpt/blob/master/webrtc/RTCCertificate-postMessage.html#L61">x-origin RTCCertificate</a> expected to fail?</li>
           <li>Remove <code>priority</code> from data channel tests (<a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-createDataChannel.html?label=experimental&label=master&aligned">RTCPeerConnection-createDataChannel.html</a>, <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-ondatachannel.html?label=experimental&label=master&aligned">RTCPeerConnection-ondatachannel</a>)</li>
@@ -122,6 +123,7 @@ table.results tbody td.todo {
           <li>Remove oauth credential from <a href="https://wpt.fyi/results/webrtc/RTCConfiguration-iceServers.html?label=experimental&label=master&aligned">RTCConfiguration-iceServers.html</a></li>
           <li><a href="webrtc/RTCPeerConnection-getStats.https.html">webrtc/RTCPeerConnection-getStats.https.html</a> should not depend on getUserMedia to create tracks</li>
           <li>Unclear if outbound-rtp stats needs to be collected when nothing is sent in <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-getStats.https.html">RTCPeerConnection-getStats.https.html</a></li>
+          <li><code>stream</code> stats are obsolete, not MTI</li>
         </ul>
         <h3>Gaps</h3>
         <ul>
