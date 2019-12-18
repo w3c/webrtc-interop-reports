@@ -120,19 +120,16 @@ table.results tbody td.todo {
         <h2>Test suite issues</h2>
         <h3>Bugs</h3>
         <ul>
-          <li>Need test for transceiver.currentDirection == stopped</li>
           <li>test for <code>bufferedAmount</code> depends on <code>blob</code> sending (but not implemented in Chromium yet)</li>
           <li>is <a href="https://github.com/web-platform-tests/wpt/blob/master/webrtc/RTCCertificate-postMessage.html#L61">x-origin RTCCertificate</a> expected to fail?</li>
-          <li>Remove <code>priority</code> from data channel tests (<a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-createDataChannel.html?label=experimental&label=master&aligned">RTCPeerConnection-createDataChannel.html</a>, <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-ondatachannel.html?label=experimental&label=master&aligned">RTCPeerConnection-ondatachannel</a>)</li>
           <li>pendingRemoteDescription not null after <code>pranswer</code> in <a href="https://github.com/web-platform-tests/wpt/blob/master/webrtc/RTCPeerConnection-setLocalDescription-pranswer.html#L106">RTCPeerConnection-setLocalDescription-pranswer.html</a> per 3.2.4.3 of set session description?</li>
-          <li>Remove oauth credential from <a href="https://wpt.fyi/results/webrtc/RTCConfiguration-iceServers.html?label=experimental&label=master&aligned">RTCConfiguration-iceServers.html</a></li>
-          <li><a href="webrtc/RTCPeerConnection-getStats.https.html">webrtc/RTCPeerConnection-getStats.https.html</a> should not depend on getUserMedia to create tracks</li>
           <li>Unclear if outbound-rtp stats needs to be collected when nothing is sent in <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-getStats.https.html">RTCPeerConnection-getStats.https.html</a></li>
           <li><code>stream</code> stats are obsolete, not MTI</li>
         </ul>
         <h3>Gaps</h3>
         <ul>
           <li>dedicated test for RTCPeerConnection.setConfiguration()</li>
+          <li>Need test for transceiver.currentDirection == stopped</li>
         </ul>
       </section>
 
@@ -156,7 +153,7 @@ table.results tbody td.todo {
       </section>
       <section>
         <h2>MIT Stats</h2>
-        <p>Static results as of December 18 2019 (based on <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-mandatory-getStats.https.html?">mandatory stats test amended for passing Safari lack of <code>kind</code>)</p>
+        <p>Static results as of December 18 2019 (based on <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-mandatory-getStats.https.html?">mandatory stats test</a> amended for passing Safari lack of <code>kind</code>)</p>
                   <table class=results>
             <thead>
               <tr><th>MTI Stat</th><th>Chromium</th><th>FF</th><th>Safari</th></tr>
