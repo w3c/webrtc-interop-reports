@@ -170,10 +170,10 @@
     "comment": "FF failure due to lack of setStreams"
   },
   "webrtc/RTCPeerConnection-getStats.https.html": {
-    "comment": "Many missing MTI stats in FF, Chromium (not checked Safari)"
+    "comment": "Many missing MTI stats in FF, Chromium, Safari"
   },
   "webrtc/RTCPeerConnection-mandatory-getStats.https.html": {
-    "comment": "22 missing in Chromium, 47 in FF; 20 implemented in both"
+    "comment": "49 implemented in 2+ browsers"
   },
   "webrtc/RTCPeerConnection-onicecandidateerror.https.html": {
     "comment": "icecandidateerror not implemented in FF, Safari"

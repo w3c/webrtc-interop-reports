@@ -43,6 +43,9 @@ table.results tbody tr.good {
 table.results tbody tr.ok {
   background: #efa;
 }
+table.results tbody tr.bad {
+  background: #fcc;
+}
 table.results tbody tr.ignore {
   opacity: 0.5;
 }
@@ -107,8 +110,10 @@ table.results tbody td.todo {
         <dd>Missing in FF, Safari; address, port missing in Chromium</dd>
         <dt>parameter-less setParameters (!)</dt>
         <dd>Bug in FF, Chromium</dd>
-        <dt>MTI stats</dt>
-        <dd>Chromium misses mandatory stats: codecId, packetsDiscarded,remoteId, framesDecoded, framesDropped, framesCorruppted, jitter, audioLevel, selectedCandidatePairId, remoteCertficateId, dataChannelIdentifier, framesPerSecond, framesReceived. Lifecyle for presence of  RTCInboundRtpStreamStats, RTCRemoteInboundRtpStreamStats,  RTCOutboundRtpStreamStats, RTCRemoteOutboundRtpStreamStats, RTCDataChannelStats? <br>FF misses mandatory stats: trackId, transportId, codecId, packetsDiscarded, remoteId, framesDecoded, ip, RTCPeerConnectionStats, totalRoundTripTime, remoteTimestamp. Lifecycle for presence of RTCIceCandidatePairStats.state, currentRoundTripTime. RTCCodecStats, RTCInboundRtpStreamStats, RTCRemoteInboundRtpStreamStats, RTCOutboundRtpStreamStats, RTCRemoteOutboundRtpStreamStats, RTCDataChannelStats, RTCMediaHandlerStats, RTCTransportStats, RTCCertificateStats? </dd>
+        <dt>Stats</dt>
+        <dd>
+
+          Chromium lifecyle for presence of  RTCInboundRtpStreamStats, RTCRemoteInboundRtpStreamStats,  RTCOutboundRtpStreamStats, RTCRemoteOutboundRtpStreamStats, RTCDataChannelStats? <br>FF lifecycle for presence of RTCIceCandidatePairStats.state, currentRoundTripTime. RTCCodecStats, RTCInboundRtpStreamStats, RTCRemoteInboundRtpStreamStats, RTCOutboundRtpStreamStats, RTCRemoteOutboundRtpStreamStats, RTCDataChannelStats, RTCMediaHandlerStats, RTCTransportStats, RTCCertificateStats?</dd>
       </dl>
       </section>
       <section>
@@ -149,6 +154,93 @@ table.results tbody td.todo {
           </tbody>
       </table>
       </section>
+      <section>
+        <h2>MIT Stats</h2>
+        <p>Static results as of December 18 2019 (based on <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-mandatory-getStats.https.html?">mandatory stats test amended for passing Safari lack of <code>kind</code>)</p>
+                  <table class=results>
+            <thead>
+              <tr><th>MTI Stat</th><th>Chromium</th><th>FF</th><th>Safari</th></tr>
+            </thead>
+            <tbody>
+              <tr class=good><th scope='row'>RTCRtpStreamStats's ssrc</th><td></td><td></td><td></td></tr>
+              <tr class=good><th scope='row'>RTCRtpStreamStats's kind</th><td></td><td></td><td>❌</td></tr>
+              <tr><th scope='row'>RTCRtpStreamStats's transportId</th><td></td><td>❌</td><td>❌</td></tr>
+<tr><th scope='row'>RTCRtpStreamStats's codecId</th><td>❌</td><td>❌</td><td></td></tr>
+<tr class=good><th scope='row'>RTCReceivedRtpStreamStats's packetsReceived</th><td></td><td></td><td></td></tr>
+<tr class=good><th scope='row'>RTCReceivedRtpStreamStats's packetsLost</th><td></td><td></td><td></td></tr>
+<tr class=good><th scope='row'>RTCReceivedRtpStreamStats's jitter</th><td>❌</td><td></td><td></td></tr>
+<tr class=bad><th scope='row'>RTCReceivedRtpStreamStats's packetsDiscarded</th><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCInboundRtpStreamStats's receiverId</th><td></td><td></td><td></td></tr>
+<tr class=bad><th scope='row'>RTCInboundRtpStreamStats's remoteId</th><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr><th scope='row'>RTCInboundRtpStreamStats's framesDecoded</th><td>❌</td><td>❌</td><td></td></tr>
+<tr class=good><th scope='row'>RTCInboundRtpStreamStats's nackCount</th><td></td><td></td><td></td></tr>
+<tr><th scope='row'>RTCInboundRtpStreamStats's framesReceived</th><td>❌</td><td></td><td>❌</td></tr>
+<tr class=bad><th scope='row'>RTCInboundRtpStreamStats's framesDropped</th><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCInboundRtpStreamStats's partialFramesLost</th><td></td><td></td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCInboundRtpStreamStats's totalAudioEnergy</th><td></td><td></td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCInboundRtpStreamStats's totalSamplesDuration</th><td></td><td></td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCRemoteInboundRtpStreamStats's localId</th><td></td><td></td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCRemoteInboundRtpStreamStats's bytesReceived</th><td></td><td></td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCRemoteInboundRtpStreamStats's roundTripTime</th><td></td><td></td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCSentRtpStreamStats's packetsSent</th><td></td><td></td><td></td></tr>
+<tr class=good><th scope='row'>RTCSentRtpStreamStats's bytesSent</th><td></td><td></td><td></td></tr>
+<tr class=good><th scope='row'>RTCOutboundRtpStreamStats's senderId</th><td></td><td></td><td>❌</td></tr>
+<tr class=bad><th scope='row'>RTCOutboundRtpStreamStats's remoteId</th><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCOutboundRtpStreamStats's framesEncoded</th><td></td><td></td><td></td></tr>
+<tr class=good><th scope='row'>RTCOutboundRtpStreamStats's nackCount</th><td></td><td></td><td></td></tr>
+<tr class=good><th scope='row'>RTCOutboundRtpStreamStats's framesSent</th><td></td><td></td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCRemoteOutboundRtpStreamStats's localId</th><td></td><td></td><td>❌</td></tr>
+<tr><th scope='row'>RTCRemoteOutboundRtpStreamStats's remoteTimestamp</th><td></td><td>❌</td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCPeerConnectionStats's dataChannelsOpened</th><td></td><td>❌</td><td></td></tr>
+<tr class=good><th scope='row'>RTCPeerConnectionStats's dataChannelsClosed</th><td></td><td>❌</td><td></td></tr>
+<tr class=good><th scope='row'>RTCDataChannelStats's protocol</th><td></td><td>❌</td><td></td></tr>
+<tr class=bad><th scope='row'>RTCDataChannelStats's dataChannelIdentifier</th><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCDataChannelStats's state</th><td></td><td></td><td></td></tr>
+<tr class=good><th scope='row'>RTCDataChannelStats's messagesSent</th><td></td><td></td><td></td></tr>
+<tr class=good><th scope='row'>RTCDataChannelStats's bytesSent</th><td></td><td></td><td></td></tr>
+<tr class=good><th scope='row'>RTCDataChannelStats's messagesReceived</th><td></td><td></td><td></td></tr>
+<tr class=good><th scope='row'>RTCDataChannelStats's bytesReceived</th><td></td><td></td><td>❌</td></tr>
+<tr class=bad><th scope='row'>RTCMediaSourceStats's trackIdentifier</th><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr><th scope='row'>RTCMediaSourceStats's kind</th><td></td><td>❌</td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCAudioSourceStats's totalAudioEnergy</th><td></td><td>❌</td><td></td></tr>
+<tr><th scope='row'>RTCAudioSourceStats's totalSamplesDuration</th><td></td><td>❌</td><td>❌</td></tr>
+<tr><th scope='row'>RTCVideoSourceStats's width</th><td></td><td>❌</td><td>❌</td></tr>
+<tr><th scope='row'>RTCVideoSourceStats's height</th><td></td><td>❌</td><td>❌</td></tr>
+<tr><th scope='row'>RTCVideoSourceStats's framesPerSecond</th><td></td><td>❌</td><td>❌</td></tr>
+<tr class=bad><th scope='row'>RTCMediaHandlerStats's trackIdentifier</th><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCCodecStats's payloadType</th><td></td><td>❌</td><td></td></tr>
+<tr class=bad><th scope='row'>RTCCodecStats's codecType</th><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCCodecStats's mimeType</th><td></td><td>❌</td><td></td></tr>
+<tr class=good><th scope='row'>RTCCodecStats's clockRate</th><td></td><td>❌</td><td></td></tr>
+<tr class=bad><th scope='row'>RTCCodecStats's channels</th><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr class=bad><th scope='row'>RTCCodecStats's sdpFmtpLine</th><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCTransportStats's bytesSent</th><td></td><td>❌</td><td></td></tr>
+<tr><th scope='row'>RTCTransportStats's bytesReceived</th><td></td><td>❌</td><td>❌</td></tr>
+<tr><th scope='row'>RTCTransportStats's selectedCandidatePairId</th><td></td><td>❌</td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCTransportStats's localCertificateId</th><td></td><td>❌</td><td></td></tr>
+<tr><th scope='row'>RTCTransportStats's remoteCertificateId</th><td></td><td>❌</td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCIceCandidatePairStats's transportId</th><td></td><td></td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCIceCandidatePairStats's localCandidateId</th><td></td><td></td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCIceCandidatePairStats's remoteCandidateId</th><td></td><td></td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCIceCandidatePairStats's state</th><td></td><td></td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCIceCandidatePairStats's priority</th><td></td><td></td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCIceCandidatePairStats's nominated</th><td></td><td></td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCIceCandidatePairStats's bytesSent</th><td></td><td></td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCIceCandidatePairStats's bytesReceived</th><td></td><td></td><td>❌</td></tr>
+<tr><th scope='row'>RTCIceCandidatePairStats's totalRoundTripTime</th><td></td><td>❌</td><td>❌</td></tr>
+<tr><th scope='row'>RTCIceCandidatePairStats's currentRoundTripTime</th><td></td><td>❌</td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCIceCandidateStats's address</th><td></td><td></td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCIceCandidateStats's port</th><td></td><td></td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCIceCandidateStats's protocol</th><td></td><td></td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCIceCandidateStats's candidateType</th><td></td><td></td><td>❌</td></tr>
+<tr class=bad><th scope='row'>RTCIceCandidateStats's url</th><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr class=good><th scope='row'>RTCCertificateStats's fingerprint</th><td></td><td>❌</td><td></td></tr>
+<tr class=good><th scope='row'>RTCCertificateStats's fingerprintAlgorithm</th><td></td><td>❌</td><td></td></tr>
+<tr class=good><th scope='row'>RTCCertificateStats's base64Certificate</th><td></td><td>❌</td><td></td></tr>
+<tr><th scope='row'>RTCCertificateStats's issuerCertificateId</th><td></td><td>❌</td><td>❌</td></tr>
+            </tbody>
+          </table>
+        </section>
     </main>
     <script src="load.js"></script>
   </body>
