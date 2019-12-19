@@ -62,59 +62,77 @@ table.results tbody td.todo {
   <body>
     <main id="content">
       <section>
-      <h2>Implementation gaps</h2>
-      <dl>
-        <dt>support for setting multiple certificates</dt>
-        <dd>In Chromium, Firefox, Safari</dd>
-        <dt><code>RTCIceCandidate</code> interface attributes</dt>
-        <dd>foundation, component, priority, address, protocol, port, type, tcpType, relatedAddress, relatedPort</dd>
-        <dt><code>RTCDtlsTransport</code> interface</dt>
-        <dd>Not implemented in FF, Safari; implemented partially in old Edge (but does it pass the tests?)</dd>
-        <dt><code>RTCIceTransport</code> interface</dt>
-        <dd>Missing in FF; Available in SecureContext only in Chromium? missing component attribute in Chromium; missing most attributes/methods in Safari</dd>
-        <dt>RTCDataChannel.onclosing</dt>
-        <dd>No implementation</dd>
-        <dt>canTrickleIceCandidates</dt>
-        <dd>Not available in Chromium, Safari</dd>
-        <dt>onicecandidateerror</dt>
-        <dd>Not available in Firefox, Safari</dd>
-        <dt>readonly attributes in RTCSessionDescription (type, sdp)</dt>
-        <dd>writable in FF, Chromium</dd>
-        <dt><code>RTCPeerConnection.setLocalDescription()</code></dt>
-        <dd>Supports for zero-argument in FF, Safari?</dd>
-        <dt><code>RTCPeerConnection.addIceCandidate()</code></dt>
-        <dd>Supports for zero-argument in Chromium, Safari</dd>
-        <dt>validation of <code>rid</code> values in addTransceiver</dt>
-        <dt><code>createOffer</code></dt>
-        <dd>Chromium Safari fails "When media stream is added when createOffer() is running in parallel, the result offer should contain the new media stream"</dd>
-        <dt><code>blob</code> argument for <code>RTCDataChannel.send()</code></dt>
-        <dd>Missing in Chromium</dd>
-        <dt>sctp transport</dt>
-        <dd>Missing in FF, Safari</dd>
-        <dt><code>transceiver.stop()</code></dt>
-        <dd>Missing from chromium</dd>
-        <dt><code>restartIce</code> survives remote offer containing partial restart</dt>
-        <dd>Not implemented in FF, Chromium</dd>
+        <h2>Implementation issues</h2>
+        <h3>Gaps</h3>
+        <h4>No implementation</h4>
+        <dl>
+          <dt>RTCDataChannel.onclosing</dt>
+          <dd>No implementation</dd>
+          <dt>support for setting multiple certificates</dt>
+          <dd>No implementation</dd>
+          <dt>voiceActivityFlag in SSRC</dt>
+          <dd>No implementation</dd>
+          <dt>MTI Stats</dt>
+          <dd>No implementation of RTCReceivedRtpStreamStats's packetsDiscarded, RTCInboundRtpStreamStats's remoteId, RTCInboundRtpStreamStats's framesDropped, RTCOutboundRtpStreamStats's remoteId, RTCDataChannelStats's dataChannelIdentifier, RTCMediaSourceStats's trackIdentifier, RTCMediaHandlerStats's trackIdentifier, RTCCodecStats's codecType, RTCCodecStats's channels, RTCCodecStats's sdpFmtpLine, RTCIceCandidateStats's url</dd>
+          <dt>validation of <code>rid</code> values in addTransceiver</dt>
+          <dd>No implementation</dd>
+        </dl>
+        <h4>Only one implementation</h4>
+        <dl>
         <dt><code>RTCRtpSender.setStreams()</code></dt>
         <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1510802">FF</a>, Safari</dd>
         <dt><code>setCodecPreferences</code></dt>
         <dd>Not implemented in FF, Safari? (per <a href="https://wpt.fyi/results/webrtc/RTCRtpParameters-codecs.html?label=experimental&label=master&aligned">RTCRtpParamters-codecs.html</a>, <a href="https://wpt.fyi/results/webrtc/RTCRtpTransceiver-setCodecPreferences.html">RTCRtpTransceiver-setCodecPreferences.html</a></dd>
+        <dt><code>RTCIceCandidate</code> interface attributes</dt>
+          <dd>foundation, component, priority, address, protocol, port, type, tcpType, relatedAddress, relatedPort</dd>
+          <dt><code>RTCDtlsTransport</code> interface</dt>
+          <dd>Not implemented in FF, Safari; implemented partially in old Edge (but does it pass the tests?)</dd>
+          <dt><code>RTCIceTransport</code> interface</dt>
+          <dd>Missing in FF; Available in SecureContext only in Chromium? missing component attribute in Chromium; missing most attributes/methods in Safari</dd>
+          <dt>canTrickleIceCandidates</dt>
+          <dd>Not available in Chromium, Safari</dd>
+          <dt>onicecandidateerror</dt>
+          <dd>Not available in Firefox, Safari</dd>
+          <dt>sctp transport</dt>
+          <dd>Missing in FF, Safari</dd>
         <dt>RTCError, RTCErrorEvent</dt>
         <dd>Not implemented in Firefox, Safari (OperationError fallback test?); bug in RTCErrorEvent consutrctor (cf <a href="https://wpt.fyi/results/webrtc/idlharness.https.window.html">idlharness test</a></dd>
-        <dt>setLocalDescription() with offer not created by own createOffer() should reject with InvalidModificationError</dt>
-        <dd>Fails in Chromium, Safari</dd>
         <dt>RTCPeerConnectionIceEvent url attribute</dt>
         <dd>Missing in FF, Chromium</dd>
         <dt>RTCPeerConnectionIceErrorEvent</dt>
-        <dd>Missing in FF, Safari; address, port missing in Chromium</dd>
+          <dd>Missing in FF, Safari; address, port missing in Chromium</dd>
+          <dt>MTI Stats (single impl)</dt>
+          <dd>Only one implementation of RTCRtpStreamStats's transportId, RTCRtpStreamStats's codecId, RTCInboundRtpStreamStats's framesDecoded, RTCInboundRtpStreamStats's framesReceived, RTCRemoteOutboundRtpStreamStats's remoteTimestamp, RTCMediaSourceStats's kind, RTCAudioSourceStats's totalSamplesDuration, RTCVideoSourceStats's width, RTCVideoSourceStats's height, RTCVideoSourceStats's framesPerSecond, RTCTransportStats's bytesReceived, RTCTransportStats's selectedCandidatePairId, RTCTransportStats's remoteCertificateId, RTCIceCandidatePairStats's totalRoundTripTime, RTCIceCandidatePairStats's currentRoundTripTime, RTCCertificateStats's issuerCertificateId</dd>
+        </dl>
+        <h4>Gap in single browser that affect test suite because of dependencies</H4>
+        <dl>
+          <dt><code>blob</code> argument for <code>RTCDataChannel.send()</code></dt>
+          <dd>Missing in Chromium</dd>
+          <dt><code>transceiver.stop()</code></dt>
+          <dd>Missing from chromium</dd>
+      </dl>
+      <h3>Bugs</h3>
+      <dl>
+        <dt>Stats lifecycle</dt>
+        <dd>
+          Chromium lifecyle for presence of  RTCInboundRtpStreamStats, RTCRemoteInboundRtpStreamStats,  RTCOutboundRtpStreamStats, RTCRemoteOutboundRtpStreamStats, RTCDataChannelStats? <br>FF lifecycle for presence of RTCIceCandidatePairStats.state, currentRoundTripTime. RTCCodecStats, RTCInboundRtpStreamStats, RTCRemoteInboundRtpStreamStats, RTCOutboundRtpStreamStats, RTCRemoteOutboundRtpStreamStats, RTCDataChannelStats, RTCMediaHandlerStats, RTCTransportStats, RTCCertificateStats?</dd>
+          <dt><code>RTCPeerConnection.addIceCandidate()</code></dt>
+          <dd>Supports for zero-argument in Chromium, Safari</dd>
+          <dt><code>RTCPeerConnection.setLocalDescription()</code></dt>
+          <dd>Supports for zero-argument in FF, Safari?</dd>
+          <dt>readonly attributes in RTCSessionDescription (type, sdp)</dt>
+          <dd>writable in FF, Chromium</dd>
+          <dt><code>restartIce</code> survives remote offer containing partial restart</dt>
+          <dd>Not implemented in FF, Chromium</dd>
+          <dt><code>createOffer</code></dt>
+          <dd>Chromium Safari fails "When media stream is added when createOffer() is running in parallel, the result offer should contain the new media stream"</dd>
+        <dt>setLocalDescription() with offer not created by own createOffer() should reject with InvalidModificationError</dt>
+        <dd>Fails in Chromium, Safari</dd>
         <dt>parameter-less setParameters (!)</dt>
         <dd>Bug in FF, Chromium</dd>
         <dt>getSynchronizationSources</dt>
-        <dd>no implementation of voiceActivityFlag at all;  returns empty array on audio track in Chromium (?); misses rtpTimestamp, voiceActivityFlag in Safari; doesn't work on video track in FF, which also lacks voiceActivityFlag</dd>
-        <dt>Stats</dt>
-        <dd>
+        <dd>returns empty array on audio track in Chromium (?); misses rtpTimestamp, voiceActivityFlag in Safari; doesn't work on video track in FF, which also lacks voiceActivityFlag</dd>
 
-          Chromium lifecyle for presence of  RTCInboundRtpStreamStats, RTCRemoteInboundRtpStreamStats,  RTCOutboundRtpStreamStats, RTCRemoteOutboundRtpStreamStats, RTCDataChannelStats? <br>FF lifecycle for presence of RTCIceCandidatePairStats.state, currentRoundTripTime. RTCCodecStats, RTCInboundRtpStreamStats, RTCRemoteInboundRtpStreamStats, RTCOutboundRtpStreamStats, RTCRemoteOutboundRtpStreamStats, RTCDataChannelStats, RTCMediaHandlerStats, RTCTransportStats, RTCCertificateStats?</dd>
       </dl>
       </section>
       <section>
@@ -126,7 +144,6 @@ table.results tbody td.todo {
           <li>is <a href="https://github.com/web-platform-tests/wpt/blob/master/webrtc/RTCCertificate-postMessage.html#L61">x-origin RTCCertificate</a> expected to fail?</li>
           <li>pendingRemoteDescription not null after <code>pranswer</code> in <a href="https://github.com/web-platform-tests/wpt/blob/master/webrtc/RTCPeerConnection-setLocalDescription-pranswer.html#L106">RTCPeerConnection-setLocalDescription-pranswer.html</a> per 3.2.4.3 of set session description?</li>
           <li>Unclear if outbound-rtp stats needs to be collected when nothing is sent in <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-getStats.https.html">RTCPeerConnection-getStats.https.html</a></li>
-          <li><code>stream</code> stats are obsolete, not MTI</li>
         </ul>
         <h3>Gaps</h3>
         <ul>

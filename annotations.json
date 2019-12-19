@@ -9,7 +9,8 @@
     "comment": "<ul><li>FF doesn't implement setConfiguration (1/2 tests)</li><li>SyntaxError vs InvalidAccessError</li><li>OAuth credential needs to go (12 failures)</li><li>legacy support for iceServers.url</li><li>credentialType validation</li><li>empty urls as error</li><li></ul>"
   },
   "webrtc/RTCDataChannel-bufferedAmount.html": {
-    "comment": "missing support on Safari; Chromium fails because of dependency on <code>blob</code> sending"
+    "comment": "missing support on Safari; Chromium fails because of dependency on <code>blob</code> sending",
+    "status": "ok"
   },
   "webrtc/RTCDataChannel-send-blob-order.html": {
     "comment": "Chromium not implementing blob sending, <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1577830'>FF missing order</a>"
@@ -167,7 +168,8 @@
     "comment": "onicecandidateerror not implemented in FF, Safari"
   },
   "webrtc/RTCPeerConnection-onnegotiationneeded.html": {
-    "comment": "FF failure due to lack of setStreams"
+    "comment": "FF failure due to lack of setStreams",
+    "status": "ok"
   },
   "webrtc/RTCPeerConnection-getStats.https.html": {
     "comment": "Many missing MTI stats in FF, Chromium, Safari"
@@ -197,7 +199,7 @@
     "comment": "setStreams not implemented in FF, Safari"
   },
   "webrtc/RTCRtpSender-getStats.https.html": {
-    "comment": "gaps in MIT stats (but selector implemented)"
+    "comment": "gaps in MTI stats (but selector implemented)"
   },
   "webrtc/RTCRtpTransceiver.https.html": {
     "comment": "Chromium failures due to bug in mute timing, lack of rollback, lack of transceiver.stop"
