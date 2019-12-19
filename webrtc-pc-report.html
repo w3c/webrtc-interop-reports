@@ -109,6 +109,8 @@ table.results tbody td.todo {
         <dd>Missing in FF, Safari; address, port missing in Chromium</dd>
         <dt>parameter-less setParameters (!)</dt>
         <dd>Bug in FF, Chromium</dd>
+        <dt>getSynchronizationSources</dt>
+        <dd>no implementation of voiceActivityFlag at all;  returns empty array on audio track in Chromium (?); misses rtpTimestamp, voiceActivityFlag in Safari; doesn't work on video track in FF, which also lacks voiceActivityFlag</dd>
         <dt>Stats</dt>
         <dd>
 

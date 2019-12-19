@@ -12,7 +12,7 @@
     "comment": "missing support on Safari; Chromium fails because of dependency on <code>blob</code> sending"
   },
   "webrtc/RTCDataChannel-send-blob-order.html": {
-    "comment": "Chromium not implementing blob sending, FF missing order"
+    "comment": "Chromium not implementing blob sending, <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1577830'>FF missing order</a>"
   },
   "webrtc/RTCDataChannel-send.html": {
     "comment": "lack of <code>blob</code> support explains 4 Chromium failures; maxSize test depends on sctp transport availability"
@@ -217,7 +217,7 @@
     "status": "ok"
   },
   "webrtc/RTCRtpReceiver-getSynchronizationSources.https.html": {
-    "comment": "Safari doesn't implement rtpTimestamp; Chromium @@@"
+    "comment": "Safari doesn't implement rtpTimestamp, voiceActivityFlag; Chromium timeout on audio (?) but works OK for video; Firefox doesn't work on video, misses voiceActivityFlag"
   },
   "webrtc/RTCRtpReceiver-getParameters.html": {
     "comment": "Safari doesn't implement .rctp, but otherwise passes same tests as Chromium (i.e. fails on simulcast test, not sure if it's right); FF doesn't implement getParameters"
