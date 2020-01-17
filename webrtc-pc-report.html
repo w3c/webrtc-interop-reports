@@ -82,25 +82,25 @@ table.results tbody td.todo {
         <dt><code>RTCRtpSender.setStreams()</code></dt>
         <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1510802">FF</a>, Safari</dd>
         <dt><code>setCodecPreferences</code></dt>
-        <dd>Not implemented in FF, Safari? (per <a href="https://wpt.fyi/results/webrtc/RTCRtpParameters-codecs.html?label=experimental&label=master&aligned">RTCRtpParamters-codecs.html</a>, <a href="https://wpt.fyi/results/webrtc/RTCRtpTransceiver-setCodecPreferences.html">RTCRtpTransceiver-setCodecPreferences.html</a></dd>
+        <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1396922">FF</a>, <a href="https://bugs.webkit.org/show_bug.cgi?id=190840">upcoming support in Safari</a> (per <a href="https://wpt.fyi/results/webrtc/RTCRtpParameters-codecs.html?label=experimental&label=master&aligned">RTCRtpParamters-codecs.html</a>, <a href="https://wpt.fyi/results/webrtc/RTCRtpTransceiver-setCodecPreferences.html">RTCRtpTransceiver-setCodecPreferences.html</a></dd>
         <dt><code>RTCIceCandidate</code> interface attributes</dt>
           <dd>foundation, component, priority, address, protocol, port, type, tcpType, relatedAddress, relatedPort</dd>
           <dt><code>RTCDtlsTransport</code> interface</dt>
-          <dd>Not implemented in FF, Safari; implemented partially in old Edge (but does it pass the tests?)</dd>
+          <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1307996">FF</a>, Safari; implemented partially in old Edge (but does it pass the tests?)</dd>
           <dt><code>RTCIceTransport</code> interface</dt>
-          <dd>Missing in FF; Available in SecureContext only in Chromium? missing component attribute in Chromium; missing most attributes/methods in Safari</dd>
+          <dd>Missing in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1307994">FF</a>; Available in SecureContext only in Chromium? missing component attribute in Chromium; missing most attributes/methods in Safari</dd>
           <dt>canTrickleIceCandidates</dt>
-          <dd>Not available in Chromium, Safari</dd>
+          <dd>Not available in <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=708484">Chromium</a>, Safari</dd>
           <dt>onicecandidateerror</dt>
-          <dd>Not available in Firefox, Safari</dd>
+          <dd>Not available in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1561441">Firefox</a>, Safari</dd>
           <dt>sctp transport</dt>
-          <dd>Missing in FF, Safari</dd>
+          <dd>Missing in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1278299">FF</a>, Safari</dd>
         <dt>RTCError, RTCErrorEvent</dt>
-        <dd>Not implemented in Firefox, Safari (OperationError fallback test?); bug in RTCErrorEvent consutrctor (cf <a href="https://wpt.fyi/results/webrtc/idlharness.https.window.html">idlharness test</a></dd>
+        <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1527916">Firefox</a>, Safari (OperationError fallback test?); bug in RTCErrorEvent consutrctor (cf <a href="https://wpt.fyi/results/webrtc/idlharness.https.window.html">idlharness test</a></dd>
         <dt>RTCPeerConnectionIceEvent url attribute</dt>
-        <dd>Missing in FF, Chromium</dd>
+        <dd>Missing in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1531911">FF</a>, Chromium</dd>
         <dt>RTCPeerConnectionIceErrorEvent</dt>
-          <dd>Missing in FF, Safari; address, port missing in Chromium</dd>
+          <dd>Missing in <span class=missing>FF</span>, <a href="https://bugs.webkit.org/show_bug.cgi?id=199207">Safari</a>; address, port missing in Chromium</dd>
           <dt>MTI Stats (single impl)</dt>
           <dd>Only one implementation of RTCRtpStreamStats's transportId, RTCRtpStreamStats's codecId, RTCInboundRtpStreamStats's framesDecoded, RTCInboundRtpStreamStats's framesReceived, RTCRemoteOutboundRtpStreamStats's remoteTimestamp, RTCMediaSourceStats's kind, RTCAudioSourceStats's totalSamplesDuration, RTCVideoSourceStats's width, RTCVideoSourceStats's height, RTCVideoSourceStats's framesPerSecond, RTCTransportStats's bytesReceived, RTCTransportStats's selectedCandidatePairId, RTCTransportStats's remoteCertificateId, RTCIceCandidatePairStats's totalRoundTripTime, RTCIceCandidatePairStats's currentRoundTripTime, RTCCertificateStats's issuerCertificateId</dd>
         </dl>
@@ -149,6 +149,7 @@ table.results tbody td.todo {
         <ul>
           <li>dedicated test for RTCPeerConnection.setConfiguration()</li>
           <li>Need test for transceiver.currentDirection == stopped</li>
+          <li>Simulcast testing (is it possible in WPT?)</li>
         </ul>
       </section>
 
