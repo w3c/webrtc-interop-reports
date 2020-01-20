@@ -241,5 +241,8 @@
   },
   "webrtc/protocol/ice-state.https.html": {
     "comment": "FF & Safari go to failed instead of disconnected on invalid ICE candidate"
+  },
+  "webrtc/RTCPeerConnection-close.html": {
+    "comment": "FF & Safari mistakenly fires signalingstate change event on closing (bug)"
   }
 }
