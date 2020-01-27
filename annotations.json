@@ -175,7 +175,7 @@
     "comment": "Many missing MTI stats in FF, Chromium, Safari"
   },
   "webrtc/RTCPeerConnection-mandatory-getStats.https.html": {
-    "comment": "49 implemented in 2+ browsers"
+    "comment": "48 implemented in 2+ browsers, 12 in only one browser, 16 in no browser"
   },
   "webrtc/RTCPeerConnection-onicecandidateerror.https.html": {
     "comment": "icecandidateerror not implemented in FF, Safari"
