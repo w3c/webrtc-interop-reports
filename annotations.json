@@ -57,7 +57,7 @@
     "comment": "canTrickleIceCandidates initial value fails for 3 - but old Edge implemented it, should be OK"
   },
   "webrtc/RTCPeerConnection-createDataChannel.html": {
-    "comment": "5 Chromium / 3 FF fails because of no-longer required <code>priority</code>; last chromium issue is linked to dependency on missing <code>stop()</code> on transceiver"
+    "comment": "2 Chromium fails because of lack of blob support; 2 other fails due to failure no negotiated ids; last chromium issue is linked to dependency on missing <code>stop()</code> on transceiver"
   },
   "webrtc/RTCPeerConnection-iceConnectionState.https.html": {
     "comment": "FF failures linked to lack of <code>sctp</code> / <code>receiver.transport</code>"
@@ -114,7 +114,7 @@
     "comment": "Missing transport objects in FF/Safari - does old Edge help?"
   },
   "webrtc/RTCTrackEvent-fire.html": {
-    "comment": "Chromium bug in handling duplicate/emtpy msid - ignore?"
+    "comment": "Chromium bug in handling duplicate/empty msid - ignore?"
   },
   "webrtc/datachannel-emptystring.html": {
     "comment": "edge case",
@@ -156,7 +156,7 @@
     "comment": "FF doesn't implement transactionId yet cf <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1401592'>#1401592</a>"
   },
   "webrtc/RTCRtpReceiver-getStats.https.html": {
-    "comment": "Chromium misses mandatory stats: codecId, packetsDiscarded,remoteId, framesDecoded, selectedCandidatePairId, remoteCertficateId. <br>FF misses mandatory stats: trackId, transportId, codecId, packetsDiscarded, remoteId, framesDecoded, ip."
+    "comment": "Chromium misses mandatory stats: codecId, packetsDiscarded,remoteId, framesDecoded, selectedCandidatePairId, remoteCertficateId. <br>FF misses mandatory stats: IceCandidate.url, RTCRtpStreamStats.transportId, RTCRtpStreamStats.codecId, RTCReceivedRtpStreamStats.packetsDiscarded, RTCReceivedRtpStreamStats.framesDropped, RTCInboundRTPStreamStats.receiverId, RTCInboundRTPStreamStats.remoteId, RTCInboundRTPStreamStats.framesDecoded, RTCInboundRTPStreamStats.framesReceived."
   },
   "webrtc/RTCPeerConnection-restartIce-onnegotiationneeded.https.html": {
     "comment": "timing bug in Chromium; restartIce not implemented in Safari"
@@ -172,7 +172,7 @@
     "status": "ok"
   },
   "webrtc/RTCPeerConnection-getStats.https.html": {
-    "comment": "Many missing MTI stats in FF, Chromium, Safari"
+    "comment": "FF misses mandatory stats: IceCandidate.url, RTCRtpStreamStats.transportId, RTCRtpStreamStats.codecId, RTCReceivedRtpStreamStats.packetsDiscarded, RTCReceivedRtpStreamStats.framesDropped, RTCInboundRTPStreamStats.receiverId, RTCInboundRTPStreamStats.remoteId, RTCInboundRTPStreamStats.framesDecoded, RTCInboundRTPStreamStats.framesReceived, RTCOutboundRTPStreamStats.senderId, RTCOutboundRTPStreamStats.remoteId, RTCOutboundRTPStreamStats.nackCount, RTCIceCandidatePairStats.transportId, RTCIceCandidatePairStats.totalRoundTripTime, RTCIceCandidatePairStats.currentRoundTripTime, RTCIceCandidatePairStats.state, RTCOutboundRTPStreamStats.framesSent, RTCCodecStats, RTCRemoteOutboundRTPStreamStats.remoteTimeStamp, RTCTransportStats, RTCCertificateStats, RTCPeerConnectionStats, RTCDataChannelStats; Chromium, Safari"
   },
   "webrtc/RTCPeerConnection-mandatory-getStats.https.html": {
     "comment": "48 implemented in 2+ browsers, 12 in only one browser, 16 in no browser"
@@ -215,7 +215,7 @@
     "comment": "not implemented in FF nor Safari"
   },
   "webrtc/RTCRtpParameters-transactionId.html": {
-    "comment": "not implemented in Safari OK (sends InvalidStateError instead of InvalidModificationError",
+    "comment": "rtcp not implemented in Safari OK (sends InvalidStateError instead of InvalidModificationError",
     "status": "ok"
   },
   "webrtc/RTCRtpReceiver-getSynchronizationSources.https.html": {
@@ -228,7 +228,7 @@
     "comment": "Chromium doesn't implement transceiver.stop; FF fails on 'A stopped sendonly transceiver should generate a sendonly m-section in the offer'"
   },
   "webrtc/protocol/simulcast-answer.html": {
-    "comment": "FF/Safari don't implement rid"
+    "comment": "FF doesn't implement rid"
   },
   "webrtc/protocol/simulcast-offer.html": {
     "comment": "FF/Safari don't implement rid"
