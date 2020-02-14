@@ -67,12 +67,12 @@ table.results tbody td.todo {
         <h4>No implementation</h4>
         <dl>
           <dt>RTCDataChannel.onclosing</dt>
-          <dd>No implementation (upcoming in Chrome)</dd>
+          <dd>No implementation (<a href="https://chromium-review.googlesource.com/c/chromium/src/+/1991571">upcoming in Chrome</a>)</dd>
           <dt>support for setting multiple certificates (to be marked as at risk)</dt>
           <dd>No implementation (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=5934">CR</a>)</dd>
           <dt>voiceActivityFlag in SSRC (to be marked as at risk)</dt>
           <dd>No implementation (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=10186">CR</a>, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1531880">FF</a>)</dd>
-          <dt>MTI Stats</dt>
+          <dt>MTI Stats (<a href="https://crbug.com/1050302">CR</a>)</dt>
           <dd>No implementation of <ul>
               <li>RTCReceivedRtpStreamStats's packetsDiscarded (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=8199">CR</a>, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1335967">FF</a>),</li>
               <li>RTCInboundRtpStreamStats's receiverId,</li>
@@ -92,7 +92,7 @@ table.results tbody td.todo {
               <li>RTCCertificateStats's issuerCertificateId</li>
           </ul></dd>
           <dt>validation of <code>rid</code> values in addTransceiver</dt>
-          <dd>No implementation</dd>
+          <dd>No implementation (<a href="https://chromium-review.googlesource.com/c/chromium/src/+/2043792">upcoming in Chrome</a>)</dd>
         </dl>
         <h4>Only one implementation</h4>
         <dl>
@@ -126,7 +126,7 @@ table.results tbody td.todo {
           <dt><code>blob</code> argument for <code>RTCDataChannel.send()</code></dt>
           <dd>Missing in Chromium (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=2276">CR2276</a>)</dd>
           <dt><code>transceiver.stop()</code></dt>
-          <dd>Missing from chromium</dd>
+          <dd>Missing from chromium (<a href="https://crbug.com/980879">CR</a>))</dd>
       </dl>
       <h3>Bugs</h3>
       <dl>
