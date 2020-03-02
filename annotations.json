@@ -133,7 +133,8 @@
     "comment": "sctp transport not implemented in FF/Safari"
   },
   "webrtc/RTCRtpTransceiver-setCodecPreferences.html": {
-    "comment": "setCodecPreferences not implemented in FF/Safari"
+    "status": "ok",
+    "comment": "setCodecPreferences not implemented in FF; Safari fails to reject invalid modifications"
   },
   "webrtc/RTCPeerConnection-setLocalDescription-offer.html": {
     "comment": "setLocalDescription() with offer not created by own createOffer() should reject with InvalidModificationError but doesn't in Chromium, Safari"
