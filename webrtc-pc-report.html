@@ -66,8 +66,6 @@ table.results tbody td.todo {
         <h3>Gaps</h3>
         <h4>No implementation</h4>
         <dl>
-          <dt>RTCDataChannel.onclosing</dt>
-          <dd>No implementation (<a href="https://chromium-review.googlesource.com/c/chromium/src/+/1991571">upcoming in Chrome</a>)</dd>
           <dt>support for setting multiple certificates (to be marked as at risk)</dt>
           <dd>No implementation (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=5934">CR</a>)</dd>
           <dt>voiceActivityFlag in SSRC (to be marked as at risk)</dt>
@@ -91,11 +89,11 @@ table.results tbody td.todo {
               <li>RTCIceCandidateStats's url (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=7063">CR</a>, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1508543">FF</a>),</li>
               <li>RTCCertificateStats's issuerCertificateId</li>
           </ul></dd>
-          <dt>validation of <code>rid</code> values in addTransceiver</dt>
-          <dd>No implementation (<a href="https://chromium-review.googlesource.com/c/chromium/src/+/2043792">upcoming in Chrome</a>)</dd>
         </dl>
         <h4>Only one implementation</h4>
         <dl>
+          <dt>RTCDataChannel.onclosing</dt>
+          <dd>Missing in FF & Safari</dd>
         <dt><code>RTCRtpSender.setStreams()</code></dt>
         <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1510802">FF</a>, Safari</dd>
         <dt><code>setCodecPreferences</code></dt>
@@ -116,6 +114,8 @@ table.results tbody td.todo {
         <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1527916">Firefox</a>, Safari (OperationError fallback test?); bug in RTCErrorEvent consutrctor (cf <a href="https://wpt.fyi/results/webrtc/idlharness.https.window.html">idlharness test</a></dd>
         <dt>RTCPeerConnectionIceEvent url attribute</dt>
         <dd>Missing in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1531911">FF</a>, Chromium</dd>
+          <dt>validation of <code>rid</code> values in addTransceiver</dt>
+          <dd>Missing in FF & Safari</dd>
         <dt>RTCPeerConnectionIceErrorEvent</dt>
           <dd>Missing in <span class=missing>FF</span>, <a href="https://bugs.webkit.org/show_bug.cgi?id=199207">Safari</a>; address, port missing in Chromium</dd>
           <dt>MTI Stats (single impl)</dt>

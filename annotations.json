@@ -44,7 +44,7 @@
     "comment": "2 failures because of wrong error names in Chromium;  Chromium doesn't handle null candidate as end-of-candidate (explains 7 of the failures)"
   },
   "webrtc/RTCPeerConnection-addTransceiver.https.html": {
-    "comment": "Failure to validate <code>rid</code> (16 chars, alphanumeric)"
+    "comment": "FF & Safari fail to validate <code>rid</code> (16 chars, alphanumeric)"
   },
   "webrtc/RTCPeerConnection-canTrickleIceCandidates.html": {
     "comment": "old Edge has <code>canTrickleIceCandidates</code> - does it pass the tests?"
@@ -242,7 +242,7 @@
   "webrtc/protocol/ice-state.https.html": {
     "comment": "FF & Safari go to failed instead of disconnected on invalid ICE candidate"
   },
-  "webrtc/RTCPeerConnection-close.html": {
-    "comment": "FF & Safari mistakenly fires signalingstate change event on closing (bug)"
+  "webrtc/RTCDataChannel-close.html" :{
+    "comment": "FF & Safari don't implement closing"
   }
 }
