@@ -223,7 +223,7 @@
     "comment": "Safari doesn't implement rtpTimestamp, voiceActivityFlag; Chromium timeout on audio (?) but works OK for video; Firefox doesn't work on video, misses voiceActivityFlag"
   },
   "webrtc/RTCRtpReceiver-getParameters.html": {
-    "comment": "Safari doesn't implement .rctp, but otherwise passes same tests as Chromium (i.e. fails on simulcast test, not sure if it's right); FF doesn't implement getParameters"
+    "comment": "Safari doesn't implement .rctp, but otherwise passes same tests as Chromium (i.e. fails on simulcast test, not sure if it's right); FF doesn't implement getParameters (<a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1618999'>#1618999</a>)"
   },
   "webrtc/RTCRtpTransceiver-stop.html": {
     "comment": "Chromium doesn't implement transceiver.stop; FF fails on 'A stopped sendonly transceiver should generate a sendonly m-section in the offer'"
