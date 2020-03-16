@@ -66,6 +66,8 @@ table.results tbody td.todo {
         <h3>Gaps</h3>
         <h4>No implementation</h4>
         <dl>
+          <dt><code>maxMessageSize</code> validation</dt>
+          <dd>Only Chromium exposes <code>maxMessageSize</code>, but it doesn't throw when sending message beyond that limit</dd>
           <dt>support for setting multiple certificates (to be marked as at risk)</dt>
           <dd>No implementation (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=5934">CR</a>)</dd>
           <dt>voiceActivityFlag in SSRC (to be marked as at risk)</dt>
@@ -92,24 +94,23 @@ table.results tbody td.todo {
         </dl>
         <h4>Only one implementation</h4>
         <dl>
+          <dt>
           <dt>RTCDataChannel.onclosing</dt>
-          <dd>Missing in FF & Safari</dd>
+          <dd>Missing in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1611953">FF</a> & Safari (<a href="https://bugs.webkit.org/show_bug.cgi?id=206056">webkit</a>)</dd>
         <dt><code>RTCRtpSender.setStreams()</code></dt>
         <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1510802">FF</a>, Safari</dd>
         <dt><code>RTCIceCandidate</code> interface attributes</dt>
-          <dd>foundation, component, priority, address, protocol, port, type, tcpType, relatedAddress, relatedPort</dd>
+          <dd>foundation, component, priority, address, protocol, port, type, tcpType, relatedAddress, relatedPort (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1322186">FF</a>)</dd>
           <dt><code>RTCDtlsTransport</code> interface</dt>
           <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1307996">FF</a>, Safari; implemented partially in old Edge (but does it pass the tests?)</dd>
           <dt><code>RTCIceTransport</code> interface</dt>
           <dd>Missing in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1307994">FF</a>; Available in SecureContext only in Chromium? missing component attribute in Chromium; missing most attributes/methods in Safari</dd>
-          <dt>canTrickleIceCandidates (to be marked as at risk)</dt>
-          <dd>Not available in <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=708484">Chromium</a>, Safari</dd>
           <dt>onicecandidateerror</dt>
-          <dd>Not available in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1561441">Firefox</a>, Safari</dd>
+          <dd>Not available in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1561441">Firefox</a>, <a href="https://bugs.webkit.org/show_bug.cgi?id=199207">Safari</a></dd>
           <dt>sctp transport</dt>
           <dd>Missing in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1278299">FF</a>, Safari</dd>
         <dt>RTCError, RTCErrorEvent</dt>
-        <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1527916">Firefox</a>, Safari (OperationError fallback test?); bug in RTCErrorEvent consutrctor (cf <a href="https://wpt.fyi/results/webrtc/idlharness.https.window.html">idlharness test</a></dd>
+        <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1527916">Firefox</a>, Safari (OperationError fallback test?); bug in RTCErrorEvent constructor (cf <a href="https://wpt.fyi/results/webrtc/idlharness.https.window.html">idlharness test</a>)</dd>
         <dt>RTCPeerConnectionIceEvent url attribute</dt>
         <dd>Missing in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1531911">FF</a>, Chromium</dd>
           <dt>validation of <code>rid</code> values in addTransceiver</dt>
@@ -125,6 +126,8 @@ table.results tbody td.todo {
           <dd>Missing in Chromium (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=2276">CR2276</a>)</dd>
           <dt><code>transceiver.stop()</code></dt>
           <dd>Missing from chromium (<a href="https://crbug.com/980879">CR</a>))</dd>
+          <dt><code>setConfiguration</code></dt>
+          <dd>Missing in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1253706">Firefox</a></dd>
       </dl>
       <h3>Bugs</h3>
       <dl>

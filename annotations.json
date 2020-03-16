@@ -6,14 +6,16 @@
     "comment": "RTCPeerConnection({ certificates }) should generate offer SDP with fingerprint of all provided certificates fails on all browsers."
   },
   "webrtc/RTCConfiguration-iceServers.html": {
-    "comment": "<ul><li>FF doesn't implement setConfiguration (1/2 tests)</li><li>SyntaxError vs InvalidAccessError</li><li>OAuth credential needs to go (12 failures)</li><li>legacy support for iceServers.url</li><li>credentialType validation</li><li>empty urls as error</li><li></ul>"
+    "comment": "<p>Buggy on edge cases / error reporting, but overall interop between Chromium / Safari, and FF if not using setConfig</p><ul><li>FF doesn't implement setConfiguration (1/2 tests)</li><li>SyntaxError vs InvalidAccessError</li><li>OAuth credential needs to go (12 failures)</li><li>legacy support for iceServers.url</li><li>credentialType default value in Chromimu/Safari</li><li>empty urls as error</li><li></ul>",
+    "status": "ok"
   },
   "webrtc/RTCDataChannel-bufferedAmount.html": {
     "comment": "missing support on Safari; Chromium fails because of dependency on <code>blob</code> sending",
     "status": "ok"
   },
   "webrtc/RTCDataChannel-send-blob-order.html": {
-    "comment": "Chromium not implementing blob sending, <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1577830'>FF missing order</a>"
+    "status": "good",
+    "comment": "Chromium not implementing blob sending, but otherwise passes; <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1577830'>FF missing order</a>"
   },
   "webrtc/RTCDataChannel-send.html": {
     "comment": "lack of <code>blob</code> support explains 4 Chromium failures; maxSize test depends on sctp transport availability"
@@ -38,16 +40,13 @@
     "comment": "not part of webrtc-pc"
   },
   "webrtc/RTCPeerConnection-addIceCandidate-timing.https.html": {
-    "comment": "FF, Safari don't implement argument-less sLD; known timing bug in Chromium"
+    "comment": "Safari don't implement argument-less sLD; <a href='https://bugs.chromium.org/p/chromium/issues/detail?id=1019232'>known timing bug in Chromium</a>"
   },
   "webrtc/RTCPeerConnection-addIceCandidate.html": {
     "comment": "2 failures because of wrong error names in Chromium;  Chromium doesn't handle null candidate as end-of-candidate (explains 7 of the failures)"
   },
   "webrtc/RTCPeerConnection-addTransceiver.https.html": {
     "comment": "FF & Safari fail to validate <code>rid</code> (16 chars, alphanumeric)"
-  },
-  "webrtc/RTCPeerConnection-canTrickleIceCandidates.html": {
-    "comment": "old Edge has <code>canTrickleIceCandidates</code> - does it pass the tests?"
   },
   "webrtc/RTCPeerConnection-connectionState.https.html": {
     "comment": "1 Safari failure linked to lack of <code>sctp</code> transport; 2nd linked to wrong state machine (FF doesn't implement)"
@@ -220,7 +219,7 @@
     "status": "ok"
   },
   "webrtc/RTCRtpReceiver-getSynchronizationSources.https.html": {
-    "comment": "Safari doesn't implement rtpTimestamp, voiceActivityFlag; Chromium timeout on audio (?) but works OK for video; Firefox doesn't work on video, misses voiceActivityFlag"
+    "comment": "Safari doesn't implement rtpTimestamp, voiceActivityFlag; Chromium timeout on audio (<a href='https://bugs.chromium.org/p/chromium/issues/detail?id=775608'>CR</a>) but works OK for video; Firefox <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1583872'>doesn't work on video</a>, misses voiceActivityFlag"
   },
   "webrtc/RTCRtpReceiver-getParameters.html": {
     "comment": "Safari doesn't implement .rctp, but otherwise passes same tests as Chromium (i.e. fails on simulcast test, not sure if it's right); FF doesn't implement getParameters (<a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1618999'>#1618999</a>)"
@@ -245,5 +244,17 @@
   },
   "webrtc/RTCDataChannel-close.html" :{
     "comment": "FF & Safari don't implement closing"
+  },
+  "webrtc/RTCPeerConnection-setRemoteDescription-simulcast.https.html": {
+    "comment": "<a href='https://bugs.chromium.org/p/chromium/issues/detail?id=944821'>chromium bug</a>"
+  },
+  "webrtc/protocol/bundle.https.html": {
+    "comment": "FF and Safari don't implement ICE / DTLS transports"
+  },
+  "webrtc/protocol/crypto-suite.https.html": {
+    "comment": "FF and Safari don't implement SCTP transport"
+  },
+  "webrtc/protocol/ice-ufragpwd.html": {
+    "comment": "FF and Safari fail to fail on ICE invalid content"
   }
 }
