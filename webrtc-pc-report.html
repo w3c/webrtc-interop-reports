@@ -69,7 +69,7 @@ table.results tbody td.todo {
           <dt><code>maxMessageSize</code> validation</dt>
           <dd>Only Chromium exposes <code>maxMessageSize</code>, but it doesn't throw when sending message beyond that limit</dd>
           <dt>support for setting multiple certificates (to be marked as at risk)</dt>
-          <dd>No implementation (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=5934">CR</a>)</dd>
+          <dd>No implementation (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=5934">CR</a>, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1531880">FF</a>)</dd>
           <dt>voiceActivityFlag in SSRC (to be marked as at risk)</dt>
           <dd>No implementation (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=10186">CR</a>, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1531880">FF</a>)</dd>
           <dt>MTI Stats (<a href="https://crbug.com/1050302">CR</a>)</dt>
@@ -150,6 +150,8 @@ table.results tbody td.todo {
         <dd>Bug in FF, Chromium</dd>
         <dt>getSynchronizationSources</dt>
         <dd>returns empty array on audio track in Chromium (?); misses rtpTimestamp, voiceActivityFlag in Safari; doesn't work on video track in FF, which also lacks voiceActivityFlag</dd>
+        <dt>mute/unmute timing</dt>
+        <dd>Buggy in <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1043503#c3">Chrome</a>, Safari</dd>
 
       </dl>
       </section>
