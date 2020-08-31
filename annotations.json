@@ -6,7 +6,7 @@
     "comment": "RTCPeerConnection({ certificates }) should generate offer SDP with fingerprint of all provided certificates fails on all browsers."
   },
   "webrtc/RTCConfiguration-iceServers.html": {
-    "comment": "<p>Buggy on edge cases / error reporting, but overall interop between Chromium / Safari, and FF if not using setConfig</p><ul><li>FF doesn't implement setConfiguration (1/2 tests)</li><li>SyntaxError vs InvalidAccessError</li><li>OAuth credential needs to go (12 failures)</li><li>legacy support for iceServers.url</li><li>credentialType default value in Chromimu/Safari</li><li>empty urls as error</li><li></ul>",
+    "comment": "<p>Buggy on edge cases / error reporting, but overall interop between Chromium / Safari, and FF if not using setConfig</p><ul><li>FF doesn't implement setConfiguration (1/2 tests)</li><li>SyntaxError vs InvalidAccessError</li><li>OAuth credential needs to go (12 failures)</li><li>legacy support for iceServers.url</li><li>credentialType default value in Chromium/Safari</li><li>empty urls as error</li><li></ul>",
     "status": "ok"
   },
   "webrtc/RTCDataChannel-bufferedAmount.html": {
@@ -51,10 +51,6 @@
   "webrtc/RTCPeerConnection-connectionState.https.html": {
     "comment": "1 Safari failure linked to lack of <code>sctp</code> transport; 2nd linked to wrong state machine (FF doesn't implement)"
   },
-  "webrtc/RTCPeerConnection-constructor.html": {
-    "status": "ok",
-    "comment": "canTrickleIceCandidates initial value fails for 3 - but old Edge implemented it, should be OK"
-  },
   "webrtc/RTCPeerConnection-createDataChannel.html": {
     "comment": "2 Chromium fails because of lack of blob support; 2 other fails due to failure no negotiated ids; last chromium issue is linked to dependency on missing <code>stop()</code> on transceiver"
   },
@@ -64,15 +60,17 @@
   "webrtc/RTCPeerConnection-iceGatheringState.html": {
     "comment": "FF/Safari fails because of lack of sctp; Chromium because RTCIceTransport not available in non-secure context"
   },
+  "webrtc/RTCPeerConnection-operations.https.html": {
+    "comment": "Only FF support"
+  },
+  "webrtc/RTCPeerConnection-perfect-negotiation.https.html": {
+    "comment": "Only FF support"
+  },
   "webrtc/RTCPeerConnection-removeTrack.https.html": {
     "comment": "Chromium fails for lack of <code>transceiver.stop()</code>; Safari fails on removing track from a stopped transceiver"
   },
-  "webrtc/RTCPeerConnection-ondatachannel.html": {
-    "status": "ok",
-    "comment": "Only tests that don't have double pass are those for priority"
-  },
   "webrtc/RTCPeerConnection-restartIce.https.html": {
-    "status": "ok",
+   "status": "ok",
     "comment": "only edge case lack implementation"
   },
   "webrtc/RTCPeerConnection-setDescription-transceiver.html": {
@@ -139,7 +137,7 @@
     "comment": "setLocalDescription() with offer not created by own createOffer() should reject with InvalidModificationError but doesn't in Chromium, Safari"
   },
   "webrtc/RTCPeerConnection-setLocalDescription-parameterless.https.html": {
-    "comment": "FF/Safari don't support parameter-less sLD; Chromium bug in falling back to last answer?"
+    "comment": "FF/Safari don't support parameter-less SLD; Chromium bug in falling back to last answer?"
   },
   "webrtc/idlharness.https.window.html": {
     "comment": "IDL gaps as documented in <a href='http://dontcallmedom.github.io/webrtc-impl-tracker/?webrtc'>impl tracker</a>"
@@ -150,32 +148,32 @@
   },
   "webrtc/historical.html": {
     "status": "ok",
-    "comment": "Chromium and FF haven't removed all their legacy backwards-compat support yet (addstream, channel.reliable, get*Streams)"
+    "comment": "legacy backwards-compat support will not be removed from Chrome and FF, and Safari had added it, although not advertised."
   },
   "RTCRtpParameters-transactionId.html": {
     "comment": "FF doesn't implement transactionId yet cf <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1401592'>#1401592</a>"
   },
   "webrtc/RTCRtpReceiver-getStats.https.html": {
-    "comment": "Chromium misses mandatory stats: codecId, packetsDiscarded,remoteId, framesDecoded, selectedCandidatePairId, remoteCertficateId. <br>FF misses mandatory stats: IceCandidate.url, RTCRtpStreamStats.transportId, RTCRtpStreamStats.codecId, RTCReceivedRtpStreamStats.packetsDiscarded, RTCReceivedRtpStreamStats.framesDropped, RTCInboundRTPStreamStats.receiverId, RTCInboundRTPStreamStats.remoteId, RTCInboundRTPStreamStats.framesDecoded, RTCInboundRTPStreamStats.framesReceived."
+    "comment": "Chromium and FF miss some mandatory stats"
   },
   "webrtc/RTCPeerConnection-restartIce-onnegotiationneeded.https.html": {
     "comment": "timing bug in Chromium; restartIce not implemented in Safari"
   },
   "webrtc/RTCPeerConnection-createOffer.html": {
-    "comment": "bug in operation queuing in Chromium, Safari"
+    "comment": "bug in operation queuing in Chromium, missing in Safari"
   },
   "webrtc/RTCPeerConnection-onicecandidateerror.https.htm": {
     "comment": "onicecandidateerror not implemented in FF, Safari"
   },
   "webrtc/RTCPeerConnection-onnegotiationneeded.html": {
-    "comment": "FF failure due to lack of setStreams",
+    "comment": "Now implemented in FF, bug in chromium https://crbug.com/1043503",
     "status": "ok"
   },
   "webrtc/RTCPeerConnection-getStats.https.html": {
     "comment": "FF misses mandatory stats: IceCandidate.url, RTCRtpStreamStats.transportId, RTCRtpStreamStats.codecId, RTCReceivedRtpStreamStats.packetsDiscarded, RTCReceivedRtpStreamStats.framesDropped, RTCInboundRTPStreamStats.receiverId, RTCInboundRTPStreamStats.remoteId, RTCInboundRTPStreamStats.framesDecoded, RTCInboundRTPStreamStats.framesReceived, RTCOutboundRTPStreamStats.senderId, RTCOutboundRTPStreamStats.remoteId, RTCOutboundRTPStreamStats.nackCount, RTCIceCandidatePairStats.transportId, RTCIceCandidatePairStats.totalRoundTripTime, RTCIceCandidatePairStats.currentRoundTripTime, RTCIceCandidatePairStats.state, RTCOutboundRTPStreamStats.framesSent, RTCCodecStats, RTCRemoteOutboundRTPStreamStats.remoteTimeStamp, RTCTransportStats, RTCCertificateStats, RTCPeerConnectionStats, RTCDataChannelStats; Chromium, Safari"
   },
   "webrtc/RTCPeerConnection-mandatory-getStats.https.html": {
-    "comment": "48 implemented in 2+ browsers, 12 in only one browser, 16 in no browser"
+    "comment": "48(31) implemented in 2+ browsers, 12(25) in only one browser, 16(20) in no browser"
   },
   "webrtc/RTCPeerConnection-onicecandidateerror.https.html": {
     "comment": "icecandidateerror not implemented in FF, Safari"
