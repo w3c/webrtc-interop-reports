@@ -64,7 +64,7 @@
     "comment": "Only FF support"
   },
   "webrtc/RTCPeerConnection-perfect-negotiation.https.html": {
-    "comment": "Only FF support"
+    "comment": "Only FF support, https://bugs.chromium.org/p/chromium/issues/detail?id=980872"
   },
   "webrtc/RTCPeerConnection-removeTrack.https.html": {
     "comment": "Chromium fails for lack of <code>transceiver.stop()</code>; Safari fails on removing track from a stopped transceiver"
@@ -254,5 +254,15 @@
   },
   "webrtc/protocol/ice-ufragpwd.html": {
     "comment": "FF and Safari fail to fail on ICE invalid content"
-  }
+  },
+  "webrtc/RTCPeerConnection-constructor.html": {
+    "status": "ok",
+    "comment": "All subtests pass on at minimum 2 browsers"
+  },
+  "webrtc/RTCPeerConnection-description-attributes-timing.https.html": {
+    "comment": "<a href='https://bugs.chromium.org/p/chromium/issues/detail?id=1121558'>bug in chromium</a>"
+  },
+  "webrtc/RTCPeerConnection-onsignalingstatechanged.https.html": {
+    "comment": "<a href='https://bugs.chromium.org/p/chromium/issues/detail?id=1122561'>bug in chromium</a>"
+  },
 }
