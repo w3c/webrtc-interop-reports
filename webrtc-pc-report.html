@@ -36,7 +36,6 @@ table.results tbody th {
 table.results thead th:first-child {
   border-left: none;
 }
-
 table.results tbody tr.good {
   background: #cfc;
 }
@@ -49,15 +48,12 @@ table.results tbody tr.bad {
 table.results tbody tr.ignore {
   opacity: 0.5;
 }
-
 table.results tbody td.comment {
  text-align: left;
 }
-
 table.results tbody td.todo {
  border: 2px solid #f00;
 }
-
 </style>
   <body>
     <main id="content">
@@ -155,7 +151,6 @@ table.results tbody td.todo {
         <dd>returns empty array on audio track in Chromium (?); misses rtpTimestamp, voiceActivityFlag in Safari; doesn't work on video track in FF, which also lacks voiceActivityFlag</dd>
         <dt>mute/unmute timing</dt>
         <dd>Buggy in <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1043503#c3">Chrome</a>, Safari</dd>
-
       </dl>
       </section>
       <section>
@@ -175,7 +170,6 @@ table.results tbody td.todo {
           <li>Simulcast testing (is it possible in WPT?)</li>
         </ul>
       </section>
-
       <section>
         <h2>Annotated WPT results</h2>
       <table class="results">
@@ -195,7 +189,826 @@ table.results tbody td.todo {
       </table>
       </section>
       <section>
-        <h2>MIT Stats</h2>
+        <h2>MTI Stats</h2>
+        <p>Static results as of 1 september 2020 (based on <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-mandatory-getStats.https.html?">mandatory stats test</a></p>
+<table class='results'>
+  <thead>
+    <tr>
+      <th width="50%">Subtest</th>
+        <th width="10%">
+          Chromium
+        </th>
+        <th width="10%">
+	  FF
+        </th>
+        <th width="10%">
+          Safari
+        </th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr class='good'>
+        <td class="sub-test-name"><code>getStats succeeds</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>Validating stats</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCRtpStreamStats's ssrc</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCRtpStreamStats's kind</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCRtpStreamStats's transportId</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCRtpStreamStats's codecId</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCReceivedRtpStreamStats's packetsReceived</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCReceivedRtpStreamStats's packetsLost</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCReceivedRtpStreamStats's jitter</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCReceivedRtpStreamStats's packetsDiscarded</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCInboundRtpStreamStats's trackId</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCInboundRtpStreamStats's receiverId</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCInboundRtpStreamStats's remoteId</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCInboundRtpStreamStats's framesDecoded</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCRemoteInboundRtpStreamStats's localId</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCRemoteInboundRtpStreamStats's roundTripTime</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCSentRtpStreamStats's packetsSent</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCSentRtpStreamStats's bytesSent</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCOutboundRtpStreamStats's trackId</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCOutboundRtpStreamStats's senderId</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCOutboundRtpStreamStats's remoteId</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCOutboundRtpStreamStats's framesEncoded</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCRemoteOutboundRtpStreamStats's localId</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCRemoteOutboundRtpStreamStats's remoteTimestamp</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCPeerConnectionStats's dataChannelsOpened</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCPeerConnectionStats's dataChannelsClosed</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCDataChannelStats's protocol</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCDataChannelStats's dataChannelIdentifier</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCDataChannelStats's state</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCDataChannelStats's messagesSent</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCDataChannelStats's bytesSent</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCDataChannelStats's messagesReceived</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCDataChannelStats's bytesReceived</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCMediaStreamStats's streamIdentifer</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCMediaStreamStats's trackIds</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCMediaHandlerStats's trackIdentifier</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCMediaHandlerStats's remoteSource</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCMediaHandlerStats's ended</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCAudioHandlerStats's audioLevel</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCVideoHandlerStats's frameWidth</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCVideoHandlerStats's frameHeight</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCVideoHandlerStats's framesPerSecond</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCVideoSenderStats's framesSent</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCVideoReceiverStats's framesReceived</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCVideoReceiverStats's framesDecoded</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCVideoReceiverStats's framesDropped</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCVideoReceiverStats's partialFramesLost</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCCodecStats's payloadType</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCCodecStats's codecType</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCCodecStats's clockRate</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCCodecStats's channels</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCCodecStats's sdpFmtpLine</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCTransportStats's bytesSent</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCTransportStats's bytesReceived</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCTransportStats's rtcpTransportStatsId</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCTransportStats's selectedCandidatePairId</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCTransportStats's localCertificateId</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCTransportStats's remoteCertificateId</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCIceCandidatePairStats's transportId</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCIceCandidatePairStats's localCandidateId</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCIceCandidatePairStats's remoteCandidateId</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCIceCandidatePairStats's state</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCIceCandidatePairStats's priority</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCIceCandidatePairStats's nominated</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCIceCandidatePairStats's bytesSent</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCIceCandidatePairStats's bytesReceived</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCIceCandidatePairStats's totalRoundTripTime</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCIceCandidatePairStats's currentRoundTripTime</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCIceCandidateStats's address</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCIceCandidateStats's port</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCIceCandidateStats's protocol</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCIceCandidateStats's candidateType</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCIceCandidateStats's url</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCCertificateStats's fingerprint</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCCertificateStats's fingerprintAlgorithm</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCCertificateStats's base64Certificate</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='bad'>
+        <td class="sub-test-name"><code>RTCCertificateStats's issuerCertificateId</code></td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+  </tbody>
+</table>
+<!--
         <p>Static results as of January 27 2020 (based on <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-mandatory-getStats.https.html?">mandatory stats test</a> amended for passing Safari lack of <code>kind</code>)</p>
                   <table class=results>
             <thead>
@@ -280,6 +1093,7 @@ table.results tbody td.todo {
 <tr class=bad><th scope='row'>RTCCertificateStats's issuerCertificateId</th><td>❌</td><td>❌</td><td>❌</td></tr>
             </tbody>
           </table>
+-->
         </section>
     </main>
     <script src="load.js"></script>
