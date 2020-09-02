@@ -264,5 +264,12 @@
   },
   "webrtc/RTCPeerConnection-onsignalingstatechanged.https.html": {
     "comment": "<a href='https://bugs.chromium.org/p/chromium/issues/detail?id=1122561'>bug in chromium</a>"
+  },
+  "webrtc/RTCRtpSender-replaceTrack.https.html": {
+    "status": "good",
+    "comment": "All subtests pass on at minimum 2 browsers"
+  },
+  "webrtc/RTCPeerConnection-setLocalDescription-rollback.html": {
+    "comment": "Wrong queuing in Chromium"
   }
 }
