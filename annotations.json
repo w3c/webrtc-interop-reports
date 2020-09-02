@@ -3,7 +3,8 @@
     "comment":"Check cross-origin created RTCCertificate fails on 3 browsers"
   },
   "webrtc/RTCCertificate.html": {
-    "comment": "RTCPeerConnection({ certificates }) should generate offer SDP with fingerprint of all provided certificates fails on all browsers."
+    "status": "good",
+    "comment": "test need to be updated - only first certificate of RTCPeerConnection({ certificates }) needs to be taken into account"
   },
   "webrtc/RTCConfiguration-iceServers.html": {
     "comment": "<p>Buggy on edge cases / error reporting, but overall interop between Chromium / Safari, and FF if not using setConfig</p><ul><li>FF doesn't implement setConfiguration (1/2 tests)</li><li>SyntaxError vs InvalidAccessError</li><li>OAuth credential needs to go (12 failures)</li><li>legacy support for iceServers.url</li><li>credentialType default value in Chromium/Safari</li><li>empty urls as error</li><li></ul>",
