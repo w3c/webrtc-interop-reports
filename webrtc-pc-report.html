@@ -66,41 +66,42 @@ table.results tbody td.todo {
         <h3>Gaps</h3>
         <h4>No implementation</h4>
         <dl>
-          <dt><code>maxMessageSize</code> validation</dt>
-          <dd>Only Chromium exposes <code>maxMessageSize</code>, but it doesn't throw when sending message beyond that limit</dd>
-          <dt>support for setting multiple certificates (to be marked as at risk)</dt>
+          <dt>support for setting multiple certificates (marked "at risk")</dt>
           <dd>No implementation (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=5934">CR</a>, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1531880">FF</a>)</dd>
-          <dt>voiceActivityFlag in SSRC (to be marked as at risk)</dt>
+          <dt>voiceActivityFlag in SSRC (marked "at risk")</dt>
           <dd>No implementation (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=10186">CR</a>, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1531880">FF</a>)</dd>
           <dt>MTI Stats (<a href="https://crbug.com/1050302">CR</a>)</dt>
           <dd>No implementation of <ul>
               <li>RTCReceivedRtpStreamStats's packetsDiscarded (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=8199">CR</a>, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1335967">FF</a>),</li>
               <li>RTCInboundRtpStreamStats's receiverId,</li>
-              <li>RTCInboundRtpStreamStats's framesReceived,</li>
-              <li>RTCInboundRtpStreamStats's framesDropped,</li>
-              <li>RTCInboundRtpStreamStats's partialFramesLost,</li>
-              <li>RTCInboundRtpStreamStats's totalAudioEnergy,</li>
               <li>RTCOutboundRtpStreamStats's senderId,</li>
-              <li>RTCOutboundRtpStreamStats's framesSent,</li>
-              <li>RTCRemoteOutboundRtpStreamStats's remoteTimestamp,</li>
-              <li>RTCDataChannelStats's dataChannelIdentifier (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=8787">CR</a>),</li>
-              <li>RTCMediaHandlerStats's trackIdentifier,</li>
+              <li>RTCMediaStreamStats's streamIdentifer,</li>
+              <li>RTCMediaHandlerStats's trackIdentifier,<li>
+              <li>RTCMediaHandlerStats's remoteSource,</li>
+              <li>RTCMediaHandlerStats's ended,</li>
+              <li>RTCAudioHandlerStats's audioLevel,</li>
+              <li>RTCVideoHandlerStats's frameWidth,</li>
+              <li>RTCVideoHandlerStats's frameHeight,</li>
+              <li>RTCVideoHandlerStats's framesPerSecond,</li>
+              <li>RTCVideoSenderStats's framesSent,</li>
+              <li>RTCVideoReceiverStats's framesReceived,</li>
+              <li>RTCVideoReceiverStats's framesDecoded,</li>
+              <li>RTCVideoReceiverStats's framesDropped,</li>
+              <li>RTCVideoReceiverStats's partialFramesLost,</li>
               <li>RTCCodecStats's codecType,</li>
-              <li>RTCCodecStats's channels (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=7061">CR</a>),</li>
-              <li>RTCCodecStats's sdpFmtpLine (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=7061">CR</a>),</li>
+              <li>RTCTransportStats's rtcpTransportStatsId,</li>
               <li>RTCIceCandidateStats's url (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=7063">CR</a>, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1508543">FF</a>),</li>
               <li>RTCCertificateStats's issuerCertificateId</li>
           </ul></dd>
         </dl>
         <h4>Only one implementation</h4>
         <dl>
-          <dt>
+          <dt><code>maxMessageSize</code> validation</dt>
+          <dd>Missing in FF and Safari</dd>
           <dt>RTCDataChannel.onclosing</dt>
           <dd>Missing in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1611953">FF</a> & Safari (<a href="https://bugs.webkit.org/show_bug.cgi?id=206056">webkit</a>)</dd>
         <dt><code>RTCRtpSender.setStreams()</code></dt>
         <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1510802">FF</a>, Safari</dd>
-        <dt><code>RTCIceCandidate</code> interface attributes</dt>
-          <dd>foundation, component, priority, address, protocol, port, type, tcpType, relatedAddress, relatedPort (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1322186">FF</a>)</dd>
           <dt><code>RTCDtlsTransport</code> interface</dt>
           <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1307996">FF</a>, Safari; implemented partially in old Edge (but does it pass the tests?)</dd>
           <dt><code>RTCIceTransport</code> interface</dt>
@@ -118,7 +119,7 @@ table.results tbody td.todo {
         <dt>RTCPeerConnectionIceErrorEvent</dt>
           <dd>Missing in <span class=missing>FF</span>, <a href="https://bugs.webkit.org/show_bug.cgi?id=199207">Safari</a>; address, port missing in Chromium</dd>
           <dt>MTI Stats (single impl)</dt>
-          <dd>Only one implementation of RTCInboundRtpStreamStats's remoteId, RTCOutboundRtpStreamStats's remoteId, RTCRemoteOutboundRtpStreamStats's localId, RTCMediaSourceStats's trackIdentifier, RTCMediaSourceStats's kind, RTCAudioSourceStats's totalAudioEnergy, RTCAudioSourceStats's totalSamplesDuration, RTCVideoSourceStats's width, RTCVideoSourceStats's height, RTCVideoSourceStats's framesPerSecond, RTCTransportStats's selectedCandidatePairId, RTCIceCandidateStats's address</dd>
+          <dd>Only one implementation of RTCInboundRtpStreamStats's remoteId, RTCOutboundRtpStreamStats's trackId, RTCRemoteOutboundRtpStreamStats's localId, RTCRemoteOutboundRtpStreamStats's remoteTimestamp, RTCPeerConnectionStats's dataChannelsOpened, RTCPeerConnectionStats's dataChannelsClosed, RTCMediaStreamStats's trackIds,RTCTransportStats's selectedCandidatePairId, RTCTransportStats's localCertificateId, RTCTransportStats's remoteCertificateId, RTCIceCandidateStats's address</dd>
         </dl>
         <h4>Gap in single browser that affect test suite because of dependencies</H4>
         <dl>
@@ -136,6 +137,8 @@ table.results tbody td.todo {
           Chromium lifecyle for presence of  RTCInboundRtpStreamStats, RTCRemoteInboundRtpStreamStats,  RTCOutboundRtpStreamStats, RTCRemoteOutboundRtpStreamStats, RTCDataChannelStats? <br>FF lifecycle for presence of RTCIceCandidatePairStats.state, currentRoundTripTime. RTCCodecStats, RTCInboundRtpStreamStats, RTCRemoteInboundRtpStreamStats, RTCOutboundRtpStreamStats, RTCRemoteOutboundRtpStreamStats, RTCDataChannelStats, RTCMediaHandlerStats, RTCTransportStats, RTCCertificateStats?</dd>
           <dt><code>RTCPeerConnection.addIceCandidate()</code></dt>
           <dd>Supports for zero-argument in Chromium, Safari</dd>
+        <dt><code>RTCIceCandidate</code> interface attributes</dt>
+          <dd>bug in FF with nondefault values for all fields</dd>
           <dt><code>RTCPeerConnection.setLocalDescription()</code></dt>
           <dd>Supports for zero-argument in FF, Safari?</dd>
           <dt>readonly attributes in RTCSessionDescription (type, sdp)</dt>
