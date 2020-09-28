@@ -64,7 +64,7 @@ table.results tbody td.todo {
         <dl>
           <dt>voiceActivityFlag in SSRC (marked "at risk")</dt>
           <dd>No implementation (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=10186">CR</a>, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1531880">FF</a>)</dd>
-          <dt>MTI Stats (<a href="https://crbug.com/1050302">CR</a>)</dt>
+          <dt>MTI Stats (<a href="https://crbug.com/1050302">CR</a>, full support planned in Safari)</dt>
           <dd>No implementation of <ul>
               <li>RTCReceivedRtpStreamStats's packetsDiscarded (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=8199">CR</a>, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1335967">FF</a>),</li>
               <li>RTCInboundRtpStreamStats's receiverId,</li>
@@ -91,11 +91,11 @@ table.results tbody td.todo {
         <h4>Only one implementation</h4>
         <dl>
           <dt>Perfect Negotiation</dt>
-          <dd><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1060083">Chromium bug</a> (landing in M87)</dd>
+          <dd><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1060083">Chromium bug</a> (landing in M87), planned in Safari</dd>
           <dt>RTCDataChannel.onclosing</dt>
-          <dd>Missing in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1611953">FF</a> & Safari (<a href="https://bugs.webkit.org/show_bug.cgi?id=206056">webkit</a>)</dd>
+          <dd>Missing in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1611953">FF</a> & planned in Safari (<a href="https://bugs.webkit.org/show_bug.cgi?id=206056">webkit</a>)</dd>
         <dt><code>RTCRtpSender.setStreams()</code></dt>
-        <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1510802">FF</a>, Safari</dd>
+        <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1510802">FF</a>, planned in Safari</dd>
           <dt><code>RTCDtlsTransport</code> interface</dt>
           <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1307996">FF</a>, Safari; implemented partially in old Edge (but does it pass the tests?)</dd>
           <dt><code>RTCIceTransport</code> interface</dt>
@@ -105,15 +105,15 @@ table.results tbody td.todo {
           <dt>sctp transport</dt>
           <dd>Missing in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1278299">FF</a>, Safari</dd>
         <dt>RTCError, RTCErrorEvent</dt>
-        <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1527916">Firefox</a>, Safari (OperationError fallback test?); bug in RTCErrorEvent constructor (cf <a href="https://wpt.fyi/results/webrtc/idlharness.https.window.html">idlharness test</a>)</dd>
+        <dd>Not implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1527916">Firefox</a>, No plan for Safari (OperationError fallback test?); bug in RTCErrorEvent constructor (cf <a href="https://wpt.fyi/results/webrtc/idlharness.https.window.html">idlharness test</a>)</dd>
         <dt>RTCPeerConnectionIceEvent url attribute</dt>
         <dd>Missing in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1531911">FF</a>, Chromium</dd>
           <dt>validation of <code>rid</code> values in addTransceiver</dt>
-          <dd>Missing in FF & Safari</dd>
+          <dd>Missing in FF, planned in Safari</dd>
         <dt>RTCPeerConnectionIceErrorEvent</dt>
           <dd>Missing in <span class=missing>FF</span>, <a href="https://bugs.webkit.org/show_bug.cgi?id=199207">Safari</a>; address, port missing in Chromium</dd>
           <dt>MTI Stats (single impl)</dt>
-          <dd>Only one implementation of RTCInboundRtpStreamStats's remoteId, RTCOutboundRtpStreamStats's trackId, RTCRemoteOutboundRtpStreamStats's localId, RTCRemoteOutboundRtpStreamStats's remoteTimestamp, RTCPeerConnectionStats's dataChannelsOpened, RTCPeerConnectionStats's dataChannelsClosed, RTCMediaStreamStats's trackIds,RTCTransportStats's selectedCandidatePairId, RTCTransportStats's localCertificateId, RTCTransportStats's remoteCertificateId, RTCIceCandidateStats's address</dd>
+          <dd>Full support planned in Safari, Currently only one implementation of RTCInboundRtpStreamStats's remoteId, RTCOutboundRtpStreamStats's trackId, RTCRemoteOutboundRtpStreamStats's localId, RTCRemoteOutboundRtpStreamStats's remoteTimestamp, RTCPeerConnectionStats's dataChannelsOpened, RTCPeerConnectionStats's dataChannelsClosed, RTCMediaStreamStats's trackIds,RTCTransportStats's selectedCandidatePairId, RTCTransportStats's localCertificateId, RTCTransportStats's remoteCertificateId, RTCIceCandidateStats's address</dd>
         </dl>
         <h4>Gap in single browser that affect test suite because of dependencies</H4>
         <dl>
