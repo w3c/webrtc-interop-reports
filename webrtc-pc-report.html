@@ -301,14 +301,15 @@ table.results tbody td.todo {
             <code>❌</code>
           </td>
       </tr>
-      <tr class='good'>
-        <td class="sub-test-name"><code>RTCInboundRtpStreamStats's trackId</code></td>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCReceivedRtpStreamStats's framesDropped</code></td>
           <td class="passes-all">
           </td>
           <td class="passes-none">
             <code>❌</code>
           </td>
-          <td class="passes-all">
+          <td class="passes-none">
+            <code>❌</code>
           </td>
       </tr>
       <tr class='bad'>
@@ -341,6 +342,57 @@ table.results tbody td.todo {
           <td class="passes-all">
           </td>
           <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCInboundRtpStreamStats's nackCount</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCInboundRtpStreamStats's framesReceived</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCInboundRtpStreamStats's bytesReceived</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCInboundRtpStreamStats's totalAudioEnergy</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCInboundRtpStreamStats's totalSamplesDuration</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
           </td>
       </tr>
       <tr class='good'>
@@ -383,17 +435,6 @@ table.results tbody td.todo {
             <code>❌</code>
           </td>
       </tr>
-      <tr class='one'>
-        <td class="sub-test-name"><code>RTCOutboundRtpStreamStats's trackId</code></td>
-          <td class="passes-all">
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-      </tr>
       <tr class='bad'>
         <td class="sub-test-name"><code>RTCOutboundRtpStreamStats's senderId</code></td>
           <td class="passes-none">
@@ -422,6 +463,27 @@ table.results tbody td.todo {
           </td>
           <td class="passes-all">
           </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCOutboundRtpStreamStats's nackCount</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCOutboundRtpStreamStats's framesSent</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+	  </td>
           <td class="passes-none">
             <code>❌</code>
           </td>
@@ -468,6 +530,15 @@ table.results tbody td.todo {
           </td>
           <td class="passes-none">
             <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCDataChannelStats's label</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-all">
           </td>
       </tr>
       <tr class='good'>
@@ -534,10 +605,29 @@ table.results tbody td.todo {
           <td class="passes-all">
           </td>
       </tr>
-      <tr class='bad'>
-        <td class="sub-test-name"><code>RTCMediaStreamStats's streamIdentifer</code></td>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCMediaSourceStats's trackIdentifier</code></td>
+          <td class="passes-all">
+          </td>
           <td class="passes-none">
             <code>❌</code>
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCMediaSourceStats's kind</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-all">
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCAudioSourceStats's totalAudioEnergy</code></td>
+          <td class="passes-all">
           </td>
           <td class="passes-none">
             <code>❌</code>
@@ -547,7 +637,40 @@ table.results tbody td.todo {
           </td>
       </tr>
       <tr class='one'>
-        <td class="sub-test-name"><code>RTCMediaStreamStats's trackIds</code></td>
+        <td class="sub-test-name"><code>RTCAudioSourceStats's totalSamplesDuration</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCVideoSourceStats's width</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCVideoSourceStats's height</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+      </tr>
+      <tr class='one'>
+        <td class="sub-test-name"><code>RTCVideoSourceStats's framesPerSecond</code></td>
           <td class="passes-all">
           </td>
           <td class="passes-none">
@@ -559,138 +682,6 @@ table.results tbody td.todo {
       </tr>
       <tr class='bad'>
         <td class="sub-test-name"><code>RTCMediaHandlerStats's trackIdentifier</code></td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-      </tr>
-      <tr class='bad'>
-        <td class="sub-test-name"><code>RTCMediaHandlerStats's remoteSource</code></td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-      </tr>
-      <tr class='bad'>
-        <td class="sub-test-name"><code>RTCMediaHandlerStats's ended</code></td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-      </tr>
-      <tr class='bad'>
-        <td class="sub-test-name"><code>RTCAudioHandlerStats's audioLevel</code></td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-      </tr>
-      <tr class='bad'>
-        <td class="sub-test-name"><code>RTCVideoHandlerStats's frameWidth</code></td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-      </tr>
-      <tr class='bad'>
-        <td class="sub-test-name"><code>RTCVideoHandlerStats's frameHeight</code></td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-      </tr>
-      <tr class='bad'>
-        <td class="sub-test-name"><code>RTCVideoHandlerStats's framesPerSecond</code></td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-      </tr>
-      <tr class='bad'>
-        <td class="sub-test-name"><code>RTCVideoSenderStats's framesSent</code></td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-      </tr>
-      <tr class='bad'>
-        <td class="sub-test-name"><code>RTCVideoReceiverStats's framesReceived</code></td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-      </tr>
-      <tr class='bad'>
-        <td class="sub-test-name"><code>RTCVideoReceiverStats's framesDecoded</code></td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-      </tr>
-      <tr class='bad'>
-        <td class="sub-test-name"><code>RTCVideoReceiverStats's framesDropped</code></td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-      </tr>
-      <tr class='bad'>
-        <td class="sub-test-name"><code>RTCVideoReceiverStats's partialFramesLost</code></td>
           <td class="passes-none">
             <code>❌</code>
           </td>
@@ -721,6 +712,16 @@ table.results tbody td.todo {
           </td>
           <td class="passes-none">
             <code>❌</code>
+          </td>
+      </tr>
+      <tr class='good'>
+        <td class="sub-test-name"><code>RTCCodecStats's mimeType</code></td>
+          <td class="passes-all">
+          </td>
+          <td class="passes-none">
+            <code>❌</code>
+          </td>
+          <td class="passes-all">
           </td>
       </tr>
       <tr class='good'>
@@ -767,18 +768,6 @@ table.results tbody td.todo {
       <tr class='one'>
         <td class="sub-test-name"><code>RTCTransportStats's bytesReceived</code></td>
           <td class="passes-all">
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-          <td class="passes-none">
-            <code>❌</code>
-          </td>
-      </tr>
-      <tr class='bad'>
-        <td class="sub-test-name"><code>RTCTransportStats's rtcpTransportStatsId</code></td>
-          <td class="passes-none">
-            <code>❌</code>
           </td>
           <td class="passes-none">
             <code>❌</code>
@@ -849,15 +838,6 @@ table.results tbody td.todo {
       </tr>
       <tr class='good'>
         <td class="sub-test-name"><code>RTCIceCandidatePairStats's state</code></td>
-          <td class="passes-all">
-          </td>
-          <td class="passes-all">
-          </td>
-          <td class="passes-all">
-          </td>
-      </tr>
-      <tr class='good'>
-        <td class="sub-test-name"><code>RTCIceCandidatePairStats's priority</code></td>
           <td class="passes-all">
           </td>
           <td class="passes-all">
