@@ -69,21 +69,8 @@ table.results tbody td.todo {
               <li>RTCReceivedRtpStreamStats's packetsDiscarded (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=8199">CR</a>, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1335967">FF</a>),</li>
               <li>RTCInboundRtpStreamStats's receiverId,</li>
               <li>RTCOutboundRtpStreamStats's senderId,</li>
-              <li>RTCMediaStreamStats's streamIdentifer,</li>
               <li>RTCMediaHandlerStats's trackIdentifier,<li>
-              <li>RTCMediaHandlerStats's remoteSource,</li>
-              <li>RTCMediaHandlerStats's ended,</li>
-              <li>RTCAudioHandlerStats's audioLevel,</li>
-              <li>RTCVideoHandlerStats's frameWidth,</li>
-              <li>RTCVideoHandlerStats's frameHeight,</li>
-              <li>RTCVideoHandlerStats's framesPerSecond,</li>
-              <li>RTCVideoSenderStats's framesSent,</li>
-              <li>RTCVideoReceiverStats's framesReceived,</li>
-              <li>RTCVideoReceiverStats's framesDecoded,</li>
-              <li>RTCVideoReceiverStats's framesDropped,</li>
-              <li>RTCVideoReceiverStats's partialFramesLost,</li>
               <li>RTCCodecStats's codecType,</li>
-              <li>RTCTransportStats's rtcpTransportStatsId,</li>
               <li>RTCIceCandidateStats's url (<a href="https://bugs.chromium.org/p/webrtc/issues/detail?id=7063">CR</a>, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1508543">FF</a>),</li>
               <li>RTCCertificateStats's issuerCertificateId</li>
           </ul></dd>
@@ -113,7 +100,12 @@ table.results tbody td.todo {
         <dt>RTCPeerConnectionIceErrorEvent</dt>
           <dd>Missing in <span class=missing>FF</span>, <a href="https://bugs.webkit.org/show_bug.cgi?id=199207">Safari</a>; address, port missing in Chromium</dd>
           <dt>MTI Stats (single impl)</dt>
-          <dd>Full support planned in Safari, Currently only one implementation of RTCInboundRtpStreamStats's remoteId, RTCOutboundRtpStreamStats's trackId, RTCRemoteOutboundRtpStreamStats's localId, RTCRemoteOutboundRtpStreamStats's remoteTimestamp, RTCPeerConnectionStats's dataChannelsOpened, RTCPeerConnectionStats's dataChannelsClosed, RTCMediaStreamStats's trackIds,RTCTransportStats's selectedCandidatePairId, RTCTransportStats's localCertificateId, RTCTransportStats's remoteCertificateId, RTCIceCandidateStats's address</dd>
+          <dd>Full support planned in Safari, Currently only one implementation of RTCReceivedRtpStreamStats's framesDropped, 
+RTCInboundRtpStreamStats's remoteId, 
+RTCInboundRtpStreamStats's framesReceived,
+RTCInboundRtpStreamStats's totalAudioEnergy,RTCInboundRtpStreamStats's totalSamplesDuration,RTCOutboundRtpStreamStats's framesSent,
+RTCRemoteOutboundRtpStreamStats's localId, RTCRemoteOutboundRtpStreamStats's remoteTimestamp, RTCPeerConnectionStats's dataChannelsOpened, RTCPeerConnectionStats's dataChannelsClosed,
+RTCAudioSourceStats's totalAudioEnergy, RTCAudioSourceStats's totalSamplesDuration, RTCVideoSourceStats's width, RTCVideoSourceStats's height, RTCVideoSourceStats's framesPerSecond, RTCTransportStats's bytesSent, RTCTransportStats's bytesReceived, RTCTransportStats's selectedCandidatePairId, RTCTransportStats's localCertificateId, RTCTransportStats's remoteCertificateId, RTCIceCandidateStats's address</dd>
         </dl>
         <h4>Gap in single browser that affect test suite because of dependencies</H4>
         <dl>
@@ -188,7 +180,7 @@ table.results tbody td.todo {
       </section>
       <section>
         <h2>MTI Stats</h2>
-        <p>Static results as of 1 september 2020 (based on <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-mandatory-getStats.https.html?">mandatory stats test</a></p>
+        <p>Static results as of 30 september 2020 (based on <a href="https://wpt.fyi/results/webrtc/RTCPeerConnection-mandatory-getStats.https.html?">mandatory stats test</a>)</p>
 <table class='results'>
   <thead>
     <tr>
