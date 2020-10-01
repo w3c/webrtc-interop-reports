@@ -186,7 +186,7 @@
     "comment": "FF failures are only linked to error type; Chromium doesn't follow spec algo"
   },
   "webrtc/RTCPeerConnection-setRemoteDescription-rollback.html": {
-    "comment": "Safari has wrong state machine<br>FF: two failures due to lack of transport, one due to lack of setStreams, 4 due to state machine bugs"
+    "comment": "Safari has wrong state machine<br>FF: one failure due to lack of setStreams, 2 due to state machine bugs"
   },
   "webrtc/RTCPeerConnection-setRemoteDescription-tracks.https.html": {
     "comment": "timing bug in muted track explains 2 Chromium failures (the 3rd actually passes when timeout removed)"
@@ -218,7 +218,7 @@
     "status": "ok"
   },
   "webrtc/RTCRtpReceiver-getSynchronizationSources.https.html": {
-    "comment": "Safari doesn't implement rtpTimestamp, voiceActivityFlag; Chromium timeout on audio (<a href='https://bugs.chromium.org/p/chromium/issues/detail?id=775608'>CR</a>) but works OK for video; Firefox <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1583872'>doesn't work on video</a>, misses voiceActivityFlag"
+    "comment": "Safari doesn't implement rtpTimestamp, voiceActivityFlag; Chromium timeout on audio (<a href='https://bugs.chromium.org/p/chromium/issues/detail?id=775608'>CR</a>) but works OK for video (the FF error is voiceActivtyFlag support, marked at risk)"
   },
   "webrtc/RTCRtpReceiver-getParameters.html": {
     "comment": "Safari doesn't implement .rctp, but otherwise passes same tests as Chromium (i.e. fails on simulcast test, not sure if it's right); FF doesn't implement getParameters (<a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1618999'>#1618999</a>)"
