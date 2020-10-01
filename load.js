@@ -1,18 +1,11 @@
 let wptData;
 const resultsBody = document.querySelector(".results tbody");
 
-let oldEdgeId;
 let runIds;
-// TODO fetch data for non-chromium edge https://wpt.fyi/api/runs?product=edge&to=2019-06-01T00:00:00Z
-fetch("https://wpt.fyi/api/runs?product=edge&to=2019-06-01T00:00:00Z")
+fetch("https://wpt.fyi/api/runs?label=master")
   .then(r => r.json())
   .then(runs => {
-    oldEdgeId = runs[0].id;
-    return fetch("https://wpt.fyi/api/runs?label=master");
-  })
-  .then(r => r.json())
-  .then(runs => {
-    runIds = runs.map(r => r.id).concat([oldEdgeId]);
+    runIds = runs.map(r => r.id);
     return fetch("https://wpt.fyi/api/search?run_ids=" + runIds.join(",") + "&q=webrtc/");
   })
   .then(r => r.json())
@@ -39,6 +32,7 @@ fetch("https://wpt.fyi/api/runs?product=edge&to=2019-06-01T00:00:00Z")
           td.textContent = s.passes + "/" + s.total;
           // TODO: is this the right check
           if (s.passes === s.total && s.total) {
+            td.classList.add("good");
             // We skip Chrome/Edge equivalence by default
             if (!(fullImpl && i === 1)) {
               fullImpl++;
