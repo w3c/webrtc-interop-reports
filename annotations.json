@@ -34,7 +34,7 @@
     "comment": "missing IceCandidate additional attributes in FF, Safari"
   },
   "webrtc/RTCIceTransport.html": {
-    "comment": "fails for lack of DtlsTransport in FF, Safari; fails because <code>RTCIceTransport</code> is only available in secure context in Chromium"
+    "comment": "fails for lack of SctpTransport in FF, Safari; fails because <code>RTCIceTransport</code> is only available in secure context in Chromium"
   },
   "webrtc/RTCIceTransport-extension.https.html": {
     "status": "ignore",
@@ -174,7 +174,7 @@
     "comment": "FF misses mandatory stats: IceCandidate.url, RTCRtpStreamStats.transportId, RTCRtpStreamStats.codecId, RTCReceivedRtpStreamStats.packetsDiscarded, RTCReceivedRtpStreamStats.framesDropped, RTCInboundRTPStreamStats.receiverId, RTCInboundRTPStreamStats.remoteId, RTCInboundRTPStreamStats.framesDecoded, RTCInboundRTPStreamStats.framesReceived, RTCOutboundRTPStreamStats.senderId, RTCOutboundRTPStreamStats.remoteId, RTCOutboundRTPStreamStats.nackCount, RTCIceCandidatePairStats.transportId, RTCIceCandidatePairStats.totalRoundTripTime, RTCIceCandidatePairStats.currentRoundTripTime, RTCIceCandidatePairStats.state, RTCOutboundRTPStreamStats.framesSent, RTCCodecStats, RTCRemoteOutboundRTPStreamStats.remoteTimeStamp, RTCTransportStats, RTCCertificateStats, RTCPeerConnectionStats, RTCDataChannelStats; Chromium, Safari"
   },
   "webrtc/RTCPeerConnection-mandatory-getStats.https.html": {
-    "comment": "48(31) implemented in 2+ browsers, 12(25) in only one browser, 16(20) in no browser"
+    "comment": "48 implemented in 2+ browsers, 21 in only one browser, 7 in no browser"
   },
   "webrtc/RTCPeerConnection-onicecandidateerror.https.html": {
     "comment": "icecandidateerror not implemented in FF, Safari"
