@@ -44,7 +44,7 @@
     "comment": "Safari don't implement argument-less sLD; <a href='https://bugs.chromium.org/p/chromium/issues/detail?id=1019232'>known timing bug in Chromium</a>"
   },
   "webrtc/RTCPeerConnection-addIceCandidate.html": {
-    "comment": "2 failures because of wrong error names in Chromium;  Chromium doesn't handle null candidate as end-of-candidate (explains 7 of the failures)"
+    "comment": "2 failures because of wrong error names in Chromium;  Chromium <a href='https://bugs.chromium.org/p/webrtc/issues/detail?id=9218'>doesn't handle null candidate as end-of-candidate</a> (explains 7 of the failures)"
   },
   "webrtc/RTCPeerConnection-addTransceiver.https.html": {
     "comment": "FF & Safari fail to validate <code>rid</code> (16 chars, alphanumeric)"
@@ -265,5 +265,32 @@
   },
   "webrtc/RTCPeerConnection-setLocalDescription-rollback.html": {
     "comment": "Wrong queuing in Chromium"
+  },
+  "webrtc/simulcast/basic.https.html": {
+    "status": "ok",
+    "comment": "Safari's failure is linked to an unrelated bug on the loadmetadata event"
+  },
+  "webrtc/simulcast/h264.https.html": {
+    "status": "ok",
+    "comment": "Safari's failure is linked to an unrelated bug on the loadmetadata event"
+  },
+  "webrtc/simulcast/vp8.https.html": {
+    "status": "ok",
+    "comment": "Safari's failure is linked to an unrelated bug on the loadmetadata event"
+  },
+  "webrtc/simulcast/setParameters-active.https.html": {
+    "status": "ok",
+    "comment": "Safari's failure is linked to an unrelated bug on the loadmetadata event"
+  },
+  "webrtc/simulcast/vp8.https.html": {
+    "status": "ok",
+    "comment": "Safari's failure is linked to an unrelated bug on the loadmetadata event"
+  },
+  "webrtc/protocol/video-codecs.https.html": {
+    "status": "good",
+    "comment": "FF failures due to H264 not enabled in WPT runs (1) and lack of RTCParameters support (2); Safari passes"
+  },
+  "webrtc/simulcast/getStats.https.html": {
+    "comment": "Safari only reports stats on 1 layer (instead of all 3 layers)"
   }
 }
