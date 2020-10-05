@@ -138,7 +138,7 @@
     "comment": "setLocalDescription() with offer not created by own createOffer() should reject with InvalidModificationError but doesn't in Chromium, Safari"
   },
   "webrtc/RTCPeerConnection-setLocalDescription-parameterless.https.html": {
-    "comment": "FF/Safari don't support parameter-less SLD; Chromium bug in falling back to last answer?"
+    "comment": "Safari doesn't support parameter-less SLD; FF &amp; Chromium bug in falling back to last answer?"
   },
   "webrtc/idlharness.https.window.html": {
     "comment": "IDL gaps as documented in <a href='http://dontcallmedom.github.io/webrtc-impl-tracker/?webrtc'>impl tracker</a>"
@@ -174,7 +174,7 @@
     "comment": "FF misses mandatory stats: IceCandidate.url, RTCRtpStreamStats.transportId, RTCRtpStreamStats.codecId, RTCReceivedRtpStreamStats.packetsDiscarded, RTCReceivedRtpStreamStats.framesDropped, RTCInboundRTPStreamStats.receiverId, RTCInboundRTPStreamStats.remoteId, RTCInboundRTPStreamStats.framesDecoded, RTCInboundRTPStreamStats.framesReceived, RTCOutboundRTPStreamStats.senderId, RTCOutboundRTPStreamStats.remoteId, RTCOutboundRTPStreamStats.nackCount, RTCIceCandidatePairStats.transportId, RTCIceCandidatePairStats.totalRoundTripTime, RTCIceCandidatePairStats.currentRoundTripTime, RTCIceCandidatePairStats.state, RTCOutboundRTPStreamStats.framesSent, RTCCodecStats, RTCRemoteOutboundRTPStreamStats.remoteTimeStamp, RTCTransportStats, RTCCertificateStats, RTCPeerConnectionStats, RTCDataChannelStats; Chromium, Safari"
   },
   "webrtc/RTCPeerConnection-mandatory-getStats.https.html": {
-    "comment": "48 implemented in 2+ browsers, 21 in only one browser, 7 in no browser"
+    "comment": "48 implemented in 2+ browsers, 21 in only one browser, 5 in no browser, 2 can't be reliably detected with WPT (issuerCertificatedId, codecType)"
   },
   "webrtc/RTCPeerConnection-onicecandidateerror.https.html": {
     "comment": "icecandidateerror not implemented in FF, Safari"
@@ -192,7 +192,7 @@
     "comment": "timing bug in muted track explains 2 Chromium failures (the 3rd actually passes when timeout removed)"
   },
   "webrtc/RTCPeerConnection-track-stats.https.html": {
-    "comment": "Chromium fails in handling replaceTrack; 3 of safari failures due to outdated stream stat tests, others are real; FF completely off?"
+    "comment": "Chromium fails in handling replaceTrack; 3 of safari failures due to outdated stream stat tests, others are real; FF doesn't implement trackIdentifier which is required for this test"
   },
   "webrtc/RTCRtpSender-setStreams.https.html": {
     "comment": "setStreams not implemented in FF, Safari"
