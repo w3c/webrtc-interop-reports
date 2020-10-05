@@ -67,16 +67,9 @@
   "webrtc/RTCPeerConnection-perfect-negotiation.https.html": {
     "comment": "Only FF support, https://bugs.chromium.org/p/chromium/issues/detail?id=980872"
   },
-  "webrtc/RTCPeerConnection-removeTrack.https.html": {
-    "comment": "Chromium fails for lack of <code>transceiver.stop()</code>; Safari fails on removing track from a stopped transceiver"
-  },
   "webrtc/RTCPeerConnection-restartIce.https.html": {
    "status": "ok",
     "comment": "only edge case lack implementation"
-  },
-  "webrtc/RTCPeerConnection-setDescription-transceiver.html": {
-    "status": "ok",
-    "comment": "Chromium fails on <code>transceiver.stop</code>"
   },
   "webrtc/RTCPeerConnection-setLocalDescription-answer.html": {
     "status": "ok",
@@ -201,7 +194,7 @@
     "comment": "gaps in MTI stats (but selector implemented)"
   },
   "webrtc/RTCRtpTransceiver.https.html": {
-    "comment": "Chromium failures due to bug in mute timing, lack of transceiver.stop (+ SDP parsing failure in checkMsidNoTrackId, track negotiation in checkAddTransceiverThenAddTrackPairs & checkRemoveTrackNegotiation)"
+    "comment": "Chromium failures due to bug in mute timing, (+ SDP parsing failure in checkMsidNoTrackId, track negotiation in checkAddTransceiverThenAddTrackPairs & checkRemoveTrackNegotiation)"
   },
   "webrtc/RTCRtpParameters-encodings.html": {
     "comment": "FF doesn't implement RtpParameters.encodings; Safari doesn't set active/maxBitRate/rid and doesn't reject invalid modifications (\"only\" 7 real failures)"
@@ -224,7 +217,7 @@
     "comment": "Safari doesn't implement .rctp, but otherwise passes same tests as Chromium (i.e. fails on simulcast test, not sure if it's right); FF doesn't implement getParameters (<a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1618999'>#1618999</a>)"
   },
   "webrtc/RTCRtpTransceiver-stop.html": {
-    "comment": "Chromium doesn't implement transceiver.stop; FF fails on 'A stopped sendonly transceiver should generate a sendonly m-section in the offer'"
+    "comment": "FF fails on 'A stopped sendonly transceiver should generate a sendonly m-section in the offer'"
   },
   "webrtc/protocol/simulcast-answer.html": {
     "comment": "FF doesn't implement rid"
