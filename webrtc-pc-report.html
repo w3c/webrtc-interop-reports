@@ -3,7 +3,7 @@
   <head>
     <meta charset=utf-8>
     <title>webrtc-pc interop</title>
- <link href="http://www.w3.org/StyleSheets/TR/base.css" rel="stylesheet" type="text/css">
+ <link href="https://www.w3.org/StyleSheets/TR/base.css" rel="stylesheet" type="text/css">
   </head>
 <style>
 table.results {
@@ -71,13 +71,19 @@ table.results td.good {
     </div>
       <section>
 	<h2>Summary - November 2nd, 2020</h2>
-<p><em>There is at least one implementation of every feature of the WebRTC 1.0 specification, except for a feature already marked at risk (voiceActivityFlag) and a couple of mandatory stats that implementers are committed to provide in the upcoming weeks. Several features have only one implementation (SctpTransport, IceTransport, setStreams, DataChannel.onclosing). Those were not marked at risk, the implementors expressed their intention to support those, although the schedule for implementation is not clearly defined, so we will get 2 interoperable implementations of each feature. Since the 2020 W3C Process allows for normative correction of bugs, it will be possible to correct any bug that would arise during testing those features while already in Recommendation state, provided that we announce this contingency in advance in the specification. 
-<br>
-As a result of this implementation analysis, the WebRTC 1.0 specification seems ready for Recommendation under the 2020 W3C Process.
- </em></p>
+        <p>Every feature not marked at risk of the WebRTC 1.0 specification has been demonstrably and independently implemented in two browsers:
+          <ul>
+            <li>A few mandatory-to-implement stats which have not been implemented anywhere, but are not critical to real-world interoperability and which implementers are committed to provide in the upcoming weeks.<li>
+            <li>The <code>RTCSctpTransport</code> and <code>RTCIceTransport</code> interfaces have been implemented in only one current browser; other browser vendors have indicated their intent to eventually ship these, and these interfaces have also received implementation experience outside of current browsers (in the old Edge Spartan, in orclib, in the Meedooze server).</li>
+            <li><code>RTCRtpSender.setStreams()</code> is only implmented in a single browser, but is expected to land in more browsers in the near future.</li>
+            <li>the <code>closing</code> event for <code>RTCDataChannel</code> is implemented in only one browser, but is expected to land in more browsers in the near future.</li>
+            <li>the way browsers report errors occuring during WebRTC operations is not fully aligned with the specification.</li>
+          </ul>
+        <p>Given the implementors commitment for these features and given their relative low real-world interoperability impact, the Working Group is confident that these implementation gaps are unlikely to require substantive change to the specification as implementations catch up. Should this prove necessary, the Working Group will take advantage of the 2020 W3C Process for normative correction of bugs.</p>
+        <p>As a result of this implementation analysis, the WebRTC Working Group estimates that the implementations of the current WebRTC 1.0 are sufficient to proceed with publication as a W3C Recommendation under the 2020 W3C Process.</p>
       </section>
       <section>
-        <h2>Implementation issues</h2>
+        <h2>Detailed Implementation issues</h2>
         <h3>Gaps</h3>
         <h4>No implementation</h4>
         <dl>
