@@ -292,5 +292,9 @@
   },
   "webrtc/simulcast/getStats.https.html": {
     "comment": "Safari only reports stats on 1 layer (instead of all 3 layers)"
+  },
+  "webrtc/RTCDataChannel-binaryType.window.html": {
+    "status": "ok",
+    "comment": "Bugs are limited to error handling (mostly type of errors for Chromium/Safari)"
   }
 }
