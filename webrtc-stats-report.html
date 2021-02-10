@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <title>webrtc-pc interop</title>
+ <link href="https://www.w3.org/StyleSheets/TR/base.css" rel="stylesheet" type="text/css">
+  </head>
+<style>
+table.results {
+  border: 2px solid darkgrey;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.results td, table.results th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.results tbody td {
+  font-size: 13px;
+}
+table.results thead {
+  background: grey;
+}
+table.results thead th {
+  font-size: 19px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: darkgrey;
+  text-align: center;
+  border-left: 2px solid grey;
+}
+table.results tbody th {
+  text-align: right;
+}
+table.results thead th:first-child {
+  border-left: none;
+}
+table.results tbody tr.good {
+  background: #cfc;
+}
+table.results tbody tr.ok {
+  background: #efa;
+}
+table.results tbody tr.bad {
+  background: #fcc;
+}
+table.results tbody tr.ignore {
+  opacity: 0.5;
+}
+table.results tbody td.comment {
+ text-align: left;
+}
+table.results tbody td.todo {
+ border: 2px solid #f00;
+}
+
+table.results td.good {
+  background: rgba(176,255,176,0.2);
+}
+
+</style>
+  <body>
+    <main id="content">
+    <div class='header'>
+      <a class='logo' href='http://www.w3.org/' rel='home'>
+        <img alt='W3C' src='http://www.w3.org/Icons/w3c_home'>
+      </a>
+      <h1>WebRTC Stats Implementation Report</h1>
+    </div>
+    <section id=missinginfo>
+    </section>
+    <section id=noimpl>
+    </section>
+    <section id=singleimpl>
+    </section>
+    </main>
+    <script src="stats-report.js"></script>
+  </body>
+</html>
