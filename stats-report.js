@@ -22,15 +22,19 @@ const statsComposition = {
   "ice-server": ["RTCIceServerStats"]
 };
 
-let results = {};
+
+let csioResults = {}, wptResults = {};
 let infoGap = new Set();
-Promise.all([fetch("webrtc-stats.json"), fetch("https://w3c.github.io/webref/ed/idlparsed/webrtc-stats.json")].map(p => p.then(r => r.json())))
-  .then(([{browserStatsList},{idlparsed}]) => {
+const urls = ["webrtc-stats.json", "https://w3c.github.io/webref/ed/idlparsed/webrtc-stats.json", "https://storage.googleapis.com/wptd/c951dfff50b1f06021cb0f5f2016056bebb5801c/chrome-90.0.4412.3_dev-linux-20.04-cb639e25cf/webrtc-stats/supported-stats.html", "https://storage.googleapis.com/wptd/c951dfff50b1f06021cb0f5f2016056bebb5801c/firefox-87.0a1-linux-20.04-8b955c1a53/webrtc-stats/supported-stats.html", "https://storage.googleapis.com/wptd/c951dfff50b1f06021cb0f5f2016056bebb5801c/safari-119_preview-mac-10.15-92c9f97c0c/webrtc-stats/supported-stats.html"];
+
+Promise.all(urls.map(u => fetch(u).then(r => r.json())))
+  .then(([{browserStatsList}, {idlparsed}, chromiumResults, firefoxResults, safariResults]) => {
     // we only consider the latest version of the browser in the data set
     browserStatsList = browserStatsList.filter((b, i, arr) => !arr.find(b2 => b2.browserInfo.name === b.browserInfo.name && b2.browserInfo.version > b.browserInfo.version));
     console.log(browserStatsList);
     for (let type of Object.keys(statsComposition)) {
-      results[type] = {};
+      csioResults[type] = {};
+      wptResults[type] = {};
       // we don't check RTCStats fields as that's unlikely to be of interest
       const statDictionaries = statsComposition[type];
       for (let dict of statDictionaries) {
@@ -52,12 +56,27 @@ Promise.all([fetch("webrtc-stats.json"), fetch("https://w3c.github.io/webref/ed/
               continue;
             }
             if (typeIsImplemented) {
-              results[type][field] = results[type][field] ? results[type][field] : 0;
+              csioResults[type][field] = csioResults[type][field] ? csioResults[type][field] : 0;
             }
             if (impl.isImplemented) {
               typeIsImplemented = true;
-              results[type][field] = results[type][field] ? results[type][field] + 1 : 1;
+              csioResults[type][field] = csioResults[type][field] ? csioResults[type][field] + 1 : 1;
             }
+          }
+          for (let browserResults of [chromiumResults, firefoxResults, safariResults]) {
+            const impl = browserResults.subtests.find(t => t.name === `${type}'s ${field}`);
+            if (!impl) {
+              console.error("missing results for " + type + "." + field);
+              continue;
+            }
+            if (typeIsImplemented) {
+              wptResults[type][field] = wptResults[type][field] ? wptResults[type][field] : 0;
+            }
+            if (impl.status === "PASS") {
+              typeIsImplemented = true;
+              wptResults[type][field] = wptResults[type][field] ? wptResults[type][field] + 1 : 1;
+            }
+
           }
         }
       }
@@ -68,9 +87,15 @@ Promise.all([fetch("webrtc-stats.json"), fetch("https://w3c.github.io/webref/ed/
 `;
     document.getElementById("noimpl").innerHTML = `
 <h2>Stat types without implementations</h2>
-<ul>${Object.keys(results).filter(type => Object.keys(results[type]).length === 0).map(type => `<li><code>${type}</code></li>`).join('')}</ul>
+<h3>in WPT report</h3>
+<ul>${Object.keys(wptResults).filter(type => Object.keys(wptResults[type]).length === 0).map(type => `<li><code>${type}</code></li>`).join('')}</ul>
+<h3>in Callstats.io report</h3>
+<ul>${Object.keys(csioResults).filter(type => Object.keys(csioResults[type]).length === 0).map(type => `<li><code>${type}</code></li>`).join('')}</ul>
 <h2>Stat fields without implementations</h2>
-<ul>${Object.keys(results).filter(type => Object.values(results[type]).includes(0)).map(type => `<li><code>${type}</code>: <ul>${Object.keys(results[type]).filter(field => results[type][field] ===0).map(field => `<li><code>${field}</code></li>`).join('')}</ul></li>`).join('')}</ul>
+<h3>in WPT report</h3>
+<ul>${Object.keys(wptResults).filter(type => Object.values(wptResults[type]).includes(0)).map(type => `<li><code>${type}</code>: <ul>${Object.keys(wptResults[type]).filter(field => wptResults[type][field] ===0).map(field => `<li><code>${field}</code></li>`).join('')}</ul></li>`).join('')}</ul>
+<h3>in Callstats.io report</h3>
+<ul>${Object.keys(csioResults).filter(type => Object.values(csioResults[type]).includes(0)).map(type => `<li><code>${type}</code>: <ul>${Object.keys(csioResults[type]).filter(field => csioResults[type][field] ===0).map(field => `<li><code>${field}</code></li>`).join('')}</ul></li>`).join('')}</ul>
 `;
-    console.log(results);
+
   });
