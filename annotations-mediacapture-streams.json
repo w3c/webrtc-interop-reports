@@ -1,0 +1,55 @@
+{
+  "mediacapture-streams/GUM-deny.https.html": {
+    "comment": "Test lacks automation, <a href='https://github.com/web-platform-tests/wpt/pull/31847'>pending pull request to fix</a>",
+    "status": "good"
+  },
+  "mediacapture-streams/MediaDevices-getUserMedia.https.html": {
+    "comment": "resizeMode not implement in FF (<a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1433480'>#1433480</a>) or Safari"
+  },
+  "mediacapture-streams/MediaDevices-after-discard.https.html": {
+    "comment": "Cr's 1st failure is issuing a wrong error code; 2nd test failing in Cr and SF is linked to promise timing, with limited interop impact",
+    "status": "ok"
+  },
+  "mediacapture-streams/MediaDevices-enumerateDevices-not-allowed-mic.https.html": {
+    "comment": "no browser protects enumerateDevices via Permissions-Policy",
+    "status": "bad"
+  },
+  "mediacapture-streams/MediaDevices-enumerateDevices-not-allowed-camera.https.html": {
+    "comment": "no browser protects enumerateDevices via Permissions-Policy",
+    "status": "bad"
+  },
+  "mediacapture-streams/MediaDevices-enumerateDevices.https.html": {
+    "comment": "InputDeviceInfo missing in FF and SF; FF exposes deviceId before capture"
+  },
+  "mediacapture-streams/MediaDevices-getSupportedConstraints.https.html": {
+    "comment": "resizeMode, sampleRate, sampleSize, latency not implemented in FF and SF; aspectRatio not implemented in FF"
+  },
+  "mediacapture-streams/MediaStream-MediaElement-srcObject.https.html": {
+    "comment": "Cr and SF don't follow mediastream reading rules - that said, they're more HTML's than gUM's"
+  },
+  "mediacapture-streams/MediaStream-supported-by-feature-policy.html": {
+    "comment": "FF and Sf don't implement permissions policy yet",
+    "status": "ok"
+  },
+  "mediacapture-streams/MediaStreamTrack-applyConstraints.https.html": {
+    "comment": "resizeMode not supported in FF / SF - marking OK since not specific to applyConstraints",
+    "status": "ok"
+  },
+  "mediacapture-streams/MediaStreamTrack-getCapabilities.https.html": {
+    "comment": "FF doesn't implement getCapabilities() nor InputDeviceInfo; SF failures come from lack of InputDeviceInfo support, lack of support for sampleSize, autoGainControl, noiseSuppression, latency, channelCount, groupId, resizeMode"
+  },
+  "mediacapture-streams/historical.https.html": {
+    "comment": "browser-legacy name support",
+    "status": "ok"
+  },
+  "mediacapture-streams/idlharness.https.window.html": {
+    "comment": "FF misses getcapabilities, OverConstrainedError; Cr &amp; SF implements an old version of OverconstrainedError IDL ; FF &amp; Safari are missing InputDeviceInfo"
+  },
+  "mediacapture-streams/MediaStream-removetrack.https.html": {
+    "comment": "Cr doesn't end media elements correctly on removeTrack; SF doesn't end audio element correctly",
+    "status": "ok"
+  },
+  "mediacapture-streams/MediaStreamTrack-getSettings.https.html": {
+    "comment": "SF doesn't implement groupId (?), FF doesn't expose deviceId of stopped tracks, and SF &amp; FF don't implement sampleRate, sampleSize, latency, aspectRatio, resizeMode"
+  }
+}

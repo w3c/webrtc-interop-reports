@@ -1,17 +1,18 @@
 let wptData;
 const resultsBody = document.querySelector(".results tbody");
 
+
 let runIds;
 fetch("https://wpt.fyi/api/runs?label=master")
   .then(r => r.json())
   .then(runs => {
     runIds = runs.map(r => r.id);
-    return fetch("https://wpt.fyi/api/search?run_ids=" + runIds.join(",") + "&q=webrtc/");
+    return fetch("https://wpt.fyi/api/search?run_ids=" + runIds.join(",") + "&q=" + (window.spec ?? "webrtc") + "/");
   })
   .then(r => r.json())
   .then(data => {
     wptData = data;
-    return fetch("annotations.json");
+    return fetch("annotations" + (window.spec ? "-" + window.spec : "") + ".json");
   })
   .then(r => r.json())
   .then(annotations => {

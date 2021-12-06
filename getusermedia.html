@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <title>mediacapture-main interop</title>
+ <link href="https://www.w3.org/StyleSheets/TR/base.css" rel="stylesheet" type="text/css">
+  </head>
+<style>
+table.results {
+  border: 2px solid darkgrey;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.results td, table.results th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.results tbody td {
+  font-size: 13px;
+}
+table.results thead {
+  background: grey;
+}
+table.results thead th {
+  font-size: 19px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: darkgrey;
+  text-align: center;
+  border-left: 2px solid grey;
+}
+table.results tbody th {
+  text-align: right;
+}
+table.results thead th:first-child {
+  border-left: none;
+}
+table.results tbody tr.good {
+  background: #cfc;
+}
+table.results tbody tr.ok {
+  background: #efa;
+}
+table.results tbody tr.bad {
+  background: #fcc;
+}
+table.results tbody tr.ignore {
+  opacity: 0.5;
+}
+table.results tbody td.comment {
+ text-align: left;
+}
+table.results tbody td.todo {
+ border: 2px solid #f00;
+}
+
+table.results td.good {
+  background: rgba(176,255,176,0.2);
+}
+
+</style>
+  <body>
+    <main id="content">
+    <div class='header'>
+      <a class='logo' href='http://www.w3.org/' rel='home'>
+        <img alt='W3C' src='http://www.w3.org/Icons/w3c_home'>
+      </a>
+      <h1>Media Capture and Streams Interoperability Tests Results</h1>
+    </div>
+      <section>
+	<h2>Summary - December 2021</h2>
+      </section>
+      <section>
+        <h2>Detailed Implementation issues</h2>
+        <h3>Gaps</h3>
+        <h4>No implementation</h4>
+        <dl>
+          <dt>enumerateDevice filtering via permissions policy</dt>
+          <dd><a href="https://wpt.fyi/results/mediacapture-streams/MediaDevices-enumerateDevices-not-allowed-camera.https.html?run_ids=5708152822562816,5665708479348736,5708884946714624,5715186334826496">camera</a>, <a href="https://wpt.fyi/results/mediacapture-streams/MediaDevices-enumerateDevices-not-allowed-mic.https.html?run_ids=5708152822562816,5665708479348736,5708884946714624,5715186334826496">mic</a></dd>
+        </dl>
+        <h4>Only one implementation</h4>
+        <dl>
+          <dt>Constraints</dt>
+          <dd>
+            <ul>
+              <li>resizeMode (FF <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1433480'>#1433480</a>)</li>
+              <li>sampleRate</li>
+              <li>sampleSize</li>
+              <li>latency</li>
+              <li>autoGainControl</li>
+              <li>noiseSuppression</li>
+              <li>channelCount</li>
+            </ul>
+        </dl>
+        <h3>Bugs</h3>
+        <dl>
+        </dl>
+      </section>
+      <section>
+        <h2>Test suite issues</h2>
+        <h3>Bugs</h3>
+        <ul>
+        </ul>
+      </section>
+      <section>
+        <h2>Annotated WPT results</h2>
+      <table class="results">
+          <thead>
+            <tr>
+              <th>Tests</th>
+                <th>Chrome</th>
+                <th>Edge</th>
+                <th>FireFox</th>
+              <th>Safari</th>
+		<th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+      </table>
+      </section>
+    </main>
+    <script>window.spec = "mediacapture-streams"</script>
+    <script src="load.js"></script>
+  </body>
+</html>
