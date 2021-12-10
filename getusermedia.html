@@ -74,14 +74,15 @@ table.results td.good {
       </section>
       <section>
         <h2>Detailed Implementation issues</h2>
+        <h3>Test suite gaps</h3>
         <h3>Gaps</h3>
         <h4>No implementation</h4>
         <dl>
-          <dt>enumerateDevice filtering via permissions policy</dt>
-          <dd><a href="https://wpt.fyi/results/mediacapture-streams/MediaDevices-enumerateDevices-not-allowed-camera.https.html?run_ids=5708152822562816,5665708479348736,5708884946714624,5715186334826496">camera</a>, <a href="https://wpt.fyi/results/mediacapture-streams/MediaDevices-enumerateDevices-not-allowed-mic.https.html?run_ids=5708152822562816,5665708479348736,5708884946714624,5715186334826496">mic</a></dd>
         </dl>
         <h4>Only one implementation</h4>
         <dl>
+          <dt>enumerateDevice filtering via permissions policy</dt>
+          <dd><a href="https://wpt.fyi/results/mediacapture-streams/MediaDevices-enumerateDevices-not-allowed-camera.https.html?run_ids=5708152822562816,5665708479348736,5708884946714624,5715186334826496">camera</a>, <a href="https://wpt.fyi/results/mediacapture-streams/MediaDevices-enumerateDevices-not-allowed-mic.https.html?run_ids=5708152822562816,5665708479348736,5708884946714624,5715186334826496">mic</a></dd>
           <dt>Constraints</dt>
           <dd>
             <ul>
@@ -94,8 +95,11 @@ table.results td.good {
               <li>channelCount</li>
             </ul>
         </dl>
-        <h3>Bugs</h3>
+        <h3>Bugs with likely interop impact</h3>
         <dl>
+          <ul>
+            <li>Cr uses "default" as a deviceId for microphone / speaker</li>
+          </ul>
         </dl>
       </section>
       <section>

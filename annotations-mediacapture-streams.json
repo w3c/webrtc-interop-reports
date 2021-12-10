@@ -1,6 +1,6 @@
 {
   "mediacapture-streams/GUM-deny.https.html": {
-    "comment": "Test lacks automation, <a href='https://github.com/web-platform-tests/wpt/pull/31847'>pending pull request to fix</a>",
+    "comment": "FF and Safari can't be automated to deny permission, but works on manual testing",
     "status": "good"
   },
   "mediacapture-streams/MediaDevices-getUserMedia.https.html": {
@@ -11,12 +11,10 @@
     "status": "ok"
   },
   "mediacapture-streams/MediaDevices-enumerateDevices-not-allowed-mic.https.html": {
-    "comment": "no browser protects enumerateDevices via Permissions-Policy",
-    "status": "bad"
+    "comment": "only Cr implements Permissions-Policy header, but it doesn't apply the enumerateDevice algo implications"
   },
   "mediacapture-streams/MediaDevices-enumerateDevices-not-allowed-camera.https.html": {
-    "comment": "no browser protects enumerateDevices via Permissions-Policy",
-    "status": "bad"
+    "comment": "only Cr implements Permissions-Policy header, but it doesn't apply the enumerateDevice algo implications"
   },
   "mediacapture-streams/MediaDevices-enumerateDevices.https.html": {
     "comment": "InputDeviceInfo missing in FF and SF; FF exposes deviceId before capture"
@@ -51,5 +49,8 @@
   },
   "mediacapture-streams/MediaStreamTrack-getSettings.https.html": {
     "comment": "SF doesn't implement groupId (?), FF doesn't expose deviceId of stopped tracks, and SF &amp; FF don't implement sampleRate, sampleSize, latency, aspectRatio, resizeMode"
+  },
+  "mediacapture-streams/MediaStream-MediaElement-preload-none.https.html": {
+    "comment": "Not clear where the fact that no suspend events get fired comes from"
   }
 }
