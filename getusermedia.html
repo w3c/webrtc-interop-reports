@@ -78,9 +78,15 @@ table.results td.good {
         <h3>Gaps</h3>
         <h4>No implementation</h4>
         <dl>
+	  <dt>Limit enumerateDevice device info based on what capture devices have been enabled</dt>
+	  <dd>FF patch in progress (according to JIB)</dd>
         </dl>
         <h4>Only one implementation</h4>
         <dl>
+	  <dt><a href="https://w3c.github.io/mediacapture-main/#device-information-exposure">pre-capture filtering of enumerateDevice</a></dt>
+	  <dd>Pending FF patches (according to JIB)</dd>
+	  <dt>Focus requirements for calling getUserMedia</dt>
+	  <dd>Spec changes may make Safari implementation qualify (according to JIB)</dd>
           <dt>enumerateDevice filtering via permissions policy</dt>
           <dd><a href="https://wpt.fyi/results/mediacapture-streams/MediaDevices-enumerateDevices-not-allowed-camera.https.html?run_ids=5708152822562816,5665708479348736,5708884946714624,5715186334826496">camera</a>, <a href="https://wpt.fyi/results/mediacapture-streams/MediaDevices-enumerateDevices-not-allowed-mic.https.html?run_ids=5708152822562816,5665708479348736,5708884946714624,5715186334826496">mic</a></dd>
           <dt>Constraints</dt>
@@ -94,12 +100,6 @@ table.results td.good {
               <li>noiseSuppression</li>
               <li>channelCount</li>
             </ul>
-        </dl>
-        <h3>Bugs with likely interop impact</h3>
-        <dl>
-          <ul>
-            <li>Cr uses "default" as a deviceId for microphone / speaker</li>
-          </ul>
         </dl>
       </section>
       <section>
