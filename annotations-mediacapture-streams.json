@@ -52,5 +52,30 @@
   },
   "mediacapture-streams/MediaStream-MediaElement-preload-none.https.html": {
     "comment": "Not clear where the fact that no suspend events get fired comes from"
+  },
+  "mediacapture-streams/MediaStreamTrack-transfer-video.https.html": {
+    "status": "ignore",
+    "comment": "Transferability is an extension"
+  },
+  "mediacapture-streams/MediaStreamTrack-iframe-transfer.https.html": {
+    "status": "ignore",
+    "comment": "Transferability is an extension"
+  },
+  "mediacapture-streams/MediaStreamTrack-transfer.https.html": {
+    "status": "ignore",
+    "comment": "Transferability is an extension"
+  },
+  "mediacapture-streams/MediaDevices-enumerateDevices-per-origin-ids.sub.https.html": {
+    "comment": "deviceIds aren't rotated by clear-site-data"
+  },
+  "mediacapture-streams/MediaDevices-enumerateDevices-persistent-permission.https.html": {
+    "comment": "Chrome list all devices in enumerateDevices prior to access to camera; FF exposes deviceId before capture"
+  },
+  "mediacapture-streams/MediaDevices-enumerateDevices-returned-objects.https.html": {
+    "Cr return 'default' as id of its pre-permission object; Firefox exposes deviceId before capture"
+  },
+  "mediacapture-streams/crashtests/enumerateDevices-after-discard-1.https.html": {
+    "status": "good",
+    "comment": "no failure detected"
   }
 }
