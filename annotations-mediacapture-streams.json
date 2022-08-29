@@ -72,7 +72,7 @@
     "comment": "Chrome list all devices in enumerateDevices prior to access to camera; FF exposes deviceId before capture"
   },
   "mediacapture-streams/MediaDevices-enumerateDevices-returned-objects.https.html": {
-    "Cr return 'default' as id of its pre-permission object; Firefox exposes deviceId before capture"
+    "comment": "Cr return 'default' as id of its pre-permission object; Firefox exposes deviceId before capture"
   },
   "mediacapture-streams/crashtests/enumerateDevices-after-discard-1.https.html": {
     "status": "good",
