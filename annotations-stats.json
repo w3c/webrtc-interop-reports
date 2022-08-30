@@ -1,0 +1,14 @@
+{
+  "inbound-rtp.estimatedPlayoutTimestamp": { "manualSupport": ["chromium"], "comment": "Implemented for sure per https://github.com/w3c/webrtc-stats/pull/622#issuecomment-1091740011" },
+  "outbound-rtp.rid": { "manualSupport": ["chromium"], "comment": "Implemented in Chrome, doesn't show up in WPT because it needs simulcast"},
+  "remote-inbound-rtp.framesDropped": { },
+  "remote-outbound-rtp.roundTripTime": { },
+  "media-source.echoReturnLoss": { "manualSupport": ["chromium"], "comment": "show up in Chrome in a real call per https://github.com/w3c/webrtc-stats/pull/622#issue-1195951597"},
+  "media-source.echoReturnLossEnhancement": {"manualSupport": ["chromium"], "comment": "show up in Chrome in a real call per https://github.com/w3c/webrtc-stats/pull/622#issue-1195951597" },
+  "candidate-pair.availableIncomingBitrate": { "manualSupport": ["chromium"], "comment": "Available in Chrome when using REMB per https://github.com/w3c/webrtc-stats/pull/622#discussion_r845302935" },
+  "local-candidate.url": { "manualSupport": ["chromium"], "comment": "Implemented in Chrome per https://github.com/w3c/webrtc-stats/pull/622#discussion_r845301829" },
+  "local-candidate.relayProtocol": { "manualSupport": ["chromium"], "comment": "Implemented in Chrome per https://github.com/w3c/webrtc-stats/pull/622#discussion_r845301829"},
+  "remote-candidate.url": {"manualSupport": ["chromium"], "comment": "Implemented in Chrome per https://github.com/w3c/webrtc-stats/pull/622#discussion_r845301829" },
+  "remote-candidate.relayProtocol": { "manualSupport": ["chromium"], "comment": "Implemented in Chrome per https://github.com/w3c/webrtc-stats/pull/622#discussion_r845301829"},
+  "certificate.issuerCertificateId": { "comment": "Chrome implementation code exists, but not verified or tested per  per https://github.com/w3c/webrtc-stats/pull/622#issue-1195951597" }
+}

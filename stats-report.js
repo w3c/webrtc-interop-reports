@@ -22,10 +22,10 @@ let wptResults = {};
   const runIds = (await fetch("https://wpt.fyi/api/runs?label=master").then(r => r.json())).map(r => r.id);
   const {idlparsed}= await fetch("https://w3c.github.io/webref/ed/idlparsed/webrtc-stats.json").then(r => r.json());
   const wptdata = (await fetch("https://wpt.fyi/api/search?run_ids=" + runIds.join(",") + "&q=webrtc-stats/supported-stats.html").then(r => r.json())).runs;
+  const annotations = await fetch("annotations-stats.json").then(r => r.json());
 
   const [chromiumResults, , firefoxResults, safariResults] = await Promise.all(wptdata.map(async w => await fetch(w.raw_results_url.replace('/wptd-results/', '/wptd/')
 														  .replace("/report.json", "/webrtc-stats/supported-stats.html")).then(r => r.json())));
-console.log(chromiumResults);
 
   const missingTests = [];
 for (let type of Object.keys(statsComposition)) {
@@ -46,9 +46,9 @@ for (let type of Object.keys(statsComposition)) {
           console.error("missing results for " + type + "." + field);
           continue;
 	}
-        wptResults[type][field] = wptResults[type][field] ? wptResults[type][field] : 0;
+	if (!wptResults[type][field]) wptResults[type][field] = {count: annotations[type + "." + field]?.manualSupport?.length ?? 0, comment: annotations[type + "." + field]?.comment};
 	if (impl.status === "PASS") {
-          wptResults[type][field] = wptResults[type][field] ? wptResults[type][field] + 1 : 1;
+          wptResults[type][field].count += 1;
 	}
       }
     }
@@ -58,11 +58,13 @@ for (let type of Object.keys(statsComposition)) {
 <h2>Stat types without implementations</h2>
 ${Object.keys(wptResults).length ? `<ul>${Object.keys(wptResults).filter(type => Object.keys(wptResults[type]).length === 0).map(type => `<li><code>${type}</code></li>`).join('')}</ul>` : `<p>N/A</p>`}
 <h2>Stat fields without implementations</h2>
-<ul>${Object.keys(wptResults).filter(type => Object.values(wptResults[type]).includes(0)).map(type => `<li><code>${type}</code>: <ul>${Object.keys(wptResults[type]).filter(field => wptResults[type][field] ===0).map(field => `<li><code>${field}</code></li>`).join('')}</ul></li>`).join('')}</ul>
+<ul>${Object.keys(wptResults).filter(type => Object.values(wptResults[type]).find(f => f.count === 0)).map(type => `<li><code>${type}</code>: <ul>${Object.keys(wptResults[type]).filter(field => wptResults[type][field].count ===0).map(field => `<li><code>${field}</code>${wptResults[type][field].comment ? ': ' + wptResults[type][field].comment : ''}</li>`).join('')}</ul></li>`).join('')}</ul>
 `;
   document.getElementById("singleimpl").innerHTML = `<h2>Stat fields with only one implementation</h2>
-<ul>${Object.keys(wptResults).filter(type => Object.values(wptResults[type]).includes(1)).map(type => `<li><code>${type}</code>: <ul>${Object.keys(wptResults[type]).filter(field => wptResults[type][field] ===1).map(field => `<li><code>${field}</code></li>`).join('')}</ul></li>`).join('')}</ul>
+<ul>${Object.keys(wptResults).filter(type => Object.values(wptResults[type]).find(f => f.count === 1)).map(type => `<li><code>${type}</code>: <ul>${Object.keys(wptResults[type]).filter(field => wptResults[type][field].count === 1).map(field => `<li><code>${field}</code>${wptResults[type][field].comment ? ': ' + wptResults[type][field].comment : ''}</li>`).join('')}</ul></li>`).join('')}</ul>
 `;
-  document.getElementById("missingtests").innerHTML = `<h2>Stat fields without matching WPT test</h2>
+  if (missingTests.length) {
+    document.getElementById("missingtests").innerHTML = `<h2>Stat fields without matching WPT test</h2>
 <ul>${missingTests.map(({type, field}) => `<li>${type}.${field}</li>`).join('')}</ul>`;
+  }
 })();
