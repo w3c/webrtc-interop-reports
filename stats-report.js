@@ -7,6 +7,7 @@ const statsComposition = {
   "remote-inbound-rtp": ["RTCRtpStreamStats", "RTCReceivedRtpStreamStats", "RTCRemoteInboundRtpStreamStats"],
   "remote-outbound-rtp": ["RTCRtpStreamStats", "RTCSentRtpStreamStats", "RTCRemoteOutboundRtpStreamStats"],
   "media-source": ["RTCMediaSourceStats", "RTCAudioSourceStats", "RTCVideoSourceStats"], // TODO: Audio/Video need to be considered separately?
+  "media-playout": ["RTCAudioPlayoutStats"],
   "peer-connection": ["RTCPeerConnectionStats"],
   "data-channel": ["RTCDataChannelStats"],
   "transport": ["RTCTransportStats"],

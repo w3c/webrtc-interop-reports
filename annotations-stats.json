@@ -1,7 +1,7 @@
 {
   "inbound-rtp.estimatedPlayoutTimestamp": { "manualSupport": ["chromium"], "comment": "Implemented for sure per https://github.com/w3c/webrtc-stats/pull/622#issuecomment-1091740011" },
   "outbound-rtp.rid": { "manualSupport": ["chromium"], "comment": "Implemented in Chrome, doesn't show up in WPT because it needs simulcast"},
-  "remote-inbound-rtp.framesDropped": { },
+  "remote-inbound-rtp.framesDropped": { "comment": "No longer in spec, WPT update pending"},
   "remote-outbound-rtp.roundTripTime": { },
   "media-source.echoReturnLoss": { "manualSupport": ["chromium"], "comment": "show up in Chrome in a real call per https://github.com/w3c/webrtc-stats/pull/622#issue-1195951597"},
   "media-source.echoReturnLossEnhancement": {"manualSupport": ["chromium"], "comment": "show up in Chrome in a real call per https://github.com/w3c/webrtc-stats/pull/622#issue-1195951597" },
