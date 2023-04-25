@@ -89,6 +89,7 @@
     "comment": "no failure detected"
   },
   "mediacapture-streams/overconstrained_error.https.html": {
-    "comment": "FF &amp; Safari don't implement OverConstrainedError"
+    "status": "ok",
+    "comment": "FF &amp; Safari don't implement OverConstrainedError as a distinct interface, but they do signal the relevant errors for constraints they support"
   }
 }
