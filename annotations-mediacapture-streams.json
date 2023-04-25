@@ -30,7 +30,7 @@
     "comment": "Cr and SF don't follow mediastream reading rules - that said, they're more HTML's than gUM's"
   },
   "mediacapture-streams/MediaStream-supported-by-feature-policy.html": {
-    "comment": "FF and Sf don't implement permissions policy yet",
+    "comment": "FF and Sf don't implement permissions policy header yet, but iframe version works",
     "status": "ok"
   },
   "mediacapture-streams/MediaStreamTrack-applyConstraints.https.html": {
