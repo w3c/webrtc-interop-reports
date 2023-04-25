@@ -11,18 +11,22 @@
     "status": "ok"
   },
   "mediacapture-streams/MediaDevices-enumerateDevices-not-allowed-mic.https.html": {
-    "comment": "only Cr implements Permissions-Policy header, but it doesn't apply the enumerateDevice algo implications"
+    "status": "ignore",
+    "comment": "only Cr implements Permissions-Policy header, but it doesn't apply the enumerateDevice algo implications; FF &amp; Safari don't implement header but do it right with the allow attribute"
   },
   "mediacapture-streams/MediaDevices-enumerateDevices-not-allowed-camera.https.html": {
-    "comment": "only Cr implements Permissions-Policy header, but it doesn't apply the enumerateDevice algo implications"
+    "status": "ignore",
+    "comment": "only Cr implements Permissions-Policy header, but it doesn't apply the enumerateDevice algo implications; FF &amp; Safari don't implement header but do it right with the allow attribute"
   },
   "mediacapture-streams/MediaDevices-enumerateDevices.https.html": {
-    "comment": "InputDeviceInfo missing in FF and SF; FF exposes deviceId before capture"
+    "status": "ok",
+    "comment": "InputDeviceInfo missing in FF; FF exposes deviceId before capture; Chrome uses 'default' instead of empty string but that's acceptable"
   },
   "mediacapture-streams/MediaDevices-getSupportedConstraints.https.html": {
     "comment": "resizeMode, sampleRate, sampleSize, latency not implemented in FF and SF; aspectRatio not implemented in FF"
   },
   "mediacapture-streams/MediaStream-MediaElement-srcObject.https.html": {
+    "status": "ignore",
     "comment": "Cr and SF don't follow mediastream reading rules - that said, they're more HTML's than gUM's"
   },
   "mediacapture-streams/MediaStream-supported-by-feature-policy.html": {
@@ -34,14 +38,14 @@
     "status": "ok"
   },
   "mediacapture-streams/MediaStreamTrack-getCapabilities.https.html": {
-    "comment": "FF doesn't implement getCapabilities() nor InputDeviceInfo; SF failures come from lack of InputDeviceInfo support, lack of support for sampleSize, autoGainControl, noiseSuppression, latency, channelCount, groupId, resizeMode"
+    "comment": "FF doesn't implement getCapabilities() nor InputDeviceInfo; SF failures come from lack of support for sampleSize, autoGainControl, noiseSuppression, latency, channelCount, groupId, resizeMode"
   },
   "mediacapture-streams/historical.https.html": {
     "comment": "browser-legacy name support",
     "status": "ok"
   },
   "mediacapture-streams/idlharness.https.window.html": {
-    "comment": "FF misses getcapabilities, OverConstrainedError; Cr &amp; SF implements an old version of OverconstrainedError IDL ; FF &amp; Safari are missing InputDeviceInfo"
+    "comment": "FF misses getcapabilities, OverConstrainedError; Cr &amp; SF implements an old version of OverconstrainedError IDL ; FF is missing InputDeviceInfo"
   },
   "mediacapture-streams/MediaStream-removetrack.https.html": {
     "comment": "Cr doesn't end media elements correctly on removeTrack; SF doesn't end audio element correctly",
@@ -65,17 +69,26 @@
     "status": "ignore",
     "comment": "Transferability is an extension"
   },
+  "mediacapture-streams/MediaStreamTrack-iframe-audio-transfer.https.html": {
+    "status": "ignore",
+    "comment": "Transferability is an extension"
+  },
   "mediacapture-streams/MediaDevices-enumerateDevices-per-origin-ids.sub.https.html": {
-    "comment": "deviceIds aren't rotated by clear-site-data"
+    "status": "ok",
+    "comment": "deviceIds aren't rotated by clear-site-data, but it isn't crystal clear that they should (yet)"
   },
   "mediacapture-streams/MediaDevices-enumerateDevices-persistent-permission.https.html": {
     "comment": "Chrome list all devices in enumerateDevices prior to access to camera; FF exposes deviceId before capture"
   },
   "mediacapture-streams/MediaDevices-enumerateDevices-returned-objects.https.html": {
+    "status": "ok",
     "comment": "Cr return 'default' as id of its pre-permission object; Firefox exposes deviceId before capture"
   },
   "mediacapture-streams/crashtests/enumerateDevices-after-discard-1.https.html": {
     "status": "good",
     "comment": "no failure detected"
+  },
+  "mediacapture-streams/overconstrained_error.https.html": {
+    "comment": "FF &amp; Safari don't implement OverConstrainedError"
   }
 }
