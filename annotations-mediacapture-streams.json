@@ -38,7 +38,7 @@
     "status": "ok"
   },
   "mediacapture-streams/MediaStreamTrack-getCapabilities.https.html": {
-    "comment": "FF doesn't implement getCapabilities() nor InputDeviceInfo; SF failures come from lack of support for sampleSize, autoGainControl, noiseSuppression, latency, channelCount, groupId, resizeMode"
+    "comment": "FF doesn't implement getCapabilities() nor InputDeviceInfo; SF failures come from lack of support for sampleSize, <a href='https://bugs.webkit.org/show_bug.cgi?id=204444'>autoGainControl</a>, noiseSuppression, latency, <a href='https://bugs.webkit.org/show_bug.cgi?id=210231'>channelCount</a>, groupId, resizeMode"
   },
   "mediacapture-streams/historical.https.html": {
     "comment": "browser-legacy name support",
