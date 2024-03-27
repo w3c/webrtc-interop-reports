@@ -88,7 +88,7 @@ table.results td.good {
 		   );
 	} else {
 	  a.forEach(x => {
-	    x.tests.forEach(t => {
+	    x.tests?.forEach(t => {
 	      if (!byTest[t]) {
 		byTest[t] = [];
 	      }
