@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <title>Amended WebRTC Interoperability Tests Results</title>
+ <link href="https://www.w3.org/StyleSheets/TR/base.css" rel="stylesheet" type="text/css">
+  </head>
+<style>
+table.results {
+  border: 2px solid darkgrey;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.results td, table.results th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.results tbody td {
+  font-size: 13px;
+}
+table.results thead {
+  background: grey;
+}
+table.results thead th {
+  font-size: 19px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: darkgrey;
+  text-align: center;
+  border-left: 2px solid grey;
+}
+table.results tbody th {
+  text-align: right;
+}
+table.results thead th:first-child {
+  border-left: none;
+}
+table.results tbody tr.good {
+  background: #cfc;
+}
+table.results tbody tr.ok {
+  background: #efa;
+}
+table.results tbody tr.bad {
+  background: #fcc;
+}
+table.results tbody tr.ignore {
+  opacity: 0.5;
+}
+table.results tbody td.comment {
+ text-align: left;
+}
+table.results tbody td.todo {
+ border: 2px solid #f00;
+}
+
+table.results td.good {
+  background: rgba(176,255,176,0.2);
+}
+
+</style>
+<script>
+  window.specFilter = "-webrtc-amendments";
+  const byTest = {};
+  window.relevantTests = fetch("amendments.json")  // FIXME: use github.io URL
+  .then(r => r.json())
+  .then(amendmentsBySection => {
+    const amendments = Object.keys(amendmentsBySection).reduce((acc, id) => {
+      for (let c of amendmentsBySection[id]) {
+	if (!acc[c.id]) {
+	  acc[c.id] = [];
+	}
+	acc[c.id].push(c);
+      }
+      return acc;
+    }, {});
+    const missing = new Set;
+    for (const id in amendments) {
+      const a = amendments[id];
+      if (a[0].testUpdates !== "not-testable" && a[0].testUpdates !== "already-tested") {
+	if (!a[0].tests) {
+	  a.forEach(x => {
+	    missing.add("#" + JSON.stringify(x.pr));
+	    x.testUpdates = "not-tested";
+	  }
+		   );
+	} else {
+	  a.forEach(x => {
+	    x.tests.forEach(t => {
+	      if (!byTest[t]) {
+		byTest[t] = [];
+	      }
+	      byTest[t].push(a);
+	    });
+	  });
+	}
+      }
+    }
+    console.log([...missing].sort().join(" "));
+    return Object.keys(byTest);
+  });
+</script>
+  <body>
+    <main id="content">
+    <div class='header'>
+      <a class='logo' href='http://www.w3.org/' rel='home'>
+        <img alt='W3C' src='http://www.w3.org/Icons/w3c_home'>
+      </a>
+      <h1>Amended WebRTC Interoperability Tests Results</h1>
+    </div>
+    <section>
+      <h2>Summary - March, 2024</h2>
+      <p><a href="https://github.com/w3c/webrtc-pc/issues/2950">Untested amendments</a>:</p>
+      <ul>
+	<li>Don't let offers to receive simulcast overwrite existing [[SendEncodings]] #2758</li>
+	<li>Revert #2033. #2759</li>
+	<li>Clarify simulcast envelope is determined by negotiation. #2760</li>
+	<li>Don't fail sRD(offer) over rid mismatch, just answer with unicast. #2794</li>
+	<li>Prune createAnswer()'s encodings and [[SendEncodings]] in sLD(answer). #2801</li>
+	<li>Use the url spec to parse ice server urls (Take 2). #2853</li>
+	<li>Determine if DTMF can be sent inside queued playout task. #2861</li>
+	<li>Redefine SendCodecs and ReceiveCodecs #2935</li>
+      </ul>
+      <p>Amendments without implementations:</p>
+      <ul>
+	<li>2800</li>
+	<li>2813</li>
+      </ul>
+      <p>Amendment with only one implementation:</p>
+      <ul>
+	<li>2902 (only Cr - but unclear for Safari)</li>
+	<li>2708 (only FF - but partial impl in Cr/Safari)</li>
+	<li>2754 (only FF)</li>
+	<li>2755 (only FF)</li>
+	<li>2763 (only Cr)</li>
+	<li>2772 (only FF)</li>
+	<li>2773 (only Cr)</li>
+	<li>2774 (only FF)</li>
+	<li>2775 (only FF)</li>
+	<li>2797 (only FF)</li>
+	<li>2832 (only Cr)</li>
+      </ul>
+      <p>Amendment with sufficient implementation experience:</p>
+      <ul>
+	<li>2687</lI>
+	<lI>2689</li>
+	<li>2691</li>
+	<li>2744</li>
+	<li>2748</li>
+	<li>2785</li>
+	<li>2799</li>
+	<li>2909</li>
+	<li>2913</li>
+	<li>2926</li>
+      </ul>
+    </section>
+      <section>
+        <h2>Annotated WPT results</h2>
+      <table class="results">
+          <thead>
+            <tr>
+              <th>Tests</th>
+                <th>Chrome</th>
+                <th>Edge</th>
+                <th>FireFox</th>
+              <th>Safari</th>
+		<th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+      </table>
+      </section>
+    </main>
+    <script src="load.js"></script>
+    <script>
+      (async function() {
+	await window.testResultsLoaded;
+	document.querySelectorAll("tbody th").forEach(th => {
+	  let prs = [];
+	  for (const section of byTest[th.textContent]) {
+	    for (const a of section) {
+	      prs = prs.concat((Array.isArray(a.pr) ? a.pr : [a.pr]).map(pr => Object.assign({}, {id:pr, title: a.description})));
+	    }
+	  }
+	  
+	  if (prs.length) {
+	    prs = prs.filter((x, i, arr) => arr.findIndex(xx => x.id === xx.id) === i);
+	    th.append(" (");
+	  }
+	  for (const pr of [...new Set(prs)].sort((a,b) => a.id - b.id)) {
+	    const link = document.createElement("a");
+	    link.href = "https://github.com/w3c/webrtc-pc/pull/" + pr.id;
+	    link.title = pr.title;
+	    link.textContent = "#" + pr.id;
+	    th.append(link, " ")
+	  }
+	  if (prs.length) {
+	    th.append(")");
+	  }
+
+	});
+
+      })();
+    </script>
+  </body>
+</html>

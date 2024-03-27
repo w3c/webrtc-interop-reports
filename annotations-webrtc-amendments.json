@@ -1,0 +1,41 @@
+{
+  "webrtc/RTCDataChannel-GC.html": {
+    "comment":"Tests timeout in Safari (and can't easily be replicated in a non-test environment). FF fails."
+  },
+  "webrtc/RTCDataChannel-binaryType.window.html": {
+    "comment": "Chromium failure unrelated to amendment",
+    "status": "good"
+  },
+  "webrtc/RTCPeerConnection-mandatory-getStats.https.html": {
+    "comment": "Of the relevant stats (trackIdentifier, totalSamplesDuration, packetsDiscarded, responsesReceived), only responsesReceived (#2832) lacks a 2nd implementation (only in Chromium atm); no relevant bugs in FF/Webkit trackers"
+  },
+  "webrtc/RTCRtpParameters-encodings.html": {
+    "comment": "<ul><li>TypeError unless all or none of encodings have rids, duplicate rids (#2774 #2775) only in Firefox</li><li>Adjustments to scaleResolutionDownBy (#2772) only in Firefox</li></ul>"
+  },
+  "webrtc/idlharness.https.window.html": {
+    "comment": "<ul><li>RTCIceCandate.relayProtocol (#2763) only in Chromium</li><li>RTCIceCandate.url (#2773) only in Chromium</li></ul>"
+
+  },
+  "webrtc/protocol/simulcast-answer.html": {
+    "comment": "#2755 and #2754 pass only in Firefox"
+
+  },
+  "webrtc/simulcast/negotiation-encodings.https.html": {
+    "comment": "<ul><li>#2800 (duplicate rids), #2813 (alternative rids) fail everywhere</li><li>#2797 (rollback) passes only in FF</li></ul>"
+  },
+  "webrtc/RTCPeerConnection-addTcpIceCandidate.html": {
+    "comment": "Chromium/Safari failing test on part of bad ports; FF failing to ignore bad port on addIceCandidate?"
+  },
+  "webrtc/RTCDataChannel-send.html": {
+    "status": "good",
+    "comment": "not sure why Safari times out on wpt.fyi, but it passes all tests when run locally; Chromium passes the tests relevant to the amendment"
+  },
+  "webrtc/RTCPeerConnection-createDataChannel.html": {
+    "status": "good",
+    "comment": "Safari and Chromium pass the amendment relevant tests"
+  },
+  "webrtc/RTCConfiguration-iceTransportPolicy.html": {
+    "status": "good",
+    "comment": "test failures in Chromium/Safari are unrelated to the amendment"
+  }
+}
