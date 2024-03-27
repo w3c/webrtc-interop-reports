@@ -64,7 +64,7 @@ table.results td.good {
 <script>
   window.specFilter = "-webrtc-amendments";
   const byTest = {};
-  window.relevantTests = fetch("amendments.json")  // FIXME: use github.io URL
+  window.relevantTests = fetch("https://w3c.github.io/webrtc-pc/amendments.json")
   .then(r => r.json())
   .then(amendmentsBySection => {
     const amendments = Object.keys(amendmentsBySection).reduce((acc, id) => {
