@@ -65,6 +65,7 @@ table.results td.good {
   window.specFilter = "-webrtc-amendments";
   var amendments;
   const byTest = {};
+  var prToSections = {};
   window.relevantTests = fetch("https://w3c.github.io/webrtc-pc/amendments.json")
   .then(r => r.json())
   .then(amendmentsBySection => {
@@ -74,13 +75,20 @@ table.results td.good {
 	  acc[c.id] = [];
 	}
 	acc[c.id].push(c);
+	for (const pr of (Array.isArray(c.pr) ? c.pr : [c.pr])) {
+	  if (!prToSections[pr]) {
+	    prToSections[pr] = [];
+	  }
+	  prToSections[pr].push(id);
+	}
       }
       return acc;
     }, {});
     const missing = new Set;
     for (const id in amendments) {
       const a = amendments[id];
-      if (a[0].testUpdates !== "not-testable" && a[0].testUpdates !== "already-tested") {
+      if (a[0].testUpdates !== "not-testable") {
+	if (a[0].testUpdates === "already-tested") { console.log(a[0].pr) }
 	if (!a[0].tests) {
 	  a.forEach(x => {
 	    missing.add("#" + JSON.stringify(x.pr));
@@ -97,6 +105,8 @@ table.results td.good {
 	    });
 	  });
 	}
+      } else {
+	console.log("untestable", a[0].pr);
       }
     }
     console.log([...missing].sort().join(" "));
@@ -145,13 +155,31 @@ table.results td.good {
       </ul>
       <p>Amendment with sufficient implementation experience:</p>
       <ul class=prs>
+	<li>2679 (untestable)</li>
+	<li>2680</li>
+	<li>2686 (untestable)</li>
 	<li>2687</lI>
 	<lI>2689</li>
 	<li>2691</li>
+	<li>2700 (untestable)</li>
+	<lI>2704 (untestable)</li>
+	<li>2742</li>
 	<li>2744</li>
 	<li>2748</li>
+	<li>2753 (untestable)</li>
+	<li>2767  (untestable)</li>
+	<li>2773 (untestable)</li>
 	<li>2785</li>
 	<li>2799</li>
+	<li>2808 (untestable)</lI>
+	<li>2829</li>
+	<li>2814 (untestable)</li>
+	<li>2834 (untestable)</li>
+	<li>2841 (untestable)</li>
+	<li>2847</li>
+	<li>2875</li>
+	<li>2876</li>
+	<li>2885 (untestable)</li>
 	<li>2909</li>
 	<li>2913</li>
 	<li>2926</li>
@@ -203,7 +231,6 @@ table.results td.good {
 	  }
 
 	});
-	console.log(amendments);
 	document.querySelectorAll("ul.prs li").forEach(li => {
 	  const pr = parseInt(li.textContent.split(" ")[0], 10);
 	  for (const a of  Object.values(amendments)) {
@@ -212,7 +239,16 @@ table.results td.good {
 		const link = document.createElement("a");
 		link.href = "https://github.com/w3c/webrtc-pc/pull/" + pr;
 		link.textContent = x.description;
-		li.prepend(link, " ");
+		const span = document.createElement("span");
+		const mixedWith = [];
+		for (const sectionId of prToSections[pr]) {
+		  mixedWith.push(...(Object.keys(prToSections).filter(x => x != pr && prToSections[x].includes(sectionId))));
+		}
+		if (mixedWith.length) {
+		  span.textContent = "* ";
+		  span.title = "PR touches same section as other PRs: " + mixedWith.join(", ");
+		}
+		li.prepend(link, " ", span);
 		break;
 	      }
 	    }
