@@ -37,5 +37,8 @@
   "webrtc/RTCConfiguration-iceTransportPolicy.html": {
     "status": "good",
     "comment": "test failures in Chromium/Safari are unrelated to the amendment"
+  },
+  "webrtc/RTCPeerConnection-iceGatheringState.html": {
+    "comment": "relevant tests fail in Chromium and Safari"
   }
 }
