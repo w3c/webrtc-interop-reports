@@ -39,6 +39,9 @@
     "comment": "test failures in Chromium/Safari are unrelated to the amendment"
   },
   "webrtc/RTCPeerConnection-iceGatheringState.html": {
-    "comment": "relevant tests fail in Chromium and Safari"
+    "comment": "2894-relevant tests fail in Chromium and Safari"
+  },
+  "webrtc/RTCRtpTransceiver-setCodecPreferences.html": {
+    "comment": "2975-relevant tests fail in Chromium and Safari"
   }
 }
