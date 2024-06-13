@@ -13,7 +13,7 @@
     "comment": "<ul><li>TypeError unless all or none of encodings have rids, duplicate rids (#2774 #2775) only in Firefox</li><li>Adjustments to scaleResolutionDownBy (#2772) only in Firefox</li></ul>"
   },
   "webrtc/idlharness.https.window.html": {
-    "comment": "<ul><li>RTCIceCandate.relayProtocol (#2763) only in Chromium</li><li>RTCIceCandate.url (#2773) only in Chromium</li></ul>"
+    "comment": "<ul><li>RTCIceCandate.relayProtocol (#2763) only in Chromium</li><li>RTCIceCandate.url (#2773) only in Chromium</li><li>RTCIceCandidatePair (#2961) not implemented</li></ul>"
 
   },
   "webrtc/protocol/simulcast-answer.html": {
@@ -48,7 +48,7 @@
     "status": "good",
     "comment": "erroneous test result to be fixed by https://github.com/web-platform-tests/wpt/pull/46549"
   },
-  "webrtc/RTCRtpReceiver-video-jitterBufferTarget-stats.https.html": {
+  "webrtc/RTCRtpReceiver-video-jitterBufferTarget-stats.html": {
     "comment": "erroneous test result to be fixed by https://github.com/web-platform-tests/wpt/pull/46549"
   }
 }
