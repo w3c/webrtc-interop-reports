@@ -43,5 +43,12 @@
   },
   "webrtc/RTCRtpTransceiver-setCodecPreferences.html": {
     "comment": "2975-relevant tests fail in Chromium and Safari"
+  },
+  "webrtc/RTCRtpReceiver-audio-jitterBufferTarget-stats.https.html": {
+    "status": "good",
+    "comment": "erroneous test result to be fixed by https://github.com/web-platform-tests/wpt/pull/46549"
+  },
+  "webrtc/RTCRtpReceiver-video-jitterBufferTarget-stats.https.html": {
+    "comment": "erroneous test result to be fixed by https://github.com/web-platform-tests/wpt/pull/46549"
   }
 }
