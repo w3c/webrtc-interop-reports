@@ -1,11 +1,4 @@
 {
-  "webrtc/RTCDataChannel-GC.html": {
-    "comment":"Tests timeout in Safari (and can't easily be replicated in a non-test environment). FF fails."
-  },
-  "webrtc/RTCDataChannel-binaryType.window.html": {
-    "comment": "Chromium failure unrelated to amendment",
-    "status": "good"
-  },
   "webrtc/RTCPeerConnection-mandatory-getStats.https.html": {
     "comment": "Of the relevant stats (trackIdentifier, totalSamplesDuration, packetsDiscarded, responsesReceived), only responsesReceived (#2832) lacks a 2nd implementation (only in Chromium atm); no relevant bugs in FF/Webkit trackers"
   },
@@ -13,7 +6,7 @@
     "comment": "<ul><li>TypeError unless all or none of encodings have rids, duplicate rids (#2774 #2775) only in Firefox</li><li>Adjustments to scaleResolutionDownBy (#2772) only in Firefox</li></ul>"
   },
   "webrtc/idlharness.https.window.html": {
-    "comment": "<ul><li>RTCIceCandate.relayProtocol (#2763) only in Chromium</li><li>RTCIceCandate.url (#2773) only in Chromium</li><li>RTCIceCandidatePair (#2961) not implemented</li></ul>"
+    "comment": "<ul><li>RTCIceCandate.relayProtocol (#2763) only in Chromium (see <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1886013'>FF bug</a>)</li><li>RTCIceCandate.url (#2773) only in Chromium  (see <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1886013'>FF bug</a>)</li><li>RTCIceCandidatePair (#2961) not implemented</li></ul>"
 
   },
   "webrtc/protocol/simulcast-answer.html": {
@@ -25,10 +18,6 @@
   },
   "webrtc/RTCPeerConnection-addTcpIceCandidate.html": {
     "comment": "Chromium/Safari failing test on part of bad ports; FF failing to ignore bad port on addIceCandidate?"
-  },
-  "webrtc/RTCDataChannel-send.html": {
-    "status": "good",
-    "comment": "not sure why Safari times out on wpt.fyi, but it passes all tests when run locally; Chromium passes the tests relevant to the amendment"
   },
   "webrtc/RTCPeerConnection-createDataChannel.html": {
     "status": "good",
@@ -43,12 +32,5 @@
   },
   "webrtc/RTCRtpTransceiver-setCodecPreferences.html": {
     "comment": "2975-relevant tests fail in Chromium and Safari"
-  },
-  "webrtc/RTCRtpReceiver-audio-jitterBufferTarget-stats.https.html": {
-    "status": "good",
-    "comment": "erroneous test result to be fixed by https://github.com/web-platform-tests/wpt/pull/46549"
-  },
-  "webrtc/RTCRtpReceiver-video-jitterBufferTarget-stats.html": {
-    "comment": "erroneous test result to be fixed by https://github.com/web-platform-tests/wpt/pull/46549"
   }
 }
