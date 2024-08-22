@@ -32,5 +32,8 @@
   },
   "webrtc/RTCRtpTransceiver-setCodecPreferences.html": {
     "comment": "2975-relevant tests fail in Chromium and Safari"
+  },
+  "webrtc/RTCRtpParameters-codec.html": {
+    "comment": "only implemented in Chromium"
   }
 }
