@@ -3,7 +3,7 @@
     "comment": "Of the relevant stats (trackIdentifier, totalSamplesDuration, packetsDiscarded, responsesReceived), only responsesReceived (#2832) lacks a 2nd implementation (only in Chromium atm); no relevant bugs in FF/Webkit trackers"
   },
   "webrtc/RTCRtpParameters-encodings.html": {
-    "comment": "<ul><li>TypeError unless all or none of encodings have rids, duplicate rids (#2774 #2775) only in Firefox</li><li>Adjustments to scaleResolutionDownBy (#2772) only in Firefox</li></ul>"
+    "comment": "<ul><li>TypeError unless all or none of encodings have rids, duplicate rids (#2774 #2775) only in Firefox</li></ul>"
   },
   "webrtc/idlharness.https.window.html": {
     "comment": "<ul><li>RTCIceCandate.relayProtocol (#2763) only in Chromium (see <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1886013'>FF bug</a>)</li><li>RTCIceCandate.url (#2773) only in Chromium  (see <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1886013'>FF bug</a>)</li><li>RTCIceCandidatePair (#2961) not implemented</li></ul>"
