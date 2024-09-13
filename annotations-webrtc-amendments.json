@@ -23,6 +23,9 @@
     "status": "good",
     "comment": "Safari and Chromium pass the amendment relevant tests"
   },
+  "webrtc/RTCConfiguration-iceServers.html": {
+    "comment": "2853-failures due to not using the WHATWG URL parser"
+  },
   "webrtc/RTCConfiguration-iceTransportPolicy.html": {
     "status": "good",
     "comment": "test failures in Chromium/Safari are unrelated to the amendment"
