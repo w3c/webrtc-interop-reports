@@ -34,7 +34,8 @@
     "comment": "2894-relevant tests fail in Chromium and Safari"
   },
   "webrtc/RTCRtpTransceiver-setCodecPreferences.html": {
-    "comment": "2975-relevant tests fail in Chromium and Safari"
+    "status": "ok",
+    "comment": "2975-relevant tests fail in Chromium and Safari, but this is relaxing a constraint and aligning with a normative reference without backwards compat risks."
   },
   "webrtc/RTCRtpParameters-codec.html": {
     "comment": "only implemented in Chromium"
