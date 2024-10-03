@@ -39,5 +39,8 @@
   },
   "webrtc/RTCRtpParameters-codec.html": {
     "comment": "only implemented in Chromium"
+  },
+  "webrtc/RTCPeerConnection-getStats-timestamp.https.html": {
+    "comment": "only implemented in Chromium"
   }
 }
